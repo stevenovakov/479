@@ -1,0 +1,189 @@
+\documentclass[10.5pt, a4paper, twoside]{article}
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\setlength{\topmargin}{-1.25in}
+\setlength{\footskip}{0.75in}
+\setlength{\textheight}{10in}
+
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{comment}
+\usepackage{enumerate}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{setspace}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{multicol} 
+\usepackage{tabularx}
+\usepackage[labelfont=bf]{caption}
+\usepackage{subfig}
+
+%%%% BIBLIO
+
+\usepackage[backend=bibtex]{biblatex}
+
+%%%% GLOSSARY STUFF
+
+\usepackage[intoc]{nomencl} 
+
+\renewcommand{\nomname}{Glossary}
+\renewcommand{\nomlabel}[1]{\textbf{#1}}
+\makenomenclature
+
+
+
+%\singlespacing
+\onehalfspacing
+%\doublespacing
+%\setstretch{1.1}
+
+\newenvironment{packed_itemize}{
+\begin{itemize}
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+}{\end{itemize}}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+
+\lstset{ %
+  language=C++,                % the language of the code
+  basicstyle=\footnotesize,           % the size of the fonts that are used for the code
+  numbers=left,                   % where to put the line-numbers
+  numberstyle=\footnotesize,          % the size of the fonts that are used for the line-numbers
+  stepnumber=1,                   % the step between two line-numbers. If it's 1, each line 
+                                  % will be numbered
+  numbersep=5pt,                  % how far the line-numbers are from the code
+  backgroundcolor=\color{white},      % choose the background color. You must add \usepackage{color}
+  showspaces=false,               % show spaces adding particular underscores
+  showstringspaces=false,         % underline spaces within strings
+  showtabs=false,                 % show tabs within strings adding particular underscores
+  frame=single,                   % adds a frame around the code
+  tabsize=2,                      % sets default tabsize to 2 spaces
+  captionpos=b,                   % sets the caption-position to bottom
+  breaklines=true,                % sets automatic line breaking
+  breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
+  title=\lstname,                   % show the filename of files included with \lstinputlisting;
+                                  % also try caption instead of title
+  numberstyle=\tiny\color{gray},        % line number style
+  keywordstyle=\color{blue},          % keyword style
+  commentstyle=\color{dkgreen},       % comment style
+  stringstyle=\color{mauve},         % string literal style
+  escapeinside={\%*}{*)},            % if you want to add a comment within your code
+  morekeywords={*,...}               % if you want to add more keywords to the set
+}
+
+\newcommand{\vecthree}[3]{\left(\!\!{\scriptsize\begin{array}{c}#1\\#2\\#3\end{array}}\!\!\right)}
+\newcommand{\vectwo}[3]{\left(\!\!{\scriptsize\begin{array}{c}#1\\#2\end{array}}\!\!\right)}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+\addbibresource{../sources.bib}
+
+\begin{document}
+%
+%\title{ \bf \huge Development of a 12.4 GHz Bandwidth Frequency Offset Locking Unit for Two-Laser Systems}
+%\author{Steve Novakov }
+%\date{}
+%
+%\maketitle
+
+\begin{titlepage}
+\begin{center}
+
+% Upper part of the page. The '~' is needed because \\
+% only works if a paragraph has started.
+
+% Title
+\HRule \\[0.4cm]
+{ \huge \bfseries Pound-Drever-Hall Servomechanism with an Atomic Referece for Frequency Stabilization of a Master Laser \\[0.4cm] }
+
+\HRule \\[2.5cm]
+
+% Author and supervisor
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \Large
+\Large \emph{Authors:}\\
+Steve \textsc{Novakov} \\
+Jeff \textsc{Taylor}
+\end{flushleft}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \Large
+\emph{Sponsor:} \\
+Dr.~Kirk \textsc{Madison}
+\end{flushright}
+\end{minipage}
+
+\vfill
+
+\textsc{\LARGE ENPH 479}\\[0.3cm]
+\textsc{\LARGE Engineering Physics}\\[0.3cm]
+\textsc{\LARGE University of British Columbia}\\[0.3cm]
+
+\vfill
+
+\textsc{\Large Group \#\#\#\#}\\[0.3cm]
+\textsc{\Large Project 33}\\[0.3cm]
+
+\vfill
+
+% Bottom of the page
+{\large \today}
+
+\end{center}
+\end{titlepage}
+\newpage
+
+%%%%%%%%%%%%%%%% EXECUTIVE SUMMARY
+
+\include{executive}
+
+%%%%%%%%%%%%%%%% TOC
+
+\tableofcontents
+
+%%%%%%%%%%%%%%%% BACKGROUND/MOTIVATION/OBJECTIVES
+
+\include{introduction}
+
+%%%%%%%%%%%%%%%% BACKGROUND THEORY / PROPOSED METHOD
+
+%\include{theory}
+
+%%%%%%%%%%%%%%%% DELIVERABLES
+
+%\include{deliverables}
+
+%%%%%%%%%%%%%%%% TEAM RESPONSIBILITIES
+
+%%\include{team}
+
+%%%%%%%%%%%%%%%% PROJECT SCHEDULE / WORK PLAN / COMMUNICATION (subsections for the last 2)
+%%%%%%%%%%%%%%%% MILESTONES
+%%%%%%%%%%%%%%%% WORK/BUDGET/RESOURCES
+
+%\include{project}
+
+%%%%%%%%%%%%%%%% RISKS / CONTINGENCY
+
+%\include{contingency}
+
+%%%%%%%%%%%%%%%% CONCLUSION
+
+%\include{conclusion}
+
+%%%%%%%%%%%%%%%% REFERENCES
+
+\newpage
+\printbibliography
+
+\end{document}
+
+
+
