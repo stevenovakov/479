@@ -36,15 +36,29 @@ completion time estimates in brackets):
   should be explicit and well defined with respect to physical parameters (
   actual equations). This model is to be used as a reference for physical
   design and must be approved by the sponsor.
-  \item{\textbf{[1b] Electrical Schematic} (12 hrs)}
+  \item{\textbf{[1b] Electrical Schematic} (24 hrs)}
   - The PDH controller CCA will have to be designed and built. At this stage,
   the electrical schematic, with all of the components necessary for controlling
   the EOM and mixing the error signal. This will consist of, at the very least
   a VCO up to 30MHz, a VCO controller (if needed), the lab computer digital
   interface and analog or digital mixing circuits (to be deterimined).
-  \item{\texbf{[1c] BOM compilation and Component Ordering} (12hrs)}
-  - stuff
+  \item{\textbf{[1c] BOM compilation and Component Ordering} (12hrs)}
+  \item{\textbf{[1d] Evaluation of Existing AOM Servo} (12hrs)}
+  \item{\textbf{[2a] Mounting Hardware}} (12hrs)
+  \item{\textbf{[2b] PDH Controller CCA} (12hrs)}
+  \item{\textbf{[3a] Assembly of Optical Breadboard} (2-3hrs)}
+  \item{\textbf{[3b] Soldering and Assembly of PDH Controller CCA} (2-3hrs)}
+  \item{\textbf{[3c] Manufacture and Assembly of Cabling/Interconnects} (2-3hrs)}
+  \item{\textbf{[3d] Final Comprehensive Assembly} (2-3 hrs)}
+  \item{\textbf{[4a] Unit Block Validation} (12hrs)}
+  \item{\textbf{[4b] Comprehensive Benchmarking} (12hrs)}
+  \item{\textbf{[4c] Fine Tuning / Final Configuration} (\?\?\?)}
 \end{packed_itemize}
+
+Mention total project time.
+Mention here that there may have to be some final adjustments/fixes, etc, and
+discuss what those might be and the timeline, but don't assign formal tasks to
+them.
 
 \subsection{Team Responsibilities} %%%%%%% RESPONSIBILITY
 
@@ -91,12 +105,12 @@ specificity about sub-assemblies) which will be necessary to construct the PDH
 feedback loop. These items, with some commentary on status and price,
 can be reviewed in \textbf{Table \ref{budget_table}}
 
-\begin{table}
+\begin{table}[!hrt]
   \begin{tabularx}{\linewidth}{|L|L|L|}
   \hline
-  \textbf{Item} & \textbf{Status} & \textbf{Purchase Cost (approx)} \\
+  \textbf{Item} & \textbf{Status} & \textbf{Approx. Purchase Cost (source)} \\
   \hline
-  Rubidium Vapur Cell & exists in inventory & \$500 (Thorlabs) \\
+  Rubidium Vapour Cell & exists in inventory & \$500 (Thorlabs) \\
   EO Phase Modulator & exists in inventory & \$2,500 (Thorlabs) \\
   High-speed FO Receiver & exists in inventory & \$200 (custom) \\
   PDH Controller CCA & to be designed/built & $>$\$200 (custom) \\
