@@ -1,0 +1,17 @@
+Just a on overview of compilation
+
+>> pdflatex proposal479.tex
+>> bibtex proposal489.tex   %%
+>> pdflatex proposal479.tex %%
+>> pdflatex proposal479.tex %%
+
+%% - only if you changed the sources.bib file, else run pdflatex twice to see all
+references, etc
+
+citing references
+
+\cite{ref_id}
+
+citing figures/tables/chapters/anything declared with \label{label_id}
+
+\ref{label_id}
