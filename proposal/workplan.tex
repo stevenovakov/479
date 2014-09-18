@@ -1,0 +1,124 @@
+\newpage
+\section{Work Plan}
+
+\subsection{Milestones} %%%%%%%%%%%%%%%%% MILESTONES
+
+The following milestones have been tenatively agreed to by both sponsor and
+team members.
+
+\begin{enumerate}
+  \item{\textbf{Principal Schematics, BOMs} - 2014-10-05} - Subunit schematics
+  and block diagrams must be completed. Optical assembly schematics may be
+  graphical (not a specific CAD format) but must be properly labeled and
+  included with the relevant physical models referenced. Electrical schematics
+  for the PDH Controller CCA should be completed, reviewed and approved. All
+  relevant BOMs should be compiled and be ready to order. Lead times should be
+  minimized as much as possible (1-3 weeks maximum), as there are no
+  anticipated long-lead components. In this time, the existing AOM locking
+  circuit must also be benchmarked
+  \item{\textbf{Mechanical Design, PCBs} - 2014-10-31} Lead times for PCBs have
+  historically been no longer than 1-2 weeks.
+  \item{\textbf{Principal Assembly} - 2014-11-21}
+  \item{\textbf{Final Unit Test} - 2014-12-14}
+\end{enumerate}
+
+\subsection{Task Schedule}  %%%%%%%%%%%%% SCHEDULE
+
+The proposed milestone schedule is broken up into tasks ([Milestone\#-Task\#]).
+These are estimates of work that must be completed and may be subject to
+alteration. The specifics behind each of these tasks are as follows (with
+completion time estimates in brackets):
+
+\begin{packed_itemize}
+  \item{\textbf{[1a] Block Diagram/Schematic of PDH Servo Loop} (2-3 hrs)}
+  - This constitutes a well-formatted block diagram of every unit in the servo
+  loop as well as associated physical models. The format of the error signal
+  should be explicit and well defined with respect to physical parameters (
+  actual equations). This model is to be used as a reference for physical
+  design and must be approved by the sponsor.
+  \item{\textbf{[1b] Electrical Schematic} (12 hrs)}
+  - The PDH controller CCA will have to be designed and built. At this stage,
+  the electrical schematic, with all of the components necessary for controlling
+  the EOM and mixing the error signal. This will consist of, at the very least
+  a VCO up to 30MHz, a VCO controller (if needed), the lab computer digital
+  interface and analog or digital mixing circuits (to be deterimined).
+  \item{\texbf{[1c] BOM compilation and Component Ordering} (12hrs)}
+  - stuff
+\end{packed_itemize}
+
+\subsection{Team Responsibilities} %%%%%%% RESPONSIBILITY
+
+As per the proposal guidelines, the following team members are assigned the
+suggested team roles:
+\begin{packed_itemize}
+  \item{\textbf{Steve Novakov} - Project Manager}
+    \begin{packed_itemize}
+      \item shall maintain and ensure project schedule
+      \item shall submit proposal and recommendation report and delegate their
+      workload
+      \item shall maintain communications with sponsor and schedule meetings,
+      when necessary
+    \end{packed_itemize}
+  \item{\textbf{Jeff Taylor} - Technical Manager}
+    \begin{packed_itemize}
+      \item shall submit weekly reports and maintain project technical data
+      \item shall drive testing and validation efforts
+    \end{packed_itemize}
+\end{packed_itemize}
+
+The nature of the project is such that both members shall be conducting
+investigations and driving design schedules, but the roles are explicitly
+delegated for formality, with the designated members having final oversight
+and providing approval. The sponsor shall interact with both team members on a
+regular basis making a single liason role untenable.
+
+\subsection{Sponsor Interactions}  %%%%%%% SPONSOR INTERACTIONS
+
+With respect to communicating with the sponsor, Dr. Kirk Madison, there shall
+at least be one weekly email sent every Sunday night summarizing work that has
+been completed and upcoming tasks in a relevant timeframe. These shall mirror
+the content of the weekly 479 reports, but will be composed with the sponsor in
+mind (more specifics, more technical jargon). During any stages where there
+is a need for interaction with Madison Group laboratory equipment, (e.g. during
+testing and benchmarking, the appropriate lab staff, likely a graduate
+student or Dr. Madison himself, shall be consulted with to approve and possibly
+assist with the procedure.
+
+\subsection{Resources and Budget}
+
+At this time, it is possible to identify several high-level items (with lack of
+specificity about sub-assemblies) which will be necessary to construct the PDH
+feedback loop. These items, with some commentary on status and price,
+can be reviewed in \textbf{Table \ref{budget_table}}
+
+\begin{table}
+  \begin{tabularx}{\linewidth}{|L|L|L|}
+  \hline
+  \textbf{Item} & \textbf{Status} & \textbf{Purchase Cost (approx)} \\
+  \hline
+  Rubidium Vapur Cell & exists in inventory & \$500 (Thorlabs) \\
+  EO Phase Modulator & exists in inventory & \$2,500 (Thorlabs) \\
+  High-speed FO Receiver & exists in inventory & \$200 (custom) \\
+  PDH Controller CCA & to be designed/built & $>$\$200 (custom) \\
+  \hline
+  \end{tabularx}
+  \caption{Brief overview of major subcomponents and their estimated status,
+  with respect to acquisition. Items stated to "exist in inventory" are likely
+  available for use from the Madison Lab, but are allowed to be purchased, if
+  necessary. Price estimates may represent an amalgamation of
+  components from various vendors.}
+  \label{budget_table}
+\end{table}
+
+There is no established hard limit on the budget for this project, but, as all
+purchases must be approved by Dr. Madison, they are expected to be provably
+reasonable and necessary. For example, should a new EOM unit need to be
+purchased, it may cost anywhere in the neighbourhood of \$2-3000. With respect
+to the PDH Controller CCA, which must be designed and built sometime this
+term, the board and components will likely price in the \$2-300 range.
+The Madison Group does have many optical components and optical breadboards
+in storage and available for use. It is unlikely that any optics will have to
+be purchased, again, unless provably necessary. It is possible that some
+mounting hardware will have to be purchased or manufactured, but there is
+allowance for small work jobs to be done by the UBC Hennings machine shop,
+if necessary.

@@ -83,6 +83,9 @@
 \newcommand{\vectwo}[3]{\left(\!\!{\scriptsize\begin{array}{c}#1\\#2\end{array}}\!\!\right)}
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X} 
+
 \addbibresource{../sources.bib}
 
 \begin{document}
@@ -144,9 +147,12 @@ Dr.~Kirk \textsc{Madison}
 
 \include{executive}
 
-%%%%%%%%%%%%%%%% TOC
-
+%%%%%%%%%%%%%%%% TOC / FIGURES / TABLES
+\newpage
 \tableofcontents
+\newpage
+\listoffigures
+\listoftables
 
 %%%%%%%%%%%%%%%% BACKGROUND/MOTIVATION/OBJECTIVES
 
@@ -160,15 +166,11 @@ Dr.~Kirk \textsc{Madison}
 
 %\include{deliverables}
 
-%%%%%%%%%%%%%%%% TEAM RESPONSIBILITIES
-
-%%\include{team}
-
 %%%%%%%%%%%%%%%% PROJECT SCHEDULE / WORK PLAN / COMMUNICATION (subsections for the last 2)
 %%%%%%%%%%%%%%%% MILESTONES
 %%%%%%%%%%%%%%%% WORK/BUDGET/RESOURCES
 
-%\include{project}
+\include{workplan}
 
 %%%%%%%%%%%%%%%% RISKS / CONTINGENCY
 
