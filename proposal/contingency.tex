@@ -1,2 +1,37 @@
 \newpage
 \section{Risks and Contingency}
+
+Though the premise of this project, an increased-fidelity PDH error-signal
+generator, may seem straightforward, there are several nuances which may
+complicate development. The models presented in \textbf{Section
+\ref{sec:theory}} are meant to give a qualitative overview of why this upgrade
+is justified, but they ignore or simplify many parameters.
+
+The signal processing here is mostly considered with the assumption that all
+mixing or amplification is linear, and that signal attenuation, if present,
+is minimal. In reality, the propagation of the beat-note signals through the
+processing electronics may be more complex, with saturation effects and other
+nonlinearities coming into effect. The incident side-band beat-note signals,
+for example, may be subject to saturation effects in the phototransistor depending
+on the incident laser power. This, and other effects, will have to be carefully
+accounted for during electrical design. If something is overlooked, it may be that
+tuning the locking unit is more difficult than anticipated.
+
+As mentioned, another point of contention is the operation of the EOM unit itself.
+Choosing between a readily-available but small-bandwidth low-power EOM which
+is tuned around some pre-included oscillator, or developing a custom high-power,
+wide-bandwidth driver will vastly change the amount of work that must be done to
+arrive at a functional unit. Time spent designing an EOM controller, estimated
+to take 1-2 weeks, would alternatively be used on assembly and benchmarking.
+
+The primary detractor to how complete this project will be at delivery
+is the amount of custom solutions (CCAs, custom software, etc) that must be
+built in-house. Presumably, if the entire control loop can be built from
+off-the-shelf components from, for example, Thorlabs and Mini-Circuits,
+then a significant amount of time will be devoted to fine-tuning and
+benchmarking a ready-to-use assembly. The sponsor has requested two functional, benchmarked PDH reference units at project completion. It is inconcievable that
+these units will not be, at the very least, fully built during this term. Lack of
+built PDH reference units, consisting of the opto-electronic assembly and electronic
+mixing components, by 2014-12-20 is considered a project failure. The sponsor
+has allowed for testing and benchmarking to be completed after delivery, if
+absolutely necessary.
