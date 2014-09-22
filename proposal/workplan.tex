@@ -7,7 +7,7 @@ The following milestones have been tenatively agreed to by both sponsor and
 team members.
 
 \begin{enumerate}
-  \item{\textbf{Principal Schematics, BOMs} - 2014-10-05} - Subunit schematics
+  \item{\textbf{Principal Schematics, BOMs} - 2014-10-12} - Subunit schematics
   and block diagrams must be completed. Optical assembly schematics may be
   graphical (not a specific CAD format) but must be properly labeled and
   included with the relevant physical models referenced. Electrical schematics
@@ -15,11 +15,24 @@ team members.
   relevant BOMs should be compiled and be ready to order. Lead times should be
   minimized as much as possible (1-3 weeks maximum), as there are no
   anticipated long-lead components. In this time, the existing AOM locking
-  circuit must also be benchmarked
+  circuit must also be benchmarked as discussed.
   \item{\textbf{Mechanical Design, PCBs} - 2014-10-31} Lead times for PCBs have
-  historically been no longer than 1-2 weeks.
-  \item{\textbf{Principal Assembly} - 2014-11-21}
-  \item{\textbf{Final Unit Test} - 2014-12-14}
+  historically been no longer than 1-2 weeks. Should CCAs have to be designed
+  for EOM control and signal mixing, time will be spent here doing actual PCB
+  layout and designing mechanical enclosures, with cooling options, if necessary.
+  At this milestone, all designs should be approved and ready to order or in the
+  process of being ordered.
+  \item{\textbf{Principal Assembly} - 2014-11-21}  This milestone is for a
+  fully \emph{assembled} servomechanism, with all optical, electro-optical and
+  electrical assemblies built and ready for testing. During this time,
+  basic electrical testing - ensuring zero short-circuit conditions and correct
+  inter-net connectivity - should be complete, with specific functional testing
+  to be completed later. All optical elements should be assembled on an optical
+  breadboard and be roughly calibrated such that beam propagation is close to
+  ideal.
+  \item{\textbf{Final Unit Delivery} - 2014-12-14} Upon delivery, the
+  new PDH unit should ideally be fully built, functionally verified and
+  benchmarked against the existing solution.
 \end{enumerate}
 
 \subsection{Task Schedule}  %%%%%%%%%%%%% SCHEDULE
@@ -110,7 +123,7 @@ assist with the procedure.
 
 At this time, it is possible to identify several high-level items (with lack of
 specificity about sub-assemblies) which will be necessary to construct the PDH
-feedback loop. These items, with some commentary on status and price,
+unit. These items, with some commentary on status and price,
 can be reviewed in \textbf{Table \ref{budget_table}}
 
 \begin{table}[!hrt]
@@ -121,7 +134,9 @@ can be reviewed in \textbf{Table \ref{budget_table}}
   Rubidium Vapour Cell & exists in inventory & \$500 (Thorlabs) \\
   EO Phase Modulator & exists in inventory & \$2,500 (Thorlabs) \\
   High-speed FO Receiver & exists in inventory & \$200 (custom) \\
-  PDH Controller CCA & to be designed/built & $>$\$200 (custom) \\
+  PDH Controller CCA & as necessary & $>$\$200 (custom) \\
+  Discrete RF Compoonents & as necessary &$>$\$200 (Mini-Circuits) \\
+  Cabling and Accessories & as necessary &$>$\$200 (Mini-Circuits) \\
   \hline
   \end{tabularx}
   \caption{Brief overview of major subcomponents and their estimated status,
@@ -143,4 +158,5 @@ in storage and available for use. It is unlikely that any optics will have to
 be purchased, again, unless provably necessary. It is possible that some
 mounting hardware will have to be purchased or manufactured, but there is
 allowance for small work jobs to be done by the UBC Hennings machine shop,
-if necessary.
+if necessary. Fiber optic receivers, with bandwidth up to 12 GHz are readily
+available throughout the laboratory.

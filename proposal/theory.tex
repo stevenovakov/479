@@ -9,8 +9,18 @@
   the frequency selective element. Borrowed from \cite{black1998}}
 \end{figure}
 
+\begin{figure}[!hrt]
+  \centering
+  \label{vapour_eom_pdh}
+  \includegraphics[scale=0.9]{EOM_PDH_UNIT.png}
+  \caption{High level layout of PDH servo loop using a Rubidium vapour cell as
+  the frequency selective element.}
+\end{figure}
 
-\subsection{Error Signal Generation from Saturated Absorption Spectra}
+
+
+\subsection{Brief Overview of Saturated Absorption Spectra}
+
 Maxwell distribution of speed in z-axis only:
 \begin{gather}
   \rho(v_z) = \sqrt{\frac{m}{2\pi k_B T}} e^{\frac{-m v_z^2}{2k_B T}}
@@ -57,7 +67,7 @@ optical scheme.
   \centering
   \includegraphics[scale=0.5]{rb_D2_single_absorption.png}
   \caption{Transmission ratio of probe beam through a 0.1m long cell of Rubidium
-  gas. Optical depth is calculated as shown in
+  gas, near the D2 feature. Optical depth is calculated as shown in
   \textbf{(\ref{eq:corr_opt_depth})},
   and all hyperfine splitting is ignored, (assumed 2-level system) for
   simplicity. The spectrum is plotted for a variety of pump beam intensities
@@ -73,6 +83,10 @@ optical scheme.
   resonance.}
   \label{fig:rb87d2abs_closer}
 \end{figure}
+
+\subsection{Optical Phase Modulation}
+
+\subsection{Error Signal Generation}
 
 Obtaining an accurate value for the optimal error signal slope will be a central
 development task, if it is not possible to optmize heuristically in a way that

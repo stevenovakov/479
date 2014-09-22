@@ -34,16 +34,38 @@ def OneTransition(dnu, nu0, vel, gamma, s):
     p2 = (s / 2.0) / (1 + s + 4*delta**2/gamma**2)
     return 1 - 2*p2
 
+def IntegrandWithPump2(vel, dnu, nu0, alpha, gamma, s, h):
+  a = OneTransition(dnu+h, nu0+h, vel, gamma, s)*LorentzAbsorb(dnu+h, nu0+h, vel, gamma)
+
+  a *= MaxwellBoltzmannOnedir(vel, alpha)
+
+  return a
+
+# def IntegrandWithPump2(vel, dnu, nu0, alpha, gamma, s, hyperfine):
+#   return MaxwellBoltzmannOnedir(vel, alpha) * \
+#     LorentzAbsorb(dnu+hyperfine, nu0+hyperfine, vel, gamma) * OneTransition(dnu+hyperfine, nu0+hyperfine, vel, gamma, s) *\
+#     LorentzAbsorb(dnu-hyperfine, nu0-hyperfine, vel, gamma) * OneTransition(dnu-hyperfine, nu0-hyperfine, vel, gamma, s)
+
+
 rc('text', usetex=True)
 
-dnu = 0.2 # GHz
-N = 1000
+dnu = 2.0 # GHz
+N = 10000
 nuspace = np.linspace(-1*dnu, dnu, N)
 
 rb_nu0_D1 = 377107.463380 # GHz
+rb_nu0_D1_hyperfine_1 = 0.30543
+rb_nu0_D1_hyperfine_2 = -0.50905
+
 rb_gamma_D1 = 0.0057500 # GHz
 rb_nu0_D2 = 384230.484468 # GHz
 rb_gamma_D2 = 0.0060666 # GHz
+
+rb_D1_hyperfines=[rb_nu0_D1_hyperfine_1, rb_nu0_D1_hyperfine_2]
+rb_D2_hyperfines= [0.0] #[0.1937407, -0.0729112, -0.2298518, -0.3020738]
+
+dnuspace = np.linspace(-1*dnu, dnu, N)
+nuspace = dnuspace + rb_nu0_D1
 
 rb_isat = 2e-3 * 10000.0 # W/m**2
 
@@ -64,7 +86,7 @@ cell_length = 0.1 #meters
 absorption_response = []
 
 constant_maxwell = 1/(alpha * (2 * scicon.pi)**0.5)
-constant_lorentz = rb_gamma_D1/(2*scicon.pi)
+constant_lorentz = rb_gamma_D2/(2*scicon.pi)
 
 #normfac = quad(IntegrandNoPump, -1*vmax, vmax, args=(rb_nu0_D1, rb_nu0_D1, alpha,
   #rb_gamma_D1))[0] * rb_nu0_D1  * constant_maxwell * constant_lorentz / scicon.c
@@ -73,42 +95,140 @@ integral = 0
 
 isatspace = [0.1, 0.5, 1.0, 5.0, 10.0]
 
-ntot = len(nuspace)
 
-for i in isatspace:
+def GenerateAbsorptionSpectrum(isatspace, nuspace):
+  ntot = len(nuspace)
+
+  for i in isatspace:
+
+    absorption_response = []
+    counter = 0
+    counter2 = 1
+
+    for n in nuspace:
+      integral = 0.0
+      transmission = 1.0
+
+      for h in rb_D2_hyperfines:
+        integral += quad(IntegrandWithPump2, -1*vmax, vmax, args=(n, rb_nu0_D2, alpha,
+          rb_gamma_D2, i, h))[0]
+
+      optical_depth = normfac*integral*constant_maxwell*constant_lorentz
+      transmission *= math.e**(-1*cell_length*optical_depth)
+
+      #absorption_response.append(math.e**(-1*integral*constant_factor))
+      absorption_response.append(transmission)
+
+      counter += 1
+      percent = counter/float(ntot)
+
+      if percent > counter2*0.1:
+        counter2 += 1
+        print str(percent) + "completed"
+
+    plt.plot(nuspace, absorption_response, linewidth=3, label =
+      "I/Isat = " + str(i))
+
+    print str(i) + "  plotted"
+
+  plt.legend(loc = "upper right")
+  plt.title("Doppler Broadened Absorption Feature for Rb87 D2 Transition - " +
+    str(cell_length) + " m Vapour Cell", y=1.05)
+  plt.ylabel(r"Transmission Ratio : $ e^{- \tau(\nu) \cdot L} $")
+  plt.xlabel(r"$ \nu - \nu_0 $ (GHz)")
+  plt.grid('on')
+
+  plt.show()
+
+
+def GenerateSingleSpectrum(isat, nuspace):
+  ntot = len(nuspace)
 
   absorption_response = []
   counter = 0
   counter2 = 1
 
+  # for n in nuspace:
+  #   integral = quad(IntegrandWithPump, -1*vmax, vmax, args=(n, rb_nu0_D1, alpha,
+  #     rb_gamma_D1, isat))[0]
+
+  #   optical_depth = normfac*integral*constant_maxwell*constant_lorentz
+
+  #   #absorption_response.append(math.e**(-1*integral*constant_factor))
+  #   absorption_response.append(math.e**(-1*cell_length*optical_depth))
+
   for n in nuspace:
-    integral = quad(IntegrandWithPump, -1*vmax, vmax, args=(n, rb_nu0_D1, alpha,
-      rb_gamma_D1, i))[0]
+    integral = 0.0
+    transmission = 1.0
+
+    for h in rb_D2_hyperfines:
+      integral += quad(IntegrandWithPump2, -1*vmax, vmax, args=(n, rb_nu0_D2, alpha,
+        rb_gamma_D2, isat, h))[0]
 
     optical_depth = normfac*integral*constant_maxwell*constant_lorentz
+    transmission *= math.e**(-1*cell_length*optical_depth)
 
     #absorption_response.append(math.e**(-1*integral*constant_factor))
-    absorption_response.append(math.e**(-1*cell_length*optical_depth))
+    absorption_response.append(transmission)
+
 
     counter += 1
     percent = counter/float(ntot)
 
     if percent > counter2*0.1:
       counter2 += 1
-      print str(percent) + "completed"
+      print str(percent) + " % completed"
 
+  return absorption_response
 
+def GenerateErrorSignals(omegaspace, isat, nuspace):
 
-  plt.plot(nuspace, absorption_response, linewidth=3, label =
-    "I/Isat = " + str(i))
+  abs_spec = GenerateSingleSpectrum(isat, nuspace)
 
-  print str(i) + "  plotted"
+  maxindex = len(nuspace)
 
-plt.legend(loc = "upper right")
-plt.title("Doppler Broadened Absorption Feature for Rb87 D1 Transition - " +
-  str(cell_length) + " m Vapour Cell", y=1.05)
-plt.ylabel(r"Transmission Ratio : $ e^{- \tau(\nu) \cdot L} $")
-plt.xlabel(r"$ \nu - \nu_0 $ (GHz)")
-plt.grid('on')
+  fig = plt.figure()
 
-plt.show()
+  ax1 = fig.add_subplot(211)
+  ax1.plot(nuspace, abs_spec)
+
+  ax2 = fig.add_subplot(212)
+
+  for omega in omegaspace:
+    omega_plot = []
+
+    lower = nuspace[0]
+    higher = nuspace[0]
+    separation = 0
+
+    while (higher - lower) < 2*omega:
+      separation += 1
+      higher = nuspace[separation]
+
+    if separation%2 != 0:
+      separation +=1
+
+    halfsep = separation/2
+
+    for i in xrange(0+halfsep, maxindex - halfsep):
+      omega_plot.append(abs_spec[i + halfsep] - abs_spec[i - halfsep])
+
+    ax2.plot(nuspace[0+halfsep:maxindex-halfsep], omega_plot, linewidth = 2,
+      label = r"$\Omega = $" + str(omega) + " (GHz) ")
+
+  ax1.set_title(r"Doppler Broadened Absorption Feature for Rb87 D2 Transition - " +
+    str(cell_length) + " m Vapour Cell - $I/I_{sat} = 5.0$", y=1.00)
+  ax2.set_title(r"Error Signal w.r.t. Phase Modulation Frequency $\Omega$", y=1.00)
+
+  ax1.set_ylabel(r"Transmission Ratio : $ e^{- \tau(\nu) \cdot L} $")
+  ax2.set_xlabel(r"$ \nu - \nu_0 $ (GHz)")
+
+  ax2.legend(loc="lower right")
+
+  ax1.grid(b=True, which='both')
+  ax2.grid(b=True, which='both')
+  fig.show()
+  raw_input()
+
+#GenerateAbsorptionSpectrum(isatspace, dnuspace)
+GenerateErrorSignals([0.0001, 0.001, 0.01, 0.1], 5, dnuspace)
