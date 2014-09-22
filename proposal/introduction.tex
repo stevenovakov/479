@@ -1,45 +1,37 @@
 \newpage
 \section{Introduction}
 
-\subsection{Excitations of Rubidium}
+\subsection{Laser Locking}
 
-The sponsor has a desire to continously excite a sample of rubidium gas.  This gas is stored at room temperature, in a sealed glass cell.  A variable frequency laser is passed through the gas.  Ideally, the laser would operate at the precise transition frequency of the gas, but due to thermal variations, doing this "open-loop" is not possible.
+The ability to lock a laser to a very specific frequency is of great importance to the UBC Quantum Degenerate Gases Laboratory.  They use these optical systems to laser cool atomic and molecular gases.  This requires a very narrow linewidth on the laser, and a specific frequency.  Any improvement in the frequency precision of the laser will increase the quantity of atoms that can be trapped or cooled, as well as the attainable temperatures in a trap.  Often, this frequency must be very close to the natural transitions of the gas.
 
-\subsection{Room Temperature Gas Excitation}
+One way to acquire such a system is to pass the beam through a gas.  The gas has several transitions at certain energies, which can be detected by sweeping the laser (or an associated probe beam).  When doing this, the gas atoms will absorb energies at the corresponding frequencies, which will appear on a spectrum analyser.  However, since the gas is at room temperature, the dip will have a bandwidth of about 1GHz, which is too wide to lock a laser to.
 
-Other labs perform the same experiment using sophisticated laser cooling setups, which reduce the temperature of the individual rubidium atoms to several degrees kelvin.  This makes the excitation frequency of the gas easy to get precisely.
+\subsection{Doppler Effects}
 
-Our sponsor, on the contrary, is using a room temperature setup.  As a result, the energy distribution of the atoms follows a Boltzmann distribution: widely spread across a large energy spectrum.  [What is the reason for room temperature?  Does it let him use a larger sample?  Is it important that the gas is at room temperature other than convenience? -Jeff]
+Since the gas atoms are moving in different directions, some atoms will be moving towards the laser beam, and other atoms will be moving away from the laser (some will be in between, of course).  As a result, if we use a single laser, the atoms moving towards the laser will perceive a higher frequency, and thus will excite at lower frequencies than the resonance frequency.  The opposite is also true.  If we measure the absorption-vs-frequency curve for a laser passed through the gas, we get a wide smear that is approximately 1GHz wide \cite{madison14}.
 
-\subsection{Doppler Effects and Their Cancellation}
+This makes the apparent spectrum of the gas much wider, and thus, much harder to lock a signal to.
 
-Since the gas atoms are moving in different directions, some atoms will be moving towards the laser beam, and other atoms will be moving away from the laser (some will be in between, of course).  As a result, if we use a single laser, the atoms moving towards the laser will perceive a higher frequency, and thus will excite at lower frequencies than the resonance frequency.  The opposite is also true.  If we measure the absorbtion-vs-frequency curve for a laser passed through the gas, we get a wide smear that is approximately 1GHz wide \cite{madison14}.
+A major improvement is to redirect the single frequency laser around the sample, to the opposite side.  Now, when the sweep laser is at the same frequency as the pumping laser, its light will not be absorbed by the atoms with zero horizontal velocity.  This creates a Doppler-cancelled feature, which is much narrower in bandwidth.
 
-[atoms and lasers sketch]
+\begin{figure}
+    \centering
+    \label{fig:doppler}
+    \includegraphics[width=9cm]{doppler.pdf}
+    \caption{Doppler effect demonstration.  Probe beam is absorbed across a wide frequency range, but only the non-Doppler-shifted particles are affected by both beams from left and right.}
+\end{figure}
 
-This is clearly inideal for any control purposes.  Attempting to adjust a laser to this signal will converge very slowly, as it is hard to tell how far we are from resonance.
+\subsection{Acousto-Optic Modulator}
 
-To solve this problem, we redirect the laser around the sample, and pass it in from the opposite side.  Gasses that are moving towards or away from the laser, previously excited by the single laser, are not affected.
-
-However, particles with zero lateral velocity can now be excited by either laser.  Since there is a limit to how much light can be absorbed by a given atom, our original laser is absorbed slightly less.  Since it only affects atoms in the centre of the distribution, we get a narrow absorbtion trough in the very centre of our our wide "smearing" peak.  The narrow trough has a width of approximately 10MHz \cite{madison14}.
-
-[distribution with doppler correction sketch]
-
-\subsection{Acousto Optic Modulator}
-
-Although, conceptually, it might make sense to consider modulating the frequency of the master laser across its frequency range, to determine where the lowest absorbtion point is in the frequency spectrum of the gas, in practice, this is not nearly good enough.
-
-A better way to accomplish this is to modulate the frequency of just one of the two beams entering the gas, and to monitor the intensity of this beam.
-
-One way to modulate the frequency of the beam is to use an *acousto optic modulator* (AOM).  An AOM is a device that acoustically varies its shape, adjusting the distance the light has to travel to reach its destination.  By modulating this at a frequency $\Omega$, we produce a beam of light with sidebands at $\omega + \Omega$ and $\omega - \Omega$, where $\omega$ is the original frequency of the laser.
+One way to modulate the frequency of the beam is to use an *acousto-optic modulator* (AOM).  An AOM is a device that acoustically varies its shape, adjusting the distance the light has to travel to reach its destination.  By modulating this at a frequency $\Omega$, we produce a beam of light with sidebands at $\omega + \Omega$ and $\omega - \Omega$, where $\omega$ is the original frequency of the laser.
 
 Since these devices use acoustics, they are limited by the mechanical properties of the device.  As a result, the AOM in use by the sponsor has a maximum frequency of about 100kHz.
 
-\subsection{Electro Optic Modulator}
+\subsection{Electro-Optic Modulator}
 
-An \emph{Electro Optic Modulator} (EOM), also known as a \emph{Pockel's Cell} is any device that uses an electromagnetic signal to modulate the frequency of light.  Some EOMs can handle frequencies over 1GHz (!)  However, EOMs do give a very small modulation for a given voltage.  Values in the range of 1~100mrad/V are typical.
+An \emph{electro-optic modulator} (EOM), is a device that uses an electric field to modulate the phase of a light wave.  These typically take advantage of the \emph{Pockels effect}, whereby the speed of light in a crystal is affected by the presence of an electric field.  Therefore, by adjusting the electric field in the crystal, the phase (and ultimately frequency spectrum) of the beam can be adjusted.
+
+Unfortunately, the Pockels effect requires very large voltages to operate, on the order of hundreds of volts.  Some manufacturers provide a full EOM solution, with built-in amplifier, to make their equipment easier to use, making an external high-voltage amplifier unnecessary.
 
 
-\section{Objectives}
-
-Provide a system which will feed an error signal back to a PID controller in real time.  Ideally the system would have a characteristic response on the order of 1MHz, replacing the ~10kHz system that is currently in place.

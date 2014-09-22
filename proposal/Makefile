@@ -1,7 +1,7 @@
 .PHONY: tex
-tex: proposal479.tex setup.pdf spectrum.pdf
+tex: proposal479.tex setup.pdf spectrum.pdf doppler.pdf
 	pdflatex $<
-	bibtex $<
+	bibtex $(basename $<)
 	pdflatex $<
 	pdflatex $<
 
