@@ -1,20 +1,7 @@
 \newpage
 \section{Theory and Implementation} \label{sec:theory}
 
-To gain an understanding of the motivations behind this project it is worthwhile
-to discuss both prior work done with the PDH method, and the motivations behind
-using it to lock to an atomic source. Most commonly, the PDH method is used to
-either lock a laser to an actuated cavity, or to use a stable laser source to
-evaluate the finesse of a cavity or other frequency selective element
-\cite{black1998}. The Madison group primarily performs laser cooling experiments
-on samples of Lithium and Rubidium gas. There is an explicit need to
-precisely set laser frequencies at or near key atomic transitions. For example,
-a useful reference is the Rb87 $5S_{1/2} \rightarrow 5P_{3/2}$ or "D2"
-transition, which is considered in this project. Essentially, the closer a
-laser's frequency
-is to a desired transition frequency, and the smaller the linewidth of that
-laser, the more efficient any excitation will be, which has a direct impact on
-experimental outcome.
+To gain an understanding of the motivations behind this project it is worthwhile to discuss both prior work done with the PDH method, and the motivations behind using it to lock to an atomic source.  The PDH method is often used to lock a laser to an actuated cavity \cite{black1998}.  The Madison group primarily performs laser cooling experiments on Lithium and Rubidium gas.  They need to precisely set laser frequencies at or near key atomic transitions. For example, the Rb87 $5S_{1/2} \rightarrow 5P_{3/2}$ or "D2" transition is the focus of this project.  The closer a laser's frequency is to a desired transition and the smaller the linewidth of that laser, the more efficient any excitation will be.  This has a direct impact on experimental outcome.
 
 \subsection{Brief Overview of Saturated Absorption Spectra}
 
@@ -25,7 +12,7 @@ basic analysis using semi-classical derivations. Because the gas is not
 collimated, and is sufficiently hot (room temperature), the constituent
 atoms are moving in every direction with the typical Maxwell-Boltzmann speed
 distribution. As the primary concern is exposure to a laser beam, the
-velocity classes to be considered here are distributed in one direction only
+velocity classes to be considered here are distributed in one direction only,
 here referred to as "z":
 \begin{gather}
   \rho(v_z) = \sqrt{\frac{m}{2\pi k_B T}} e^{\frac{-m v_z^2}{2k_B T}}
@@ -33,7 +20,7 @@ here referred to as "z":
 Each velocity class absorbs the incident beam at a rate that is dependent on
 how far it is from a transition resonance. Furthermore, if the atoms are not
 stationary, then the incident light is Doppler shifted. This results in the
-standard Lorentzian absorption profile:
+standard Lorentzian absorption profile with a Doppler correction:
 \begin{gather}
   F(\nu, v_z) = \frac{\Gamma / 2 \pi}{(\nu - \nu_0 + \nu_0 v / c)^2 +
   \Gamma^2 / 4}
@@ -57,8 +44,7 @@ of the medium it has passed through:
 \end{gather}
 Plotting $I/I_0 (\nu, L)$, for some fixed vapour cell length L, and for
 values corresponding to the Rb87 D2 transition generates a
-a fairly broad absorption spectrum that is essentially Gaussian and has a
-FWHM of approximately 1 GHz. Using the PDH method to lock to this feature
+a fairly broad absorption spectrum that is essentially Gaussian with a width of approximately 1GHz \cite{maguire2006}.  Using the PDH method to lock to this feature
 alone is not atttractive as it generates a very low slope about the null locking
 point. If a laser is needed to specifically excite a particular hyperfine
 transition, for example, this locking method will not be sufficient. \\
@@ -140,19 +126,18 @@ what phase modulation depths and frequencies are physically attainable. \\
 
 With AOMs, which use acoustic waves to Doppler shift a beam in the transverse
 direction of propagation, there is a distinct tradeoff between modulation
-frequency and the resultant power of the outgoing beam. As reported by the
-sponsor, the AOMs in current use by the Madison Group only have a useful
+frequency and the resultant power of the outgoing beam.  The AOMs in current use by the Madison Group only have a useful
 modulation frequency of approximately 200 kHz \cite{madison14}. \\
 
 The modulation frequency of an EOM is sustainable well into the 100 MHz range,
 with modulation depth a function of the driving voltage. Furthermore, as
 phase modulation is parallel with the beam propagation, there is no significant
-decrease in beam power as the modulation frequency is increased. High modulation
+decrease in total beam power as the modulation frequency is increased. High modulation
 frequencies do, however, result in higher electrical power consumption.
 Typical modulation depths are in the 100mRad range, with a driving voltage of
-$\sim 10 V_{pp}$. A higher modulation depth demands a higher driving voltage,
+$\sim 10 V_{pp}$ \cite{thorlabs_eom}. A higher modulation depth demands a higher driving voltage,
 which also results in higher power consumption, which may or may not be of
-concern [cite something?]. \\
+concern. \\
 
 The effect of the phase modulating medium is to induce a phase oscillation
 in the incident laser:
@@ -177,7 +162,7 @@ linear approximation can be made:
 \begin{gather}
   E_0 e^{i \omega t + \beta \sin \Omega t}  \approx
     E_0 e^{i\omega t} \left(1 + \frac{\beta}{2}e^{i\Omega t} -
-      \frac{\beta}{2}) e^{-i\Omega t} \right)
+      \frac{\beta}{2} e^{-i\Omega t} \right)
 \end{gather}
 
 A visual description of this process is shown in
@@ -276,10 +261,10 @@ An example error signal, using the naive Rb87 D2 profile in
 \textbf{Figure \ref{fig:rb87d2abs}} and generated with different phase modulation
 frequencies to show the change in slope about the lock point is shown in
 \textbf{Figure \ref{fig:err_gen}\subref*{fig:error_far}}, with an explicit
-change in the slope made clearn i
+change in the slope made clear in
 \textbf{Figure  \ref{fig:err_gen}\subref*{fig:error_close}}. It is clear from
 this analysis that, for this particular absorption profile,
-there exists some $ 100kHz < \Omega < 10MHz $ that produces
+there exists some $\Omega$ between 100kHz and 10MHz that produces
 the maximum error signal slope. Maximizing the slope is important as it provides
 the smallest drift in frequency for a given change in signal voltage, which
 allows any locking system to lock closer to the resonance, given a particular

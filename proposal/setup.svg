@@ -10,11 +10,11 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="744.09448819"
-   height="1052.3622047"
+   width="517.4375"
+   height="271.33081"
    id="svg2"
    version="1.1"
-   inkscape:version="0.48.4 r9939"
+   inkscape:version="0.48.5 r10040"
    sodipodi:docname="setup.svg">
   <sodipodi:namedview
      id="base"
@@ -24,30 +24,35 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4"
-     inkscape:cx="395.54978"
-     inkscape:cy="822.77039"
+     inkscape:cx="346.08103"
+     inkscape:cy="126.89868"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1920"
-     inkscape:window-height="1017"
-     inkscape:window-x="1912"
-     inkscape:window-y="-8"
-     inkscape:window-maximized="1" />
+     inkscape:window-width="1366"
+     inkscape:window-height="702"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
   <defs
      id="defs4">
     <marker
        inkscape:stockid="Arrow2Send"
        orient="auto"
-       refY="0.0"
-       refX="0.0"
+       refY="0"
+       refX="0"
        id="Arrow2Send"
-       style="overflow:visible;">
+       style="overflow:visible">
       <path
          id="path4160"
-         style="fill-rule:evenodd;stroke-width:0.62500000;stroke-linejoin:round;"
-         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
-         transform="scale(0.3) rotate(180) translate(-2.3,0)" />
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)"
+         inkscape:connector-curvature="0" />
     </marker>
     <linearGradient
        id="linearGradient12681">
@@ -114,15 +119,16 @@
     <marker
        inkscape:stockid="Arrow1Send"
        orient="auto"
-       refY="0.0"
-       refX="0.0"
+       refY="0"
+       refX="0"
        id="Arrow1Send"
-       style="overflow:visible;">
+       style="overflow:visible">
       <path
          id="path4142"
-         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
-         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;"
-         transform="scale(0.2) rotate(180) translate(6,0)" />
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(-0.2,0,0,-0.2,-1.2,0)"
+         inkscape:connector-curvature="0" />
     </marker>
     <inkscape:path-effect
        effect="skeletal"
@@ -141,41 +147,44 @@
     <marker
        inkscape:stockid="Arrow1Sstart"
        orient="auto"
-       refY="0.0"
-       refX="0.0"
+       refY="0"
+       refX="0"
        id="Arrow1Sstart"
        style="overflow:visible">
       <path
          id="path4139"
-         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
-         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt"
-         transform="scale(0.2) translate(6,0)" />
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(0.2,0,0,0.2,1.2,0)"
+         inkscape:connector-curvature="0" />
     </marker>
     <marker
        inkscape:stockid="Arrow1Lstart"
        orient="auto"
-       refY="0.0"
-       refX="0.0"
+       refY="0"
+       refX="0"
        id="Arrow1Lstart"
        style="overflow:visible">
       <path
          id="path4127"
-         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
-         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt"
-         transform="scale(0.8) translate(12.5,0)" />
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(0.8,0,0,0.8,10,0)"
+         inkscape:connector-curvature="0" />
     </marker>
     <marker
        inkscape:stockid="Arrow1Mend"
        orient="auto"
-       refY="0.0"
-       refX="0.0"
+       refY="0"
+       refX="0"
        id="Arrow1Mend"
-       style="overflow:visible;">
+       style="overflow:visible">
       <path
          id="path4136"
-         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
-         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;"
-         transform="scale(0.4) rotate(180) translate(10,0)" />
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         inkscape:connector-curvature="0" />
     </marker>
     <marker
        inkscape:stockid="Arrow1Mend"
@@ -194,15 +203,16 @@
     <marker
        inkscape:stockid="Arrow1SendT"
        orient="auto"
-       refY="0.0"
-       refX="0.0"
+       refY="0"
+       refX="0"
        id="Arrow1SendT"
-       style="overflow:visible;">
+       style="overflow:visible">
       <path
          id="path6335"
-         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
-         style="stroke:#ff1ee3;stroke-width:1.0pt;fill:#ff1ee3;fill-rule:evenodd"
-         transform="scale(0.2) rotate(180) translate(6,0)" />
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill:#ff1ee3;fill-rule:evenodd;stroke:#ff1ee3;stroke-width:1pt"
+         transform="matrix(-0.2,0,0,-0.2,-1.2,0)"
+         inkscape:connector-curvature="0" />
     </marker>
     <linearGradient
        gradientTransform="matrix(4.145492,0,0,1.0000385,-259.73432,0.05867242)"
@@ -218,9 +228,9 @@
        inkscape:collect="always"
        xlink:href="#linearGradient12681"
        id="radialGradient12687"
-       cx="270.57143"
+       cx="270.57144"
        cy="141.29076"
-       fx="270.57143"
+       fx="270.57144"
        fy="141.29076"
        r="50.214119"
        gradientTransform="matrix(1,0,0,0.35277172,0,91.447374)"
@@ -255,7 +265,8 @@
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1">
+     id="layer1"
+     transform="translate(-49.46875,-28.016797)">
     <g
        id="g3773"
        transform="translate(-46.722417,-66.733203)"
@@ -434,7 +445,7 @@
          style="fill:none;stroke:#000000;stroke-width:1.10000002;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
     </g>
     <rect
-       style="fill:url(#radialGradient12687);fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.91799998000000005;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       style="fill:url(#radialGradient12687);fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.91799998;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect3809-2"
        width="99.510239"
        height="34.510242"
@@ -457,7 +468,7 @@
        inkscape:export-ydpi="200"><tspan
          sodipodi:role="line"
          id="tspan3996"
-         x="122.10941"
+         x="122.41054"
          y="55.225315">Laser </tspan><tspan
          sodipodi:role="line"
          x="120.0732"
@@ -522,7 +533,7 @@
          inkscape:connector-curvature="0"
          id="path4051"
          d="m 430.12251,142.59806 c 14.42894,-8.59697 -4.89896,16.96801 14.3585,-3.59237"
-         style="fill:none;stroke:#000000;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none" />
+         style="fill:none;stroke:#000000;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
       <path
          inkscape:connector-curvature="0"
          id="path4051-1"
@@ -554,7 +565,7 @@
        sodipodi:cy="60.139843"
        sodipodi:rx="11.869292"
        sodipodi:ry="10.859139"
-       d="m 310.11682,60.139843 a 11.869292,10.859139 0 1 1 -23.73858,0 11.869292,10.859139 0 1 1 23.73858,0 z"
+       d="m 310.11682,60.139843 c 0,5.997337 -5.31406,10.859139 -11.86929,10.859139 -6.55523,0 -11.86929,-4.861802 -11.86929,-10.859139 0,-5.997337 5.31406,-10.859139 11.86929,-10.859139 6.55523,0 11.86929,4.861802 11.86929,10.859139 z"
        transform="matrix(1.1440121,0,0,1.1108969,-67.447438,-7.9320128)"
        inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
        inkscape:export-xdpi="200"
@@ -584,7 +595,7 @@
          y="51.418842"
          id="tspan3998-5-4">VCO \ EOM Driver</tspan></text>
     <path
-       style="fill:none;stroke:#000000;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Mend);stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:none;stroke:#000000;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Mend)"
        d="m 259.99276,59.155127 -99.94749,0 0,71.079173"
        id="path4121"
        inkscape:connector-curvature="0"
@@ -601,7 +612,7 @@
        inkscape:export-xdpi="200"
        inkscape:export-ydpi="200" />
     <path
-       style="fill:none;stroke:#ff00ff;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:4,2;stroke-dashoffset:0;marker-mid:none;marker-end:none"
+       style="fill:none;stroke:#ff00ff;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:4, 2;stroke-dashoffset:0;marker-mid:none;marker-end:none"
        d="m 82.592661,140.09997 1.25,134.94983 283.827489,-1.07143 -0.9631,-128.01888 -317.231877,-1.26269"
        id="path4618"
        inkscape:connector-curvature="0"
@@ -829,7 +840,7 @@
        inkscape:connector-curvature="0"
        id="path6701"
        d="m 82.600276,140.25849 0,-48.236633"
-       style="fill:none;fill-opacity:1;stroke:url(#linearGradient8195);stroke-width:2.03608726999999990;stroke-opacity:1"
+       style="fill:none;stroke:url(#linearGradient8195);stroke-width:2.03608727;stroke-opacity:1"
        inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
        inkscape:export-xdpi="200"
        inkscape:export-ydpi="200" />
@@ -873,7 +884,7 @@
    style="font-size:6.93336153px;baseline-shift:super;fill:#e600ff;fill-opacity:1">iωt</tspan></tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:9.28945446000000000px;font-style:normal;font-weight:normal;text-align:center;line-height:100%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#57cd00;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-size:9.28945446px;font-style:normal;font-weight:normal;text-align:center;line-height:100%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#57cd00;fill-opacity:1;stroke:none;font-family:Sans"
        x="133.16206"
        y="115.74703"
        id="text3994-9-9"
@@ -890,12 +901,12 @@
        inkscape:connector-curvature="0"
        id="path8322"
        d="m 82.857143,140.21932 323.729257,0"
-       style="fill:#aa4400;stroke:#52ff00;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#aa4400;stroke:#52ff00;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
        inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
        inkscape:export-xdpi="200"
        inkscape:export-ydpi="200" />
     <g
-       style="fill:#65ff00;stroke:#78ff00;stroke-opacity:1;fill-opacity:1"
+       style="fill:#65ff00;fill-opacity:1;stroke:#78ff00;stroke-opacity:1"
        transform="matrix(0.61828692,0.0059219,0.01006416,-0.95515151,32.890039,312.18125)"
        id="g6464-4-1-6-7"
        inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
@@ -905,15 +916,15 @@
          inkscape:connector-curvature="0"
          id="path5939-2-9-5-6"
          d="m 123.75,179.84375 0,2 0,0 13.125,0 0,-2 z"
-         style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#65ff00;fill-opacity:1;stroke:#78ff00;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans;stroke-opacity:1" />
+         style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#65ff00;fill-opacity:1;stroke:#78ff00;stroke-width:0;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans" />
       <path
          inkscape:connector-curvature="0"
          id="path6470-7-8-0-3"
          d="m 134.47567,180.85307 -2,2 0,0 7,-2 -7,-2 0,0 z"
-         style="fill:#65ff00;fill-rule:evenodd;stroke:#78ff00;stroke-width:0.40000000000000002pt;stroke-opacity:1;fill-opacity:1" />
+         style="fill:#65ff00;fill-opacity:1;fill-rule:evenodd;stroke:#78ff00;stroke-width:0.4pt;stroke-opacity:1" />
     </g>
     <g
-       style="fill:#65ff00;stroke:#78ff00;stroke-opacity:1;fill-opacity:1"
+       style="fill:#65ff00;fill-opacity:1;stroke:#78ff00;stroke-opacity:1"
        transform="matrix(0.61828692,0.0059219,0.01006416,-0.95515151,118.58938,312.1769)"
        id="g6464-4-1-6-7-6"
        inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
@@ -923,15 +934,15 @@
          inkscape:connector-curvature="0"
          id="path5939-2-9-5-6-1"
          d="m 123.75,179.84375 0,2 0,0 13.125,0 0,-2 z"
-         style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#65ff00;fill-opacity:1;stroke:#78ff00;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans;stroke-opacity:1" />
+         style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#65ff00;fill-opacity:1;stroke:#78ff00;stroke-width:0;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans" />
       <path
          inkscape:connector-curvature="0"
          id="path6470-7-8-0-3-5"
          d="m 134.47567,180.85307 -2,2 0,0 7,-2 -7,-2 0,0 z"
-         style="fill:#65ff00;fill-rule:evenodd;stroke:#78ff00;stroke-width:0.40000000000000002pt;stroke-opacity:1;fill-opacity:1" />
+         style="fill:#65ff00;fill-opacity:1;fill-rule:evenodd;stroke:#78ff00;stroke-width:0.4pt;stroke-opacity:1" />
     </g>
     <g
-       style="fill:#65ff00;stroke:#78ff00;stroke-opacity:1;fill-opacity:1"
+       style="fill:#65ff00;fill-opacity:1;stroke:#78ff00;stroke-opacity:1"
        transform="matrix(0.61828692,0.0059219,0.01006416,-0.95515151,255.91081,312.26618)"
        id="g6464-4-1-6-7-4"
        inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
@@ -941,15 +952,15 @@
          inkscape:connector-curvature="0"
          id="path5939-2-9-5-6-2"
          d="m 123.75,179.84375 0,2 0,0 13.125,0 0,-2 z"
-         style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#65ff00;fill-opacity:1;stroke:#78ff00;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans;stroke-opacity:1" />
+         style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#65ff00;fill-opacity:1;stroke:#78ff00;stroke-width:0;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans" />
       <path
          inkscape:connector-curvature="0"
          id="path6470-7-8-0-3-0"
          d="m 134.47567,180.85307 -2,2 0,0 7,-2 -7,-2 0,0 z"
-         style="fill:#65ff00;fill-rule:evenodd;stroke:#78ff00;stroke-width:0.40000000000000002pt;stroke-opacity:1;fill-opacity:1" />
+         style="fill:#65ff00;fill-opacity:1;fill-rule:evenodd;stroke:#78ff00;stroke-width:0.4pt;stroke-opacity:1" />
     </g>
     <g
-       style="fill:#65ff00;stroke:#78ff00;stroke-opacity:1;fill-opacity:1"
+       style="fill:#65ff00;fill-opacity:1;stroke:#78ff00;stroke-opacity:1"
        transform="matrix(0.61828692,0.0059219,0.01006416,-0.95515151,308.27477,312.27828)"
        id="g6464-4-1-6-7-9"
        inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
@@ -959,12 +970,12 @@
          inkscape:connector-curvature="0"
          id="path5939-2-9-5-6-7"
          d="m 123.75,179.84375 0,2 0,0 13.125,0 0,-2 z"
-         style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#65ff00;fill-opacity:1;stroke:#78ff00;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans;stroke-opacity:1" />
+         style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#65ff00;fill-opacity:1;stroke:#78ff00;stroke-width:0;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans" />
       <path
          inkscape:connector-curvature="0"
          id="path6470-7-8-0-3-3"
          d="m 134.47567,180.85307 -2,2 0,0 7,-2 -7,-2 0,0 z"
-         style="fill:#65ff00;fill-rule:evenodd;stroke:#78ff00;stroke-width:0.40000000000000002pt;stroke-opacity:1;fill-opacity:1" />
+         style="fill:#65ff00;fill-opacity:1;fill-rule:evenodd;stroke:#78ff00;stroke-width:0.4pt;stroke-opacity:1" />
     </g>
     <text
        transform="scale(0.97924472,1.0211952)"
@@ -972,7 +983,7 @@
        id="text8207-7"
        y="168.99646"
        x="103.95246"
-       style="font-size:9.07950401000000080px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0fae00;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-size:9.07950401px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0fae00;fill-opacity:1;stroke:none;font-family:Sans"
        xml:space="preserve"
        inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
        inkscape:export-xdpi="200"
@@ -981,17 +992,17 @@
          x="103.95246"
          id="tspan8209-2"
          sodipodi:role="line">E<tspan
-   style="font-size:5.90176058000000040px;baseline-shift:sub;fill:#0fae00;fill-opacity:1"
+   style="font-size:5.90176058px;baseline-shift:sub;fill:#0fae00;fill-opacity:1"
    id="tspan8689">pump</tspan> e<tspan
    id="tspan8211-0"
-   style="font-size:5.90176058000000040px;baseline-shift:super;fill:#0fae00;fill-opacity:1">iωt</tspan></tspan></text>
+   style="font-size:5.90176058px;baseline-shift:super;fill:#0fae00;fill-opacity:1">iωt</tspan></tspan></text>
     <text
        transform="scale(0.92712148,1.0786073)"
        sodipodi:linespacing="125%"
        id="text8207-7-1"
        y="160.19765"
        x="173.52736"
-       style="font-size:9.19332026999999920px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0fae00;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-size:9.19332027px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0fae00;fill-opacity:1;stroke:none;font-family:Sans"
        xml:space="preserve"
        inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
        inkscape:export-xdpi="200"
@@ -1000,12 +1011,12 @@
          x="173.52736"
          id="tspan8209-2-6"
          sodipodi:role="line">E<tspan
-   style="font-size:5.97574186000000030px;baseline-shift:sub;fill:#0fae00;fill-opacity:1"
+   style="font-size:5.97574186px;baseline-shift:sub;fill:#0fae00;fill-opacity:1"
    id="tspan8689-5">pump</tspan> e<tspan
    id="tspan8211-0-7"
-   style="font-size:5.97574186000000030px;baseline-shift:super;fill:#0fae00;fill-opacity:1">i(ωt + βsinΩt)</tspan></tspan></text>
+   style="font-size:5.97574186px;baseline-shift:super;fill:#0fae00;fill-opacity:1">i(ωt + βsinΩt)</tspan></tspan></text>
     <path
-       style="fill:none;stroke:#62ff00;stroke-width:1.05731153000000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:1.05731148000000010, 1.05731148000000010;stroke-dashoffset:0"
+       style="fill:none;stroke:#62ff00;stroke-width:1.05731153;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:1.05731148, 1.05731148;stroke-dashoffset:0"
        d="m 112.63201,140.75846 0,22.58515"
        id="path8718"
        inkscape:connector-curvature="0"
@@ -1013,7 +1024,7 @@
        inkscape:export-xdpi="200"
        inkscape:export-ydpi="200" />
     <path
-       style="fill:none;stroke:#62ff00;stroke-width:1.05731153000000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:1.05731148000000010, 1.05731148000000010;stroke-dashoffset:0"
+       style="fill:none;stroke:#62ff00;stroke-width:1.05731153;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:1.05731148, 1.05731148;stroke-dashoffset:0"
        d="m 193.75,139.64104 0,22.58515"
        id="path8718-5"
        inkscape:connector-curvature="0"
@@ -1228,7 +1239,7 @@
        inkscape:export-xdpi="200"
        inkscape:export-ydpi="200"><tspan
          sodipodi:role="line"
-         x="428.72742"
+         x="428.95947"
          y="184.17796"
          id="tspan3998-5-3-3-9-7-3"
          style="font-weight:normal">~1.5 Ω </tspan></text>
@@ -1244,7 +1255,7 @@
        inkscape:export-xdpi="200"
        inkscape:export-ydpi="200"><tspan
          sodipodi:role="line"
-         x="575.72736"
+         x="575.95941"
          y="246.40628"
          id="tspan3998-5-3-3-9-7-3-4"
          style="font-weight:normal">&lt;&lt;&lt; Ω </tspan></text>
