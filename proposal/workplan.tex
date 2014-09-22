@@ -1,27 +1,34 @@
 \newpage
 \section{Work Plan}
 
+It should be noted that this project is quite complex in nature, and that
+any estimates here are likely to change during development. Of particular
+concern are any steps which require significant debugging or integration with
+existing experimental instruments.
+
 \subsection{Milestones} %%%%%%%%%%%%%%%%% MILESTONES
 
 The following milestones have been tenatively agreed to by both sponsor and
 team members.
 
 \begin{enumerate}
-  \item{\textbf{Principal Schematics, BOMs} - 2014-10-12} - Subunit schematics
+  \item{\textbf{Principal Schematics, BOMs} - 2014-10-12}
+  - Subunit schematics
   and block diagrams must be completed. Optical assembly schematics may be
   graphical (not a specific CAD format) but must be properly labeled and
   included with the relevant physical models referenced. Electrical schematics
-  for the PDH Controller CCA should be completed, reviewed and approved. All
+  for any CCAs should be completed, reviewed and approved. All
   relevant BOMs should be compiled and be ready to order. Lead times should be
   minimized as much as possible (1-3 weeks maximum), as there are no
   anticipated long-lead components. In this time, the existing AOM locking
   circuit must also be benchmarked as discussed.
-  \item{\textbf{Mechanical Design, PCBs} - 2014-10-31} Lead times for PCBs have
-  historically been no longer than 1-2 weeks. Should CCAs have to be designed
+  \item{\textbf{Mechanical Design, PCBs Finalized} - 2014-10-31}
+  - Lead times for PCBs have historically been no longer than 1-2 weeks. Should
+  CCAs have to be designed
   for EOM control and signal mixing, time will be spent here doing actual PCB
-  layout and designing mechanical enclosures, with cooling options, if necessary.
-  At this milestone, all designs should be approved and ready to order or in the
-  process of being ordered.
+  layout and designing mechanical enclosures, with cooling options, if
+  necessary. At this milestone, all designs should be approved and ready to
+  order or be in the process of being ordered.
   \item{\textbf{Principal Assembly} - 2014-11-21}  This milestone is for a
   fully \emph{assembled} servomechanism, with all optical, electro-optical and
   electrical assemblies built and ready for testing. During this time,
@@ -32,7 +39,8 @@ team members.
   ideal.
   \item{\textbf{Final Unit Delivery} - 2014-12-14} Upon delivery, the
   new PDH unit should ideally be fully built, functionally verified and
-  benchmarked against the existing solution.
+  benchmarked against the existing solution. At this stage the units would be
+  ready for use in experiments.
 \end{enumerate}
 
 \subsection{Task Schedule}  %%%%%%%%%%%%% SCHEDULE
@@ -58,28 +66,83 @@ completion time estimates in brackets):
   a VCO up to 100MHz, a VCO controller (if needed), the lab computer digital
   interface and analog mixing circuits (to be deterimined).
   \item{\textbf{[1c] BOM compilation and Component Ordering} (12hrs)}
-  \item{\textbf{[1d] Evaluation of Existing AOM Servo} (12 hrs)}
+  - This is potentially a significant step if any CCAs are to be designed.
+  Components will have to be sourced and the requisite invoices will have to be
+  produced so that the Madison Lab can put an order through. Depending on the
+  number of suppliers involved, this step may represent a significant amount of
+  paperwork/communication, and is not inconsequential.
+  \item{\textbf{[1d] Evaluation of Existing AOM Servo} (36 hrs)}
+  - The existing AOM based PDH unit is to be benchmarked for parameters such as
+  its noise floor and slope around the locking point, as well as the resulting
+  linewidth of the master laser. These features can be evaluated with equipment
+  in the Madison Group laboratory. Fiber coupled laser sources are readily
+  accessible within the laboratory. However, it is unclear whether the PDH
+  feedback unit in existance will be in use for ongoing experiments. If so,
+  a separate unit will have to be quickly constructed. All of the components
+  for this should be readily available wtihin the Madison Group laboratory.
   \item{\textbf{[2a] Mounting Hardware}} (12 hrs)
-  \item{\textbf{[2b] PDH Controller CCA} (12 hrs)}
+  - It is likely that some mounting hardware will have to be constructed for
+  various controllers and optical units to sit in either a standard equipment
+  rack or near electro-optical elements on an optical table. Whether the EOM
+  driver or FO receiver can be coupled to with long coaxial cables or fiber is
+  dependent on how much attenuation is tolerable.
+  \item{\textbf{[2b] Possible Signal Processing / EOM Controller CCA*} (24 hrs)}
+  - If it is not possible to construct the EOM driving and signal mixing
+  electronics from a collection of discrete RF components, a custom PCB will
+  be designed and assembled in-house. This will likely not take long, discounting
+  any difficulties in the electrical design stage, as group members have
+  significant experience with PCB construction and layout. In this stage, actual
+  board layout will likely take less than 12 hours.
   \item{\textbf{[3a] Assembly of Optical Breadboard} (6 hrs)}
-  \item{\textbf{[3b] Soldering and Assembly of PDH Controller CCA} (3 hrs)}
+  - Once acquired, all optical and electro-optical components must be assembled
+  on an optical breadboard. This is simply a plate of moderate size with a
+  grid of threaded holes to fasten standard optical elements to. The equipment
+  required for this is avilable in the Madison lab. This is not expected to
+  be difficult, but it may take some time to carefully lay out.
+  \item{\textbf{[3b] Soldering and Assembly of custom CCAs*} (6 hrs)}
+  - Should any custom CCAs be required, time will be spent soldering their
+  components and doing basic electrical testing to ensure no short-circuit
+  conditions and correct inter-net connectivity, etc.
   \item{\textbf{[3c] Manufacture and Assembly of Cabling/Interconnects} (3 hrs)}
+  - Cabling must be created for connecting to laboratory power supplies
+  and powering various components. Manually fabricated cabling will likely be
+  standard braided cable with various MOLEX connectors. Any high-speed
+  (100MHz +) cabling will likely be pre-purchased to maintain quality.
   \item{\textbf{[3d] Final Comprehensive Assembly} (12 hrs)}
+  - This stage involves integrating all previously assembled subunits into their
+  laboratory configuration. This will involve placing the optical assembly,
+  placing any controlling electronics, connecting these components and then
+  integrating them with any test equipment or lab systems.
   \item{\textbf{[4a] Unit Block Validation} (12hrs)}
+  - All subunits will be quickly tested to ensure that they produce signals that
+  are at least qualitatively correct. This is considered the "trial run" as it
+  will hopefully identify any major problems, such as overattenuation,
+  excessive power draw, excessive noise or instability, etc. The servomechanism
+  will be evaluated piecewise to ensure that component feedthrough is correct.
   \item{\textbf{[4b] Comprehensive Benchmarking} (24hrs)}
-  \item{\textbf{[4c] Fine Tuning / Final Configuration} (???)}
+  - This step mirrors step [1d], but for the presumably-finished EOM-based
+  locking unit. Identical parameters will be extracted, and compared with
+  those of the AOM solution, to formally establish improvement metrics.
+  \item{\textbf{[4c] Fine Tuning / Final Configuration} (???, 24hrs ++)}
+  - With current background knowledge and understanding, it is not possible
+  to predict how long tuning the system will take. While the scope and
+  technical background behind the project is understoood, anticipating
+  complications that may arise from problems such as component nonlinearities or
+  induced noise is not currently possible. This is expected to be the
+  longest single task of the project.
 \end{packed_itemize}
 
 Tasks marked with (*) are potentially unnecessary, should ready-made solutions
-be found. Total estimated task time sums to 144 hours over the term. The testing
-and assembly estimates are likely accurate, as they are based on previous
-experience. However it is likely that the model development and testing will
-exceed the estimated time significantly as this project is based on complex
-physical principles and has high technical demands.
-
-Mention here that there may have to be some final adjustments/fixes, etc, and
-discuss what those might be and the timeline, but don't assign formal tasks to
-them.
+be found. The total estimated task time, barring final debugging, sums to 180
+hours over the term. The testing and assembly estimates are likely accurate, as
+they are based on previous experience. However it is likely that the model
+development and testing will exceed the estimated time significantly as this
+project is based on complex physical principles and has high technical demands.
+The final debugging step is estimated to take the most amount of time and effort
+as there is potential for significant problems to arise. Fixing these problems
+will require some re-design and re-assembly, followed by further testing. This
+testing, in particular, has the potential to take a long time, especially if
+significant lab resources are required.
 
 \subsection{Team Responsibilities} %%%%%%% RESPONSIBILITY
 
@@ -105,7 +168,7 @@ The nature of the project is such that both members shall be conducting
 investigations and driving design schedules, but the roles are explicitly
 delegated for formality, with the designated members having final oversight
 and providing approval. The sponsor shall interact with both team members on a
-regular basis making a single liason role untenable.
+regular basis making the single liason role effectively meaningless.
 
 \subsection{Sponsor Interactions}  %%%%%%% SPONSOR INTERACTIONS
 
