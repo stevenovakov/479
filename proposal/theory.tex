@@ -1,21 +1,7 @@
 \newpage
 \section{Theory and Implementation} \label{sec:theory}
 
-\begin{figure}[!hrt]
-  \centering
-  \label{cavity_eom_pdh}
-  \includegraphics[scale=0.5]{cavity_eom_pdh.png}
-  \caption{High level layout of PDH servo loop using an actuated cavity as
-  the frequency selective element. Borrowed from \cite{black1998}}
-\end{figure}
-
-\begin{figure}[!hrt]
-  \centering
-  \label{vapour_eom_pdh}
-  \includegraphics[scale=0.9]{EOM_PDH_UNIT.png}
-  \caption{High level layout of PDH servo loop using a Rubidium vapour cell as
-  the frequency selective element.}
-\end{figure}
+Reference cavity figure from paper, for reference.
 
 \subsection{Brief Overview of Saturated Absorption Spectra}
 
@@ -61,7 +47,7 @@ Rubidium indicates that this bandwidth is much more appropriate than that of an
 AOM. The exact modulation frequency can be tuned ad-hoc to match a particular
 optical scheme.
 
-\begin{figure}[!hrt]
+\begin{figure}
   \centering
   \includegraphics[scale=0.5]{rb_D2_single_absorption.png}
   \caption{Transmission ratio of probe beam through a 0.1m long cell of Rubidium
@@ -74,7 +60,7 @@ optical scheme.
   \label{fig:rb87d2abs}
 \end{figure}
 
-\begin{figure}[!hrt]
+\begin{figure}
   \centering
   \includegraphics[scale=0.5]{rb_D2_single_absorption_resonance.png}
   \caption{Closer view of \textbf{Figure~\ref{fig:rb87d2abs}}, near the
@@ -82,41 +68,176 @@ optical scheme.
   \label{fig:rb87d2abs_closer}
 \end{figure}
 
+The model presented here is naive. The Rb87 $5P_{3/2}$ state has 4 hyperfine
+levels, and transition from the ground state is goverened by the standard
+selection criteria (\cite{steckrb87}, see Figure 2). This produces a much more
+complicated absorption feature, with multiple transition and crossover
+resonances (\cite{maguire2006}, see Figure 3). Calculating an optimal modulation
+frequency for locking about one of the predominant resonance features inside the
+Rb87 D2 spectrum can be done with detailed quantum mechanical analysis. It is
+unclear if this is necessary, or whether the locking unit should simply be built
+with an appropriate phase modulation bandwidth such that heuristic tuning can
+attain an optimal result.
+
 \subsection{Optical Phase Modulation}
+
+As it is not possible to process optical signals in the THz range electronically,
+it is common to modulate these signals to produce a spectrum about the carrier,
+and then down-mix them to RF signals to extract the relevant information.
+For optical signals, this is typically done with either an AOM or an EOM. From
+a mathematical standpoint, the only difference between the two methods is
+what phase modulation depths and frequencies are physically attainable. \\
+
+With AOMs, which use acoustic waves to Doppler shift a beam in the transverse
+direction of propagation, there is a distinct tradeoff between modulation
+frequency and the resultant power of the outgoing beam. As reported by the
+sponsor, the AOMs in current use by the Madison Group only have a useful
+modulation frequency of approximately 200 kHz \cite{madison14}. \\
+
+The modulation frequency of an EOM is sustainable well into the 100 MHz range,
+with modulation depth a function of the driving voltage. Furthermore, as
+phase modulation is parallel with the beam propagation, there is no significant
+decrease in beam power as the modulation frequency is increased. High modulation
+frequencies do, however, result in higher electrical power consumption.
+Typical modulation depths are in the 100mRad range, with a driving voltage of
+$\sim 10 V_{pp}$. A higher modulation depth demands a higher driving voltage,
+which also results in higher power consumption, which may or may not be of
+concern [cite something?].
+
+\begin{gather}
+  E = E_0 e^{i\omega t} \xrightarrow{Phase Modulation}
+    E_0 e^{i \omega t + \beta \sin \Omega t}
+\end{gather}
+
+Where $\beta$ is defined as the modulation depth, in radians, and $\Omega$ is the
+modulation frequency. Using the Jacobi-Anger expansion to isolate the sideband
+amplitudes,
+
+\begin{gather}
+  E_0 e^{i \omega t + \beta \sin \Omega t}  =
+  E_0 e^{i\omega t} \sum_{n = -\infty}^{n = \infty} J_n(\beta)e^{in\Omega}
+\end{gather}
+
+it is shown that a sideband of frequency $(\omega +n\Omega)$ has amplitude
+$J_n{\beta}$, the Bessel function of order $n$, evaluated at $\beta$, the
+modulation depth. If the modulation depth is sufficiently small, the following
+linear approximation can be made:
+
+\begin{gather}
+  E_0 e^{i \omega t + \beta \sin \Omega t}  \approx
+    E_0 e^{i\omega t} \left(1 + \frac{\beta}{2}e^{i\Omega t} -
+      \frac{\beta}{2}) e^{-i\Omega t} \right)
+\end{gather}
+
+A visual description of this process is shown in
+\textbf{Figure \ref{fig:eom_spectrum}}.
+An inspection of Bessel function behaviour near the origin shows that
+this approximation quickly becomes invalid for large modulation depths, and
+that the carrier amplitude is not conserved. This phenomenon becomes important
+when considering the response of a photosensor to the carrier and side-band
+amplitudes. These must be tuned such that the signal power is above the noise
+floor of the FO receiver, but below the saturation level.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=1.2]{spectrum.pdf}
+  \caption{Expected spectrum of beam after phase modulation, to the first
+  sidebands. While possibly present and significant, further sidebands can
+  be ignored as they will be filtered during mixing.}
+  \label{fig:eom_spectrum}
+\end{figure}
 
 \subsection{Error Signal Generation}
 
 Obtaining an accurate value for the optimal error signal slope will be a central
-development task, if it is not possible to optmize heuristically in a way that
-is comfortable for the laboratory staff. This will involve some detailed
-quantum mechanical analysis, but there are precedents for reference
-\cite{maguire2006}
+development task, if it is not possible to obtain heuristically in
+a way that is comfortable for the laboratory staff. Rigorous analysis will
+involve some complex quantum mechanical models, but there are precedents for
+reference \cite{maguire2006}. \\
 
-The entire setup is depicted in Figure~\ref{setup}.  A variable frequency laser beam (red dotted line), enters at the left, and is immediate split by a "pol cube" into two new beams.  The lower beam, unmodified, reflects off several mirrors, and is directed into a chamber full of rubidium-87 gas.  This beam excites the gas molecules with no horizontal velocity, so that we will get a Doppler-cancelled feature (which we can lock to).
+The entire PDH error-signal generating setup is depicted in
+\textbf{ Figure \ref{fig:setup}}.
+The master laser enters at the left, and is immediately split by a
+polarizing cube into two beams.  The lower "pump" beam (dashed line), unmodified,
+reflects off of several mirrors, and is directed into a chamber full of
+rubidium-87 gas. This beam serves to saturate the absorption ability of the gas,
+which results in the aforementioned set of Doppler-cancelled features.
+The most predominant of these features is used as a locking point. \\
 
-The second beam is passed into an electro optic modulator.  This modulator is fed by a voltage-controlled oscillator, running at frequency $\Omega$.  This modulates the phase of the laser, such that the output laser follows the function
-
-\[ E = exp(i(\omega t + \beta sin(\Omega t)), \]
-
-which looks like a central carrier at $\omega$ with two side bands at $\omega + \Omega$ and $\omega - \Omega$.
+The second "probe" beam is passed into an EOM.  This modulator is fed by a VCO,
+running at frequency $\Omega$. As previously discussed, this creates the spectrum
+shown in \textbf{Figure \ref{fig:eom_spectrum}}. After being passed through the
+vapour cell, the amplitudes of the carrier and the sidebands are attenuated
+according to the transmission profile of the saturated absorption feature,
+of which a naive representation is shown in
+\textbf{Figure \ref{fig:rb87d2abs}}. Let $\hat{F}$ be the operator that
+describes the attentuation of the probe beam as it passes through the
+vapour cell. Then, the resultant beam is, to the first sidebands:
+\begin{gather}
+  E_0 e^{i \omega t + \beta \sin \Omega t} \xrightarrow{\hat{F}}
+    E_0e^{i \omega t }\left( J_0(\beta)\hat{F}(\omega) +
+      J_1(\beta)\hat{F}(\omega + \Omega)e^{i\Omega t} +
+        J_1(\beta)\hat{F}(\omega - \Omega)e^{-i\Omega t} \right)
+\end{gather}
 
 \begin{figure}
   \centering
-  \label{setup}
-  \includegraphics[scale=0.9]{spectrum.pdf}
-  \caption{Expected spectrum of beam after EOM}
+  \includegraphics[scale=0.95]{setup.pdf}
+  \caption{High level layout of the proposed PDH servo loop using a Rubidium
+   vapour cell as the frequency selective element.}
+    \label{fig:setup}
 \end{figure}
 
-After being filtered through the gas, beam A is fed into a light detector, which measures the \emph{power} of the resulting beam.  Since $P = |E|^2 = E*E$, we get DC components, as well as time varying components at $\Omega$ and $2 \Omega$.
+This beam is then coupled into a high-speed fiber optic receiver, a
+photosensor unit with bandwidth up to 12GHz. The current produced by the
+biased sensor is proportional to the incident optical power. As
+$P = |E|^2$, this creates a signal with some mixed frequency components. After
+applying a low pass filter to this signal, with a pole at $\sim 1.5 \Omega$,
+the following waveform is extracted:
+\begin{gather}
+  V_1(t) = A(\hat{F}, \omega, \Omega) E_0^2 +
+    E_0^2 (J_0(\beta)J_1(\beta))
+    (\hat{F}(\omega + \Omega) - \hat{F}(\omega - \Omega))cos(\Omega t)
+\end{gather}
 
-We use a lock in amplifier (a multiplyer followed by a low-pass filter), between the VCO's signal and the detector output, which isolates just the stuff at $\Omega$.  [Jeff's note: shouldn't we keep both in-phase and quadrature here, or are we OK with making someone turn a phase dial]
+Where  $A(\hat{F}, \omega, \Omega)$ is some down-mixed DC term that is dependent
+on carrier and side-band powers, as well as the frequency selective element
+(it will be filtered out shortly). It is clear even at this stage, that being
+able to isolate $(\hat{F}(\omega + \Omega) - \hat{F}(\omega - \Omega))$ will
+provide some variable accuracy estimation of the \emph{derivative} of the
+saturated absorption spectrum, and will provide a convenient null locking point
+at any absorption peaks, which are located at important resonances. To extract
+this value explicitly, $V_1$ is mixed with a phase delayed version of the
+VCO signal, of frequency $\Omega$ and filtered to extract the DC error signal,
+which is explicitly:
+\begin{gather}
+  \epsilon = \alpha E_0^2 (J_0(\beta)J_1(\beta))
+    (\hat{F}(\omega + \Omega) - \hat{F}(\omega - \Omega))\cos\phi
+\end{gather}
+where $\alpha$ is some attentuation factor, dependent on electrical components,
+and $\phi$ is the phase delay between the oscillator signal being mixed
+and the oscillator signal driving the EOM (same source, one passes through
+extra cabling and other components such as buffers, etc). It is clear that
+care must be taken to select an appropriate $\phi$ so as to generate a
+clear, useable error signal. $\epsilon$ is then fed back into the
+laser controller and used to sweep $\omega$ as necessary.
+An example error signal, using the naive Rb87 D2 profile in
+\textbf{Figure \ref{fig:rb87d2abs}} and generated with different phase modulation
+frequencies to show the change in slope about the lock point is shown in
+\textbf{Figure \ref{fig:error_far}}, with an explicit change in the slope
+made clearn in \textbf{Figure \ref{fig:error_close}}.
 
-The form of this output is roughly
+\begin{figure}
+  \centering
+  \includegraphics[width=\linewidth]{rb_D2_error_faraway.png}
+  \caption{Error signal far}
+    \label{fig:error_far}
+\end{figure}
 
-\[ LPF_{out} ~= P_0 \frac{\beta}{2} [ F(\omega + \Omega) - F(\omega - \Omega) ]. \]
-
-This gives us a measure of the derivative of the function, as measured far from the centre, where it is steeper (and thus more easily measured).
-
-We feed this signal back into a PID amplifier which uses it to further adjust the laser.
-
+\begin{figure}
+  \centering
+  \includegraphics[width=\linewidth]{rb_D2_error_closer.png}
+  \caption{Error signal close}
+    \label{fig:error_close}
+\end{figure}
 

@@ -10,29 +10,12 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="553.07422"
-   height="234.89343"
+   width="744.09448819"
+   height="1052.3622047"
    id="svg2"
    version="1.1"
-   inkscape:version="0.48.5 r10040"
+   inkscape:version="0.48.4 r9939"
    sodipodi:docname="setup.svg">
-  <defs
-     id="defs4">
-    <marker
-       inkscape:stockid="Arrow1Lend"
-       orient="auto"
-       refY="0"
-       refX="0"
-       id="Arrow1Lend"
-       style="overflow:visible">
-      <path
-         id="path3799"
-         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
-         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
-         transform="matrix(-0.8,0,0,-0.8,-10,0)"
-         inkscape:connector-curvature="0" />
-    </marker>
-  </defs>
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
@@ -40,32 +23,223 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.4142136"
-     inkscape:cx="293.49167"
-     inkscape:cy="104.73669"
+     inkscape:zoom="1.4"
+     inkscape:cx="395.54978"
+     inkscape:cy="822.77039"
      inkscape:document-units="px"
-     inkscape:current-layer="g4476-0"
-     showgrid="true"
-     inkscape:snap-global="true"
-     inkscape:window-width="1366"
-     inkscape:window-height="702"
-     inkscape:window-x="0"
-     inkscape:window-y="27"
-     inkscape:window-maximized="1"
-     fit-margin-top="0"
-     fit-margin-left="0"
-     fit-margin-right="0"
-     fit-margin-bottom="0">
-    <inkscape:grid
-       type="xygrid"
-       id="grid2985"
-       empspacing="5"
-       visible="true"
-       enabled="true"
-       snapvisiblegridlinesonly="true"
-       originx="-14.801758px"
-       originy="-810.6543px" />
-  </sodipodi:namedview>
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <defs
+     id="defs4">
+    <marker
+       inkscape:stockid="Arrow2Send"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow2Send"
+       style="overflow:visible;">
+      <path
+         id="path4160"
+         style="fill-rule:evenodd;stroke-width:0.62500000;stroke-linejoin:round;"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         transform="scale(0.3) rotate(180) translate(-2.3,0)" />
+    </marker>
+    <linearGradient
+       id="linearGradient12681">
+      <stop
+         style="stop-color:#00bfff;stop-opacity:1;"
+         offset="0"
+         id="stop12683" />
+      <stop
+         style="stop-color:#98faff;stop-opacity:0.23214285;"
+         offset="1"
+         id="stop12685" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient8183">
+      <stop
+         id="stop8203"
+         offset="0"
+         style="stop-color:#00ff1a;stop-opacity:0.96078432;" />
+      <stop
+         id="stop8201"
+         offset="0.25"
+         style="stop-color:#24ff00;stop-opacity:0.96470588;" />
+      <stop
+         id="stop8199"
+         offset="0.5"
+         style="stop-color:#ffffff;stop-opacity:0.97647059;" />
+      <stop
+         style="stop-color:#ff00df;stop-opacity:0.98823529;"
+         offset="0.75"
+         id="stop8205" />
+      <stop
+         id="stop8193"
+         offset="1"
+         style="stop-color:#ff00df;stop-opacity:1;" />
+    </linearGradient>
+    <inkscape:path-effect
+       fuse_tolerance="0"
+       vertical_pattern="false"
+       prop_units="false"
+       tang_offset="0"
+       normal_offset="0"
+       spacing="0"
+       scale_y_rel="false"
+       prop_scale="1"
+       copytype="single_stretched"
+       pattern="M 0,0 1,0"
+       is_visible="true"
+       id="path-effect6472"
+       effect="skeletal" />
+    <inkscape:path-effect
+       fuse_tolerance="0"
+       vertical_pattern="false"
+       prop_units="false"
+       tang_offset="0"
+       normal_offset="0"
+       spacing="0"
+       scale_y_rel="false"
+       prop_scale="1"
+       copytype="single_stretched"
+       pattern="M 0,0 1,0"
+       is_visible="true"
+       id="path-effect6462"
+       effect="skeletal" />
+    <marker
+       inkscape:stockid="Arrow1Send"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Send"
+       style="overflow:visible;">
+      <path
+         id="path4142"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;"
+         transform="scale(0.2) rotate(180) translate(6,0)" />
+    </marker>
+    <inkscape:path-effect
+       effect="skeletal"
+       id="path-effect5937"
+       is_visible="true"
+       pattern="M 0,0 1,0"
+       copytype="repeated"
+       prop_scale="1"
+       scale_y_rel="true"
+       spacing="50"
+       normal_offset="0"
+       tang_offset="0"
+       prop_units="false"
+       vertical_pattern="false"
+       fuse_tolerance="0" />
+    <marker
+       inkscape:stockid="Arrow1Sstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Sstart"
+       style="overflow:visible">
+      <path
+         id="path4139"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt"
+         transform="scale(0.2) translate(6,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Lstart"
+       style="overflow:visible">
+      <path
+         id="path4127"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt"
+         transform="scale(0.8) translate(12.5,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Mend"
+       style="overflow:visible;">
+      <path
+         id="path4136"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;"
+         transform="scale(0.4) rotate(180) translate(10,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Mend-1"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4136-1"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(-0.4,0,0,-0.4,-4,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1SendT"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1SendT"
+       style="overflow:visible;">
+      <path
+         id="path6335"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="stroke:#ff1ee3;stroke-width:1.0pt;fill:#ff1ee3;fill-rule:evenodd"
+         transform="scale(0.2) rotate(180) translate(6,0)" />
+    </marker>
+    <linearGradient
+       gradientTransform="matrix(4.145492,0,0,1.0000385,-259.73432,0.05867242)"
+       gradientUnits="userSpaceOnUse"
+       y2="116.07704"
+       x2="83.079971"
+       y1="116.07704"
+       x1="82.079971"
+       id="linearGradient8195"
+       xlink:href="#linearGradient8183"
+       inkscape:collect="always" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient12681"
+       id="radialGradient12687"
+       cx="270.57143"
+       cy="141.29076"
+       fx="270.57143"
+       fy="141.29076"
+       r="50.214119"
+       gradientTransform="matrix(1,0,0,0.35277172,0,91.447374)"
+       gradientUnits="userSpaceOnUse" />
+    <marker
+       inkscape:stockid="Arrow1Send"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Send-0"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4142-8"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(-0.2,0,0,-0.2,-1.2,0)" />
+    </marker>
+  </defs>
   <metadata
      id="metadata7">
     <rdf:RDF>
@@ -74,401 +248,1005 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1"
-     transform="translate(-14.801758,-6.81446)">
+     id="layer1">
     <g
-       id="g3011">
+       id="g3773"
+       transform="translate(-46.722417,-66.733203)"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200">
       <rect
-         y="102.36218"
-         x="70"
-         height="30"
-         width="30"
-         id="rect2987"
-         style="fill:#ffffff;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0" />
+         transform="matrix(0,1,1,0,0,0)"
+         y="117.33684"
+         x="95.40181"
+         height="23.420273"
+         width="56.250221"
+         id="rect2985"
+         style="fill:none;stroke:#000000;stroke-width:1.30308545;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <rect
+         transform="matrix(0,1,1,0,0,0)"
+         y="121.66486"
+         x="152.00522"
+         height="15.269316"
+         width="6.6830106"
+         id="rect2985-1"
+         style="fill:none;stroke:#000000;stroke-width:1.36300004;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+    </g>
+    <g
+       id="g3781"
+       transform="translate(8.1312944,-8.9166286)"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200">
+      <rect
+         y="136.65891"
+         x="61.619305"
+         height="27.274118"
+         width="27.274118"
+         id="rect3777"
+         style="fill:none;stroke:#000000;stroke-width:1.36300004;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
       <path
          inkscape:connector-curvature="0"
-         id="path2989"
-         d="m 70,102.36218 30,30"
-         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+         id="path3779"
+         d="m 61.591296,136.60025 27.02158,27.02158"
+         style="fill:none;stroke:#000000;stroke-width:1.60000002;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    </g>
+    <g
+       id="g3781-7"
+       transform="translate(288.94892,-8.9166286)"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200">
+      <rect
+         y="136.65891"
+         x="61.619305"
+         height="27.274118"
+         width="27.274118"
+         id="rect3777-4"
+         style="fill:none;stroke:#000000;stroke-width:1.36300004;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path3779-0"
+         d="m 61.591296,136.60025 27.02158,27.02158"
+         style="fill:none;stroke:#000000;stroke-width:1.60000002;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
     </g>
     <rect
-       style="fill:#ffffff;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
-       id="rect2991"
-       width="30"
-       height="30"
-       x="130"
-       y="102.36218" />
+       style="fill:none;stroke:#000000;stroke-width:1.60000002;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect3809"
+       width="41.42857"
+       height="17.142857"
+       x="139.85715"
+       y="132.71933"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200" />
     <g
-       id="g3005">
-      <path
-         transform="translate(20,0)"
-         d="m 190,117.36218 c 0,8.28427 -4.47715,15 -10,15 -5.52285,0 -10,-6.71573 -10,-15 0,-8.28427 4.47715,-15 10,-15 5.52285,0 10,6.71573 10,15 z"
-         sodipodi:ry="15"
-         sodipodi:rx="10"
-         sodipodi:cy="117.36218"
-         sodipodi:cx="180"
-         id="path2993"
-         style="fill:#ffffff;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
-         sodipodi:type="arc" />
+       id="g3875"
+       transform="translate(1.3571429,52.307086)"
+       style="stroke-width:1.10000002;stroke-miterlimit:4;stroke-dasharray:none"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200">
       <path
          inkscape:connector-curvature="0"
-         id="path2995"
-         d="m 200,102.36218 60,0"
-         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+         id="path3811"
+         d="m 68.571429,210.93361 c 22.857143,22.85714 23.214285,23.21429 23.214285,23.21429"
+         style="fill:none;stroke:#000000;stroke-width:1.10000002;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
       <path
          inkscape:connector-curvature="0"
-         id="path2997"
-         d="m 200,132.36218 60,0"
-         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+         id="path3813"
+         d="m 68.928572,211.29075 c -5.357143,5.35715 -5.357143,5.35715 -5.357143,5.35715"
+         style="fill:none;stroke:#000000;stroke-width:1.10000002;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
       <path
-         sodipodi:open="true"
-         sodipodi:end="7.8539816"
-         sodipodi:start="4.712389"
-         d="m 260,102.36218 c 5.52285,0 10,6.71573 10,15 0,8.28427 -4.47715,15 -10,15"
-         sodipodi:ry="15"
-         sodipodi:rx="10"
-         sodipodi:cy="117.36218"
-         sodipodi:cx="260"
-         id="path3003"
-         style="fill:#ffffff;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
-         sodipodi:type="arc" />
+         inkscape:connector-curvature="0"
+         id="path3813-9"
+         d="m 92.343093,234.07392 c -5.357143,5.35715 -5.357143,5.35715 -5.357143,5.35715"
+         style="fill:none;stroke:#000000;stroke-width:1.10000002;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path3813-4"
+         d="m 78.948059,220.93142 c -5.357143,5.35715 -5.357143,5.35715 -5.357143,5.35715"
+         style="fill:none;stroke:#000000;stroke-width:1.10000002;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path3813-8"
+         d="m 72.140681,214.71207 c -5.35714,5.35715 -5.35714,5.35715 -5.35714,5.35715"
+         style="fill:none;stroke:#000000;stroke-width:1.10000002;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path3813-82"
+         d="m 75.579041,217.73201 c -5.35714,5.35715 -5.35714,5.35715 -5.35714,5.35715"
+         style="fill:none;stroke:#000000;stroke-width:1.10000002;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path3813-45"
+         d="m 82.480622,224.38897 c -5.357143,5.35715 -5.357143,5.35715 -5.357143,5.35715"
+         style="fill:none;stroke:#000000;stroke-width:1.10000002;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path3813-5"
+         d="m 86.016158,227.79824 c -5.357145,5.35715 -5.357145,5.35715 -5.357145,5.35715"
+         style="fill:none;stroke:#000000;stroke-width:1.10000002;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path3813-1"
+         d="m 89.172879,231.20751 c -5.35714,5.35715 -5.35714,5.35715 -5.35714,5.35715"
+         style="fill:none;stroke:#000000;stroke-width:1.10000002;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
     </g>
     <g
-       id="g3015"
-       transform="matrix(-1,0,0,-1,400,234.72436)">
-      <rect
-         style="fill:#ffffff;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
-         id="rect3017"
-         width="30"
-         height="30"
-         x="70"
-         y="102.36218" />
+       id="g3875-2"
+       transform="matrix(0,-1,1,0,144.94969,355.44669)"
+       style="stroke-width:1.10000002;stroke-miterlimit:4;stroke-dasharray:none"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200">
       <path
-         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         d="m 70,102.36218 30,30"
-         id="path3019"
-         inkscape:connector-curvature="0" />
+         inkscape:connector-curvature="0"
+         id="path3811-2"
+         d="m 68.571429,210.93361 c 22.857143,22.85714 23.214285,23.21429 23.214285,23.21429"
+         style="fill:none;stroke:#000000;stroke-width:1.10000002;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path3813-16"
+         d="m 68.928572,211.29075 c -5.357143,5.35715 -5.357143,5.35715 -5.357143,5.35715"
+         style="fill:none;stroke:#000000;stroke-width:1.10000002;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path3813-9-8"
+         d="m 92.343093,234.07392 c -5.357143,5.35715 -5.357143,5.35715 -5.357143,5.35715"
+         style="fill:none;stroke:#000000;stroke-width:1.10000002;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path3813-4-5"
+         d="m 78.948059,220.93142 c -5.357143,5.35715 -5.357143,5.35715 -5.357143,5.35715"
+         style="fill:none;stroke:#000000;stroke-width:1.10000002;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path3813-8-7"
+         d="m 72.140681,214.71207 c -5.35714,5.35715 -5.35714,5.35715 -5.35714,5.35715"
+         style="fill:none;stroke:#000000;stroke-width:1.10000002;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path3813-82-6"
+         d="m 75.579041,217.73201 c -5.35714,5.35715 -5.35714,5.35715 -5.35714,5.35715"
+         style="fill:none;stroke:#000000;stroke-width:1.10000002;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path3813-45-1"
+         d="m 82.480622,224.38897 c -5.357143,5.35715 -5.357143,5.35715 -5.357143,5.35715"
+         style="fill:none;stroke:#000000;stroke-width:1.10000002;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path3813-5-8"
+         d="m 86.016158,227.79824 c -5.357145,5.35715 -5.357145,5.35715 -5.357145,5.35715"
+         style="fill:none;stroke:#000000;stroke-width:1.10000002;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path3813-1-9"
+         d="m 89.172879,231.20751 c -5.35714,5.35715 -5.35714,5.35715 -5.35714,5.35715"
+         style="fill:none;stroke:#000000;stroke-width:1.10000002;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
     </g>
-    <g
-       id="g3041"
-       transform="translate(0,5.0000026)">
-      <path
-         inkscape:connector-curvature="0"
-         id="path3025"
-         d="m 70,162.36218 30,30"
-         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
-      <path
-         inkscape:connector-curvature="0"
-         id="path3027"
-         d="m 75,167.36218 -5,5"
-         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
-      <path
-         inkscape:connector-curvature="0"
-         id="path3029"
-         d="m 80,172.36218 -5,5"
-         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
-      <path
-         inkscape:connector-curvature="0"
-         id="path3031"
-         d="m 85,177.36218 -5,5"
-         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
-      <path
-         inkscape:connector-curvature="0"
-         id="path3033"
-         d="m 90,182.36218 -5,5"
-         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
-      <path
-         inkscape:connector-curvature="0"
-         id="path3035"
-         d="m 95,187.36218 -5,5"
-         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
-      <path
-         inkscape:connector-curvature="0"
-         id="path3037"
-         d="m 100,192.36218 -5,5"
-         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
-      <path
-         inkscape:connector-curvature="0"
-         id="path3039"
-         d="m 70,162.36218 -5,5"
-         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
-    </g>
-    <use
-       x="0"
-       y="0"
-       xlink:href="#g3041"
-       id="use3051"
-       transform="matrix(0,-1,1,0,132.63782,267.36218)"
-       width="744.09448"
-       height="1052.3622" />
+    <rect
+       style="fill:url(#radialGradient12687);fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.91799998000000005;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect3809-2"
+       width="99.510239"
+       height="34.510242"
+       x="220.81631"
+       y="124.03564"
+       ry="0"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200" />
     <text
        xml:space="preserve"
-       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="130"
-       y="147.36218"
-       id="text3007"
-       sodipodi:linespacing="125%"><tspan
+       style="font-size:14.68365574px;font-style:normal;font-weight:normal;text-align:center;line-height:100%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="120.0732"
+       y="55.225315"
+       id="text3994"
+       sodipodi:linespacing="100%"
+       transform="scale(1.01641,0.98385495)"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200"><tspan
          sodipodi:role="line"
-         id="tspan3009"
-         x="130"
-         y="147.36218">EOM</tspan></text>
+         id="tspan3996"
+         x="122.10941"
+         y="55.225315">Laser </tspan><tspan
+         sodipodi:role="line"
+         x="120.0732"
+         y="69.908974"
+         id="tspan3998">Source</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:11.41514397px;font-style:normal;font-weight:normal;text-align:center;line-height:100%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="183.11528"
+       y="122.26551"
+       id="text3994-7"
+       sodipodi:linespacing="100%"
+       transform="scale(0.97406247,1.0266282)"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200"><tspan
+         sodipodi:role="line"
+         x="183.11528"
+         y="122.26551"
+         id="tspan3998-5">EOM</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:11.31359196px;font-style:normal;font-weight:normal;text-align:center;line-height:100%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="270.59195"
+       y="113.73501"
+       id="text3994-7-4"
+       sodipodi:linespacing="100%"
+       transform="scale(0.94695275,1.0560189)"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200"><tspan
+         sodipodi:role="line"
+         x="270.59195"
+         y="113.73501"
+         id="tspan3998-5-3"
+         style="font-weight:normal">Rb Vapour Cell</tspan></text>
     <path
-       style="fill:none;stroke:#ff0000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:2, 2;stroke-dashoffset:0"
-       d="m 85,117.36218 0,65 230,2 0,-65 -115,0"
-       id="path3013"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 406.5864,127.56753 0,28.78934 c 16.47843,0.89286 21.16679,-5.99963 21.16679,-5.99963 0,0 5.68917,-6.45006 -1.00925,-16.81019 -5.49606,-8.50052 -20.15754,-5.97952 -20.15754,-5.97952 z"
+       id="path4047"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccc" />
+       sodipodi:nodetypes="cccsc"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200" />
     <path
-       style="fill:none;stroke:#ff0000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:2, 2;stroke-dashoffset:0"
-       d="m 85,72.362183 0,44.999997 60,0"
-       id="path3015"
-       inkscape:connector-curvature="0" />
-    <path
-       style="fill:none;stroke:#0000ff;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:6, 6;stroke-dashoffset:0"
-       d="m 145,117.36218 210,0"
-       id="path3017"
-       inkscape:connector-curvature="0" />
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 408.92857,126.64789 0,29.28572"
+       id="path4049"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200" />
+    <g
+       id="g4071"
+       transform="matrix(0.99985663,0.01693261,0.43036483,-0.99285514,-61.230263,276.98496)"
+       style="stroke-width:1.5;stroke-miterlimit:4;stroke-dasharray:none"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4051"
+         d="m 430.12251,142.59806 c 14.42894,-8.59697 -4.89896,16.96801 14.3585,-3.59237"
+         style="fill:none;stroke:#000000;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path4051-1"
+         d="m 444.13931,139.44453 c 10.57066,-12.45298 1.85293,16.10531 11.92609,-6.64443 0.20066,-0.45316 7.8079,-18.11694 8.02377,-18.61154"
+         style="fill:none;stroke:#000000;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Mend-1)"
+         sodipodi:nodetypes="csc" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:11.31359196px;font-style:normal;font-weight:normal;text-align:center;line-height:100%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="460.83264"
+       y="115.48336"
+       id="text3994-7-4-2"
+       sodipodi:linespacing="100%"
+       transform="scale(0.94695275,1.0560189)"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200"><tspan
+         sodipodi:role="line"
+         x="460.83264"
+         y="115.48336"
+         id="tspan3998-5-3-3"
+         style="font-weight:normal">FO Receiver</tspan></text>
     <path
        sodipodi:type="arc"
-       style="fill:#ffffff;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
-       id="path3022"
-       sodipodi:cx="355"
-       sodipodi:cy="117.36218"
-       sodipodi:rx="15"
-       sodipodi:ry="15"
-       d="m 355,102.36218 c 8.28427,0 15,6.71573 15,15 0,8.28427 -6.71573,15 -15,15 l 0,-15 z"
-       sodipodi:start="4.712389"
-       sodipodi:end="7.8539816"
-       transform="matrix(2.0061443,0,0,0.98601771,-356.97147,1.6409925)" />
-    <text
-       xml:space="preserve"
-       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="205"
-       y="147.36218"
-       id="text4420"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan4422"
-         x="205"
-         y="147.36218">Rb Cell</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="92.362183"
-       y="-55"
-       id="text4424"
-       sodipodi:linespacing="125%"
-       transform="matrix(0,1,-1,0,0,0)"><tspan
-         sodipodi:role="line"
-         id="tspan4426"
-         x="92.362183"
-         y="-55">Splitter</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="167.84041"
-       y="90.058662"
-       id="text4428"
-       sodipodi:linespacing="125%"
-       transform="matrix(0.70710678,0.70710678,-0.70710678,0.70710678,0,0)"
-       inkscape:transform-center-x="-12.47523"><tspan
-         sodipodi:role="line"
-         id="tspan4430"
-         x="167.84041"
-         y="90.058662">Mirror</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="340"
-       y="147.36218"
-       id="text4432"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan4434"
-         x="340"
-         y="147.36218">Detector</tspan></text>
-    <g
-       id="g4458"
-       transform="translate(-75,-2.3437678e-8)">
-      <path
-         transform="matrix(1,0,0,1.2,75,-5.4724365)"
-         d="m 160,64.862183 c 0,6.903559 -6.71573,12.5 -15,12.5 -8.28427,0 -15,-5.596441 -15,-12.5 0,-6.90356 6.71573,-12.5 15,-12.5 8.28427,0 15,5.59644 15,12.5 z"
-         sodipodi:ry="12.5"
-         sodipodi:rx="15"
-         sodipodi:cy="64.862183"
-         sodipodi:cx="145"
-         id="path4436"
-         style="fill:none;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
-         sodipodi:type="arc" />
-      <path
-         sodipodi:nodetypes="ccc"
-         inkscape:connector-curvature="0"
-         id="path4440"
-         d="m 210,70.362183 c 2,9 8,9 10,3 2,-7 8,-7 10,2"
-         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
-    </g>
+       style="fill:none;stroke:#000000;stroke-width:0.91799998;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="path4096"
+       sodipodi:cx="298.24753"
+       sodipodi:cy="60.139843"
+       sodipodi:rx="11.869292"
+       sodipodi:ry="10.859139"
+       d="m 310.11682,60.139843 a 11.869292,10.859139 0 1 1 -23.73858,0 11.869292,10.859139 0 1 1 23.73858,0 z"
+       transform="matrix(1.1440121,0,0,1.1108969,-67.447438,-7.9320128)"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 145,87.362183 0,14.999997"
-       id="path4462"
-       inkscape:connector-curvature="0" />
-    <text
-       xml:space="preserve"
-       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="130"
-       y="52.362183"
-       id="text4464"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan4466"
-         x="130"
-         y="52.362183">VCO</tspan></text>
-    <path
-       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 160,72.362183 260,0 0,29.999997"
-       id="path4470"
+       style="fill:none;stroke:#000000;stroke-width:0.94253749px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 265.26528,59.113056 c 10.13466,-17.842353 6.44501,18.169311 15.71047,-1.575961"
+       id="path4098"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cc" />
-    <g
-       id="g4476"
-       transform="translate(50,45)">
-      <path
-         transform="translate(165,0)"
-         d="m 220,72.362183 c 0,8.284271 -6.71573,15 -15,15 -8.28427,0 -15,-6.715729 -15,-15 0,-8.284272 6.71573,-15 15,-15 8.28427,0 15,6.715728 15,15 z"
-         sodipodi:ry="15"
-         sodipodi:rx="15"
-         sodipodi:cy="72.362183"
-         sodipodi:cx="205"
-         id="path4468"
-         style="fill:none;stroke:#000000;stroke-width:1.09544516;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
-         sodipodi:type="arc" />
-      <path
-         inkscape:connector-curvature="0"
-         id="path4472"
-         d="m 365,67.362183 10,10"
-         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
-      <path
-         inkscape:connector-curvature="0"
-         id="path4474"
-         d="m 365,77.362183 10,-10"
-         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
-    </g>
-    <path
-       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 385,117.36218 20,0"
-       id="path4481"
-       inkscape:connector-curvature="0" />
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200" />
     <text
        xml:space="preserve"
-       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="445"
-       y="142.36218"
-       id="text4483"
-       sodipodi:linespacing="125%"><tspan
+       style="font-size:11.41514397px;font-style:normal;font-weight:normal;text-align:center;line-height:100%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="343.76172"
+       y="51.418842"
+       id="text3994-7-3"
+       sodipodi:linespacing="100%"
+       transform="scale(0.97406247,1.0266282)"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200"><tspan
          sodipodi:role="line"
-         id="tspan4485"
-         x="445"
-         y="142.36218">Lock-in</tspan><tspan
-         sodipodi:role="line"
-         x="445"
-         y="159.86218"
-         id="tspan4487">Amplifier</tspan></text>
+         x="343.76172"
+         y="51.418842"
+         id="tspan3998-5-4">VCO \ EOM Driver</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Mend);stroke-miterlimit:4;stroke-dasharray:none"
+       d="m 259.99276,59.155127 -99.94749,0 0,71.079173"
+       id="path4121"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Mend)"
+       d="m 287.91852,58.943828 278.2394,0 0,158.336962 -52.98749,0.40046"
+       id="path4121-3"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccc"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200" />
+    <path
+       style="fill:none;stroke:#ff00ff;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:4,2;stroke-dashoffset:0;marker-mid:none;marker-end:none"
+       d="m 82.592661,140.09997 1.25,134.94983 283.827489,-1.07143 -0.9631,-128.01888 -317.231877,-1.26269"
+       id="path4618"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200" />
     <g
-       id="g4476-0"
-       transform="translate(50,90)">
+       style="fill:#ff00ff"
+       transform="matrix(0,0.61716338,-1,0,263.58001,82.721687)"
+       id="g6464"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200">
       <path
-         transform="translate(165,0)"
-         d="m 220,72.362183 c 0,8.284271 -6.71573,15 -15,15 -8.28427,0 -15,-6.715729 -15,-15 0,-8.284272 6.71573,-15 15,-15 8.28427,0 15,6.715728 15,15 z"
-         sodipodi:ry="15"
-         sodipodi:rx="15"
-         sodipodi:cy="72.362183"
-         sodipodi:cx="205"
-         id="path4468-0"
-         style="fill:none;stroke:#000000;stroke-width:1.09544516;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
-         sodipodi:type="arc" />
-      <text
-         xml:space="preserve"
-         style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-         x="358"
-         y="77.362183"
-         id="text4516"
-         sodipodi:linespacing="125%"><tspan
-           sodipodi:role="line"
-           id="tspan4518"
-           x="358"
-           y="77.362183">LPF</tspan></text>
+         inkscape:connector-curvature="0"
+         id="path5939"
+         d="m 123.75,179.84375 0,2 0,0 13.125,0 0,-2 z"
+         style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#ff00ff;fill-opacity:1;stroke:none;stroke-width:2;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path6470"
+         d="m 134.47567,180.85307 -2,2 0,0 7,-2 -7,-2 0,0 z"
+         style="fill:#ff00ff;fill-rule:evenodd;stroke:#ff1ee3;stroke-width:0.4pt" />
+    </g>
+    <g
+       style="fill:#ff00ff"
+       transform="matrix(0,0.61716338,-1,0,264.03282,127.11805)"
+       id="g6464-4"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200">
+      <path
+         inkscape:connector-curvature="0"
+         id="path5939-2"
+         d="m 123.75,179.84375 0,2 0,0 13.125,0 0,-2 z"
+         style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#ff00ff;fill-opacity:1;stroke:none;stroke-width:2;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path6470-7"
+         d="m 134.47567,180.85307 -2,2 0,0 7,-2 -7,-2 0,0 z"
+         style="fill:#ff00ff;fill-rule:evenodd;stroke:#ff1ee3;stroke-width:0.4pt" />
+    </g>
+    <g
+       style="fill:#ff00ff"
+       transform="matrix(0,0.61716338,-1,0,264.38773,166.94651)"
+       id="g6464-7"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200">
+      <path
+         inkscape:connector-curvature="0"
+         id="path5939-9"
+         d="m 123.75,179.84375 0,2 0,0 13.125,0 0,-2 z"
+         style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#ff00ff;fill-opacity:1;stroke:none;stroke-width:2;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path6470-3"
+         d="m 134.47567,180.85307 -2,2 0,0 7,-2 -7,-2 0,0 z"
+         style="fill:#ff00ff;fill-rule:evenodd;stroke:#ff1ee3;stroke-width:0.4pt" />
+    </g>
+    <g
+       style="fill:#ff00ff"
+       transform="matrix(0.61716338,0,0,1,61.571404,93.983183)"
+       id="g6464-4-1"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200">
+      <path
+         inkscape:connector-curvature="0"
+         id="path5939-2-9"
+         d="m 123.75,179.84375 0,2 0,0 13.125,0 0,-2 z"
+         style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#ff00ff;fill-opacity:1;stroke:none;stroke-width:2;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path6470-7-8"
+         d="m 134.47567,180.85307 -2,2 0,0 7,-2 -7,-2 0,0 z"
+         style="fill:#ff00ff;fill-rule:evenodd;stroke:#ff1ee3;stroke-width:0.4pt" />
+    </g>
+    <g
+       style="fill:#ff00ff"
+       transform="matrix(-0.61716338,0,0,1,203.55328,-35.860413)"
+       id="g6464-4-1-6"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200">
+      <path
+         inkscape:connector-curvature="0"
+         id="path5939-2-9-5"
+         d="m 123.75,179.84375 0,2 0,0 13.125,0 0,-2 z"
+         style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#ff00ff;fill-opacity:1;stroke:none;stroke-width:2;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path6470-7-8-0"
+         d="m 134.47567,180.85307 -2,2 0,0 7,-2 -7,-2 0,0 z"
+         style="fill:#ff00ff;fill-rule:evenodd;stroke:#ff1ee3;stroke-width:0.4pt" />
+    </g>
+    <g
+       style="fill:#ff00ff"
+       transform="matrix(0,-0.61716338,-1,0,547.63966,337.37279)"
+       id="g6464-0"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200">
+      <path
+         inkscape:connector-curvature="0"
+         id="path5939-24"
+         d="m 124.26149,179.08614 0,2 0,0 13.125,0 0,-2 z"
+         style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#ff00ff;fill-opacity:1;stroke:none;stroke-width:2;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path6470-8"
+         d="m 134.98716,180.09546 -2,2 0,0 7,-2 -7,-2 0,0 z"
+         style="fill:#ff00ff;fill-rule:evenodd;stroke:#ff1ee3;stroke-width:0.4pt" />
+    </g>
+    <g
+       style="fill:#ff00ff"
+       transform="matrix(0,-0.61716338,-1,0,548.09247,292.97644)"
+       id="g6464-4-6"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200">
+      <path
+         inkscape:connector-curvature="0"
+         id="path5939-2-5"
+         d="m 123.75,179.84375 0,2 0,0 13.125,0 0,-2 z"
+         style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#ff00ff;fill-opacity:1;stroke:none;stroke-width:2;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path6470-7-0"
+         d="m 134.47567,180.85307 -2,2 0,0 7,-2 -7,-2 0,0 z"
+         style="fill:#ff00ff;fill-rule:evenodd;stroke:#ff1ee3;stroke-width:0.4pt" />
+    </g>
+    <g
+       style="fill:#ff00ff"
+       transform="matrix(0,-0.61716338,-1,0,547.81603,253.27425)"
+       id="g6464-7-9"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200">
+      <path
+         inkscape:connector-curvature="0"
+         id="path5939-9-0"
+         d="m 123.75,179.84375 0,2 0,0 13.125,0 0,-2 z"
+         style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#ff00ff;fill-opacity:1;stroke:none;stroke-width:2;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path6470-3-0"
+         d="m 134.47567,180.85307 -2,2 0,0 7,-2 -7,-2 0,0 z"
+         style="fill:#ff00ff;fill-rule:evenodd;stroke:#ff1ee3;stroke-width:0.4pt" />
+    </g>
+    <g
+       style="fill:#ff00ff"
+       transform="matrix(0.61716338,0,0,1,159.59778,92.53229)"
+       id="g6464-4-1-61"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200">
+      <path
+         inkscape:connector-curvature="0"
+         id="path5939-2-9-3"
+         d="m 121.86928,180.91518 0,2 0,0 13.125,0 0,-2 z"
+         style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#ff00ff;fill-opacity:1;stroke:none;stroke-width:2;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path6470-7-8-8"
+         d="m 132.59495,181.9245 -2,2 0,0 7,-2 -7,-2 0,0 z"
+         style="fill:#ff00ff;fill-rule:evenodd;stroke:#ff1ee3;stroke-width:0.4pt" />
+    </g>
+    <g
+       style="fill:#ff00ff"
+       transform="matrix(0.61716338,0,0,1,239.1473,93.289904)"
+       id="g6464-4-1-9"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200">
+      <path
+         inkscape:connector-curvature="0"
+         id="path5939-2-9-34"
+         d="m 123.75,179.84375 0,2 0,0 13.125,0 0,-2 z"
+         style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#ff00ff;fill-opacity:1;stroke:none;stroke-width:2;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path6470-7-8-4"
+         d="m 134.47567,180.85307 -2,2 0,0 7,-2 -7,-2 0,0 z"
+         style="fill:#ff00ff;fill-rule:evenodd;stroke:#ff1ee3;stroke-width:0.4pt" />
+    </g>
+    <g
+       style="fill:#ff00ff"
+       transform="matrix(-0.61716338,0,0,1,281.94983,-35.455176)"
+       id="g6464-4-1-6-6"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200">
+      <path
+         inkscape:connector-curvature="0"
+         id="path5939-2-9-5-0"
+         d="m 123.75,179.84375 0,2 0,0 13.125,0 0,-2 z"
+         style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#ff00ff;fill-opacity:1;stroke:none;stroke-width:2;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path6470-7-8-0-6"
+         d="m 134.47567,180.85307 -2,2 0,0 7,-2 -7,-2 0,0 z"
+         style="fill:#ff00ff;fill-rule:evenodd;stroke:#ff1ee3;stroke-width:0.4pt" />
+    </g>
+    <g
+       style="fill:#ff00ff"
+       transform="matrix(-0.61716338,0,0,1,417.57482,-35.098032)"
+       id="g6464-4-1-6-61"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200">
+      <path
+         inkscape:connector-curvature="0"
+         id="path5939-2-9-5-8"
+         d="m 123.75,179.84375 0,2 0,0 13.125,0 0,-2 z"
+         style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#ff00ff;fill-opacity:1;stroke:none;stroke-width:2;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path6470-7-8-0-4"
+         d="m 134.47567,180.85307 -2,2 0,0 7,-2 -7,-2 0,0 z"
+         style="fill:#ff00ff;fill-rule:evenodd;stroke:#ff1ee3;stroke-width:0.4pt" />
+    </g>
+    <path
+       inkscape:connector-curvature="0"
+       id="path6701"
+       d="m 82.600276,140.25849 0,-48.236633"
+       style="fill:none;fill-opacity:1;stroke:url(#linearGradient8195);stroke-width:2.03608726999999990;stroke-opacity:1"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200" />
+    <text
+       transform="scale(1.0309744,0.96995618)"
+       sodipodi:linespacing="125%"
+       id="text8207"
+       y="85.04084"
+       x="102.99542"
+       style="font-size:11.73885918px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200"><tspan
+         y="85.04084"
+         x="102.99542"
+         id="tspan8209"
+         sodipodi:role="line">E<tspan
+   id="tspan8213"
+   style="font-size:7.63036585px;baseline-shift:sub">0</tspan> e<tspan
+   id="tspan8211"
+   style="font-size:7.63036585px;baseline-shift:super">iωt</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:10.66656017px;font-style:normal;font-weight:normal;text-align:center;line-height:100%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#e600ff;fill-opacity:1;stroke:none;font-family:Sans"
+       x="241.88197"
+       y="272.86407"
+       id="text3994-9"
+       sodipodi:linespacing="100%"
+       transform="scale(1.0210797,0.97935548)"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200"><tspan
+         sodipodi:role="line"
+         x="241.88197"
+         y="272.86407"
+         id="tspan3998-3">Pump Beam - E<tspan
+   style="font-size:65.00091553%;baseline-shift:sub"
+   id="tspan8687">pump</tspan> e<tspan
+   id="tspan8269"
+   style="font-size:6.93336153px;baseline-shift:super;fill:#e600ff;fill-opacity:1">iωt</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:9.28945446000000000px;font-style:normal;font-weight:normal;text-align:center;line-height:100%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#57cd00;fill-opacity:1;stroke:none;font-family:Sans"
+       x="133.16206"
+       y="115.74703"
+       id="text3994-9-9"
+       sodipodi:linespacing="100%"
+       transform="scale(0.91064978,1.098117)"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200"><tspan
+         sodipodi:role="line"
+         x="133.16206"
+         y="115.74703"
+         id="tspan3998-3-1">Probe Beam</tspan></text>
+    <path
+       inkscape:connector-curvature="0"
+       id="path8322"
+       d="m 82.857143,140.21932 323.729257,0"
+       style="fill:#aa4400;stroke:#52ff00;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200" />
+    <g
+       style="fill:#65ff00;stroke:#78ff00;stroke-opacity:1;fill-opacity:1"
+       transform="matrix(0.61828692,0.0059219,0.01006416,-0.95515151,32.890039,312.18125)"
+       id="g6464-4-1-6-7"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200">
+      <path
+         inkscape:connector-curvature="0"
+         id="path5939-2-9-5-6"
+         d="m 123.75,179.84375 0,2 0,0 13.125,0 0,-2 z"
+         style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#65ff00;fill-opacity:1;stroke:#78ff00;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path6470-7-8-0-3"
+         d="m 134.47567,180.85307 -2,2 0,0 7,-2 -7,-2 0,0 z"
+         style="fill:#65ff00;fill-rule:evenodd;stroke:#78ff00;stroke-width:0.40000000000000002pt;stroke-opacity:1;fill-opacity:1" />
+    </g>
+    <g
+       style="fill:#65ff00;stroke:#78ff00;stroke-opacity:1;fill-opacity:1"
+       transform="matrix(0.61828692,0.0059219,0.01006416,-0.95515151,118.58938,312.1769)"
+       id="g6464-4-1-6-7-6"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200">
+      <path
+         inkscape:connector-curvature="0"
+         id="path5939-2-9-5-6-1"
+         d="m 123.75,179.84375 0,2 0,0 13.125,0 0,-2 z"
+         style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#65ff00;fill-opacity:1;stroke:#78ff00;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path6470-7-8-0-3-5"
+         d="m 134.47567,180.85307 -2,2 0,0 7,-2 -7,-2 0,0 z"
+         style="fill:#65ff00;fill-rule:evenodd;stroke:#78ff00;stroke-width:0.40000000000000002pt;stroke-opacity:1;fill-opacity:1" />
+    </g>
+    <g
+       style="fill:#65ff00;stroke:#78ff00;stroke-opacity:1;fill-opacity:1"
+       transform="matrix(0.61828692,0.0059219,0.01006416,-0.95515151,255.91081,312.26618)"
+       id="g6464-4-1-6-7-4"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200">
+      <path
+         inkscape:connector-curvature="0"
+         id="path5939-2-9-5-6-2"
+         d="m 123.75,179.84375 0,2 0,0 13.125,0 0,-2 z"
+         style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#65ff00;fill-opacity:1;stroke:#78ff00;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path6470-7-8-0-3-0"
+         d="m 134.47567,180.85307 -2,2 0,0 7,-2 -7,-2 0,0 z"
+         style="fill:#65ff00;fill-rule:evenodd;stroke:#78ff00;stroke-width:0.40000000000000002pt;stroke-opacity:1;fill-opacity:1" />
+    </g>
+    <g
+       style="fill:#65ff00;stroke:#78ff00;stroke-opacity:1;fill-opacity:1"
+       transform="matrix(0.61828692,0.0059219,0.01006416,-0.95515151,308.27477,312.27828)"
+       id="g6464-4-1-6-7-9"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200">
+      <path
+         inkscape:connector-curvature="0"
+         id="path5939-2-9-5-6-7"
+         d="m 123.75,179.84375 0,2 0,0 13.125,0 0,-2 z"
+         style="font-size:medium;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:start;text-decoration:none;line-height:normal;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;baseline-shift:baseline;color:#000000;fill:#65ff00;fill-opacity:1;stroke:#78ff00;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Sans;-inkscape-font-specification:Sans;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path6470-7-8-0-3-3"
+         d="m 134.47567,180.85307 -2,2 0,0 7,-2 -7,-2 0,0 z"
+         style="fill:#65ff00;fill-rule:evenodd;stroke:#78ff00;stroke-width:0.40000000000000002pt;stroke-opacity:1;fill-opacity:1" />
+    </g>
+    <text
+       transform="scale(0.97924472,1.0211952)"
+       sodipodi:linespacing="125%"
+       id="text8207-7"
+       y="168.99646"
+       x="103.95246"
+       style="font-size:9.07950401000000080px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0fae00;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200"><tspan
+         y="168.99646"
+         x="103.95246"
+         id="tspan8209-2"
+         sodipodi:role="line">E<tspan
+   style="font-size:5.90176058000000040px;baseline-shift:sub;fill:#0fae00;fill-opacity:1"
+   id="tspan8689">pump</tspan> e<tspan
+   id="tspan8211-0"
+   style="font-size:5.90176058000000040px;baseline-shift:super;fill:#0fae00;fill-opacity:1">iωt</tspan></tspan></text>
+    <text
+       transform="scale(0.92712148,1.0786073)"
+       sodipodi:linespacing="125%"
+       id="text8207-7-1"
+       y="160.19765"
+       x="173.52736"
+       style="font-size:9.19332026999999920px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0fae00;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200"><tspan
+         y="160.19765"
+         x="173.52736"
+         id="tspan8209-2-6"
+         sodipodi:role="line">E<tspan
+   style="font-size:5.97574186000000030px;baseline-shift:sub;fill:#0fae00;fill-opacity:1"
+   id="tspan8689-5">pump</tspan> e<tspan
+   id="tspan8211-0-7"
+   style="font-size:5.97574186000000030px;baseline-shift:super;fill:#0fae00;fill-opacity:1">i(ωt + βsinΩt)</tspan></tspan></text>
+    <path
+       style="fill:none;stroke:#62ff00;stroke-width:1.05731153000000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:1.05731148000000010, 1.05731148000000010;stroke-dashoffset:0"
+       d="m 112.63201,140.75846 0,22.58515"
+       id="path8718"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200" />
+    <path
+       style="fill:none;stroke:#62ff00;stroke-width:1.05731153000000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:1.05731148000000010, 1.05731148000000010;stroke-dashoffset:0"
+       d="m 193.75,139.64104 0,22.58515"
+       id="path8718-5"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 222.8649,211.10117 95.71196,0"
+       id="path8738"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200" />
+    <text
+       xml:space="preserve"
+       style="font-size:10.10188484px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="259.09052"
+       y="226.29927"
+       id="text8740"
+       sodipodi:linespacing="125%"
+       transform="scale(1.033661,0.96743517)"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200"><tspan
+         sodipodi:role="line"
+         id="tspan8742"
+         x="259.09052"
+         y="226.29927">ν</tspan></text>
+    <path
+       style="fill:none;stroke:#434343;stroke-width:1.06947005px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 223.08905,181.35257 c 2.47133,1.07302 4.78564,1.24325 7.44857,9.93766 2.6987,4.92823 4.57096,1.85851 5.43289,0.46647 1.72768,-3.15551 1.05468,-10.44027 4.74193,-10.42204 3.8832,0.0192 4.58849,10.03952 5.28878,13.11347 1.4805,6.49873 4.9527,9.48512 6.75185,-0.31853 0.21685,-1.18156 0.19755,-8.90302 3.76226,-12.49705 0.98,-0.98806 9.90407,-0.8516 11.7915,-0.76791 8.35746,0.37061 7.26277,1.25275 8.7659,5.44791 1.71177,4.77746 3.31225,7.09707 7.7194,0.0939 0.86998,-1.38246 0.85449,-1.42415 1.58414,-4.32801 0.19664,-0.7826 4.01339,-0.63703 6.55069,-0.32826 4.74037,0.57686 3.48405,1.43791 5.32001,3.6374 1.59215,1.90738 3.71578,1.91054 4.69163,0.25945 1.87631,-3.17466 1.18032,-3.49809 2.24543,-3.6279 6.74982,-0.82262 13.29051,0.0932 13.45645,0.21578"
+       id="path8770"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccssssssssssssc"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200" />
+    <g
+       id="g3781-7-6"
+       transform="matrix(0.85824249,0,0,1.0029652,387.36987,35.881727)"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200">
       <rect
-         style="fill:none;stroke:#000000;stroke-width:1.09544516;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
-         id="rect4520"
-         width="30"
-         height="65"
-         x="70"
-         y="7.3621826"
-         transform="translate(-50,-90)"
-         ry="0" />
-      <text
-         xml:space="preserve"
-         style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-         x="-77.637817"
-         y="0"
-         id="text4522"
-         sodipodi:linespacing="125%"
-         transform="matrix(0,1,-1,0,0,0)"><tspan
-           sodipodi:role="line"
-           id="tspan4524"
-           x="-77.637817"
-           y="0">Frequency</tspan><tspan
-           sodipodi:role="line"
-           x="-77.637817"
-           y="17.5"
-           id="tspan4528">Adjustable</tspan><tspan
-           sodipodi:role="line"
-           x="-77.637817"
-           y="35"
-           id="tspan4526">Laser</tspan></text>
+         y="138.15208"
+         x="46.444954"
+         height="23.530165"
+         width="56.612663"
+         id="rect3777-4-4"
+         style="fill:none;stroke:#000000;stroke-width:1.82395625;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
     </g>
     <text
        xml:space="preserve"
-       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="161.22035"
-       y="200.29851"
-       id="text4530"
-       sodipodi:linespacing="125%"><tspan
+       style="font-size:11.31359196px;font-style:normal;font-weight:normal;text-align:center;line-height:100%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="429.36041"
+       y="173.10309"
+       id="text3994-7-4-2-1"
+       sodipodi:linespacing="100%"
+       transform="scale(0.94695275,1.0560189)"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200"><tspan
          sodipodi:role="line"
-         id="tspan4532"
-         x="161.22035"
-         y="200.29851" /></text>
+         x="429.36041"
+         y="173.10309"
+         id="tspan3998-5-3-3-9"
+         style="font-weight:normal">LPF</tspan></text>
     <path
-       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 420,132.36218 0,15"
-       id="path4534"
-       inkscape:connector-curvature="0" />
+       style="fill:none;stroke:#000000;stroke-width:0.92778623px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 430.32329,193.63403 41.99258,0"
+       id="path12926"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
-       d="m 420,177.36218 0,55"
-       id="path4536"
-       inkscape:connector-curvature="0" />
+       style="fill:none;stroke:#000000;stroke-width:0.92778623px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 430.9799,179.94904 7.69423,0 c 2.59964,-0.34649 7.03329,0.98156 8.51743,4.24201 2.4342,3.48992 2.42258,3.61369 6.05011,4.82519 6.1749,2.22074 12.1841,1.14975 18.26842,1.57085"
+       id="path12928"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200" />
+    <g
+       id="g13371"
+       transform="translate(0.1785714,-15.535714)"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200">
+      <path
+         transform="matrix(0.94822449,0,0,1.0015477,216.5451,172.7569)"
+         d="m 310.11682,60.139843 c 0,5.997337 -5.31406,10.859139 -11.86929,10.859139 -6.55523,0 -11.86929,-4.861802 -11.86929,-10.859139 0,-5.997337 5.31406,-10.859139 11.86929,-10.859139 6.55523,0 11.86929,4.861802 11.86929,10.859139 z"
+         sodipodi:ry="10.859139"
+         sodipodi:rx="11.869292"
+         sodipodi:cy="60.139843"
+         sodipodi:cx="298.24753"
+         id="path4096-5"
+         style="fill:none;stroke:#000000;stroke-width:1.42028022;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+         sodipodi:type="arc" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path12948"
+         d="m 491.18668,225.29979 16.66751,14.89975"
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path12950"
+         d="m 491.69175,241.20969 16.16244,-15.9099"
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    </g>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.47508621;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Mend-1)"
+       d="m 451.77827,198.49508 0,18.78158 34.40801,0"
+       id="path12952"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccc"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200" />
+    <g
+       id="g3781-7-6-5"
+       transform="matrix(0.85824249,0,0,1.0029652,434.66939,100.69371)"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200">
+      <rect
+         y="138.15208"
+         x="46.444954"
+         height="23.530165"
+         width="56.612663"
+         id="rect3777-4-4-7"
+         style="fill:none;stroke:#000000;stroke-width:1.82395625;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+    </g>
     <text
        xml:space="preserve"
-       style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="445"
-       y="222.36218"
-       id="text4722"
-       sodipodi:linespacing="125%"><tspan
+       style="font-size:11.31359196px;font-style:normal;font-weight:normal;text-align:center;line-height:100%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="574.72845"
+       y="233.80058"
+       id="text3994-7-4-2-1-4"
+       sodipodi:linespacing="100%"
+       transform="scale(0.94695275,1.0560189)"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200"><tspan
          sodipodi:role="line"
-         id="tspan4724"
-         x="445"
-         y="222.36218">Output</tspan><tspan
+         x="574.72845"
+         y="233.80058"
+         id="tspan3998-5-3-3-9-7"
+         style="font-weight:normal">LPF</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.92778623px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 477.62281,258.44601 41.99258,0"
+       id="path12926-3"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.92778623px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 478.27942,244.76102 7.69423,0 c 2.59964,-0.34649 7.03329,0.98156 8.51743,4.24201 2.4342,3.48992 2.42258,3.61369 6.05011,4.82519 6.1749,2.22074 12.1841,1.14975 18.26842,1.57085"
+       id="path12928-4"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.82019114;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Send)"
+       d="m 499.56704,228.2672 0,8.46468"
+       id="path13376"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:3.91692948;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow2Send)"
+       d="m 498.8169,263.07704 0,18.1213"
+       id="path13376-8"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200" />
+    <text
+       xml:space="preserve"
+       style="font-size:11.31359196px;font-style:normal;font-weight:normal;text-align:center;line-height:100%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="527.10321"
+       y="283.26981"
+       id="text3994-7-4-2-1-4-1"
+       sodipodi:linespacing="100%"
+       transform="scale(0.94695275,1.0560189)"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200"><tspan
          sodipodi:role="line"
-         x="445"
-         y="239.86218"
-         id="tspan4782">(to PID controller)</tspan></text>
+         x="527.10321"
+         y="283.26981"
+         id="tspan3998-5-3-3-9-7-5"
+         style="font-size:14px;font-weight:bold">SERVO</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:11.31359196px;font-style:normal;font-weight:normal;text-align:center;line-height:100%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="427.15857"
+       y="184.17796"
+       id="text3994-7-4-2-1-4-2"
+       sodipodi:linespacing="100%"
+       transform="scale(0.94695275,1.0560189)"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200"><tspan
+         sodipodi:role="line"
+         x="428.72742"
+         y="184.17796"
+         id="tspan3998-5-3-3-9-7-3"
+         style="font-weight:normal">~1.5 Ω </tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:11.31359196px;font-style:normal;font-weight:normal;text-align:center;line-height:100%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="574.15851"
+       y="246.40628"
+       id="text3994-7-4-2-1-4-2-2"
+       sodipodi:linespacing="100%"
+       transform="scale(0.94695275,1.0560189)"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\proposal\EOM_PDH_UNIT.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200"><tspan
+         sodipodi:role="line"
+         x="575.72736"
+         y="246.40628"
+         id="tspan3998-5-3-3-9-7-3-4"
+         style="font-weight:normal">&lt;&lt;&lt; Ω </tspan></text>
   </g>
 </svg>
