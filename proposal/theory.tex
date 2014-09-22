@@ -94,3 +94,31 @@ is comfortable for the laboratory staff. This will involve some detailed
 quantum mechanical analysis, but there are precedents for reference
 \cite{maguire2006}
 
+The entire setup is depicted in Figure~\ref{setup}.  A variable frequency laser beam (red dotted line), enters at the left, and is immediate split by a "pol cube" into two new beams.  The lower beam, unmodified, reflects off several mirrors, and is directed into a chamber full of rubidium-87 gas.  This beam excites the gas molecules with no horizontal velocity, so that we will get a Doppler-cancelled feature (which we can lock to).
+
+The second beam is passed into an electro optic modulator.  This modulator is fed by a voltage-controlled oscillator, running at frequency $\Omega$.  This modulates the phase of the laser, such that the output laser follows the function
+
+\[ E = exp(i(\omega t + \beta sin(\Omega t)), \]
+
+which looks like a central carrier at $\omega$ with two side bands at $\omega + \Omega$ and $\omega - \Omega$.
+
+\begin{figure}
+  \centering
+  \label{setup}
+  \includegraphics[scale=0.9]{spectrum.pdf}
+  \caption{Expected spectrum of beam after EOM}
+\end{figure}
+
+After being filtered through the gas, beam A is fed into a light detector, which measures the \emph{power} of the resulting beam.  Since $P = |E|^2 = E*E$, we get DC components, as well as time varying components at $\Omega$ and $2 \Omega$.
+
+We use a lock in amplifier (a multiplyer followed by a low-pass filter), between the VCO's signal and the detector output, which isolates just the stuff at $\Omega$.  [Jeff's note: shouldn't we keep both in-phase and quadrature here, or are we OK with making someone turn a phase dial]
+
+The form of this output is roughly
+
+\[ LPF_{out} ~= P_0 \frac{\beta}{2} [ F(\omega + \Omega) - F(\omega - \Omega) ]. \]
+
+This gives us a measure of the derivative of the function, as measured far from the centre, where it is steeper (and thus more easily measured).
+
+We feed this signal back into a PID amplifier which uses it to further adjust the laser.
+
+
