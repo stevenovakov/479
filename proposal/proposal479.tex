@@ -13,6 +13,7 @@
 \usepackage{color}
 \usepackage{setspace}
 \usepackage{tabularx}
+\setlength{\extrarowheight}{5pt}
 \usepackage[labelfont=bf]{caption}
 \usepackage{subfig}
 
@@ -76,19 +77,12 @@
 \HRule \\[2.5cm]
 
 % Author and supervisor
-\begin{minipage}{0.4\textwidth}
-\begin{flushleft} \Large
-\Large \emph{Authors:}\\
-\textsc{Steve Novakov} \\
-\textsc{Jeff Taylor}
-\end{flushleft}
-\end{minipage}
-\begin{minipage}{0.4\textwidth}
-\begin{flushright} \Large
-\emph{Sponsor:} \\
-\textsc{Dr.~Kirk Madison}
-\end{flushright}
-\end{minipage}
+
+\begin{tabularx}{\linewidth}{lXr}
+  \Large \emph{Authors:} & & \Large \emph{Sponsor:} \\
+  \Large \textsc{Steve Novakov} & & \Large \textsc{Dr.~Kirk Madison} \\
+  \Large \textsc{Jeff Taylor}  & & \\
+\end{tabularx}
 
 \vfill
 
