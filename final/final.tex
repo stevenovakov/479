@@ -1,0 +1,161 @@
+\documentclass[10.5pt, a4paper, twoside]{article}
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\setlength{\topmargin}{-1.25in}
+\setlength{\footskip}{0.75in}
+\setlength{\textheight}{10in}
+
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage{color}
+\usepackage{setspace}
+\usepackage{tabularx}
+\setlength{\extrarowheight}{5pt}
+\usepackage[labelfont=bf]{caption}
+\usepackage{subfig}
+
+%%%% BIBLIO
+
+\usepackage[backend=bibtex]{biblatex}
+
+%%%% GLOSSARY STUFF
+
+\usepackage[intoc]{nomencl}
+
+\renewcommand{\nomname}{Glossary}
+\renewcommand{\nomlabel}[1]{\textbf{#1}}
+\makenomenclature
+
+%\singlespacing
+\onehalfspacing
+%\doublespacing
+%\setstretch{1.1}
+
+\setlength\parindent{0pt}
+
+\newenvironment{packed_itemize}{
+\begin{itemize}
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+}{\end{itemize}}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\newcommand{\vecthree}[3]{\left(\!\!{\scriptsize\begin{array}{c}#1\\#2\\#3\end{array}}\!\!\right)}
+\newcommand{\vectwo}[3]{\left(\!\!{\scriptsize\begin{array}{c}#1\\#2\end{array}}\!\!\right)}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+
+\addbibresource{sources.bib}
+
+\begin{document}
+%
+%\title{ \bf \huge Development of a 12.4 GHz Bandwidth Frequency Offset Locking Unit for Two-Laser Systems}
+%\author{Steve Novakov }
+%\date{}
+%
+%\maketitle
+
+\begin{titlepage}
+\begin{center}
+
+% Upper part of the page. The '~' is needed because \\
+% only works if a paragraph has started.
+
+% Title
+\HRule \\[0.4cm]
+{ \huge \bfseries Pound-Drever-Hall Servomechanism with an Atomic Referece for Frequency Stabilization of a Master Laser \\[0.4cm] }
+
+\HRule \\[1.3cm]
+
+{ \huge \bfseries Final Recommendation Report \\[1.3cm] }
+
+% Author and supervisor
+
+\begin{tabularx}{\linewidth}{lXr}
+  \Large \emph{Authors:} & & \Large \emph{Sponsor:} \\
+  \Large \textsc{Steve Novakov} & & \Large \textsc{Dr.~Kirk Madison} \\
+  \Large \textsc{Jeff Taylor}  & & \\
+\end{tabularx}
+
+\vfill
+
+\textsc{\LARGE ENPH 479}\\[0.3cm]
+\textsc{\LARGE Engineering Physics}\\[0.3cm]
+\textsc{\LARGE University of British Columbia}\\[0.3cm]
+
+\vfill
+
+\textsc{\Large Group 1472}\\[0.3cm]
+\textsc{\Large Project 33}\\[0.3cm]
+
+\vfill
+
+% Bottom of the page
+{\large \today}
+
+\end{center}
+\end{titlepage}
+\newpage
+
+%%%%%%%%%%%%%%%% EXECUTIVE SUMMARY
+
+\include{executive}
+
+%%%%%%%%%%%%%%%% TOC / FIGURES / TABLES
+\newpage
+\tableofcontents
+\newpage
+\listoffigures
+\listoftables
+
+%%%%%%%%%%%%%%% GLOSSARY
+
+\include{glossary}
+
+%%%%%%%%%%%%%%%% BACKGROUND/MOTIVATION/OBJECTIVES
+
+\include{introduction}
+
+%%%%%%%%%%%%%%%% BACKGROUND THEORY
+
+\include{theory}
+
+%%%%%%%%%%%%%%%% IMPLEMENTATION
+
+\include{implementation}
+
+%%%%%%%%%%%%%%%% DELIVERABLES
+
+\include{deliverables}
+
+%%%%%%%%%%%%%%%% RECOMMENDATIONS
+
+\include{recommendations}
+
+
+%%%%%%%%%%%%%%%% CONCLUSION
+
+\include{conclusion}
+
+%%%%%%%%%%%%%%%% REFERENCES
+
+\newpage
+\printbibliography
+
+%%%%%%%%%%%%%%%% APPENDICES
+
+\include{appendix}
+
+\end{document}
+
+
+
