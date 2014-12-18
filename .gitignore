@@ -1,1 +1,10 @@
 *.aux
+*.pdf
+*.toc
+*.xml
+*.bbl
+*.blg
+*.lof
+*.log
+*.lot
+*.nlo
