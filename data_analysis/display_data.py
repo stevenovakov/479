@@ -40,9 +40,11 @@ tdelta = 1.0
 
 source_dir_85 = data_dir + OSDirAppend('power') + OSDirAppend('85')
 source_dir_87 = data_dir + OSDirAppend('power') + OSDirAppend('87')
+source_dir_temps = data_dir + OSDirAppend('temperature_2')
 
 write_params_85 = root_dir + OSDirAppend('85params.csv')
 write_params_87 = root_dir + OSDirAppend('87params.csv')
+write_params_temps = root_dir + OSDirAppend('tempparams.csv')
 
 def OSDirAppend(target_dir):
 
@@ -212,6 +214,125 @@ def FindRes87Power():
   return
 
 
+def FindResTemps():
+
+  wfile = open(write_params_temps, 'wb')
+
+  for filename in os.listdir(source_dir_temps):
+
+    print "Processing " + filename
+
+    file_path = source_dir_temps + OSDirAppend(filename)
+    file_data = np.genfromtxt(file_path, dtype=float, delimiter=',', \
+      names=['t1', 'v1', 't2', 'v2', 't3', 'v3'])
+
+    t_fit = file_data['t1']
+    v_fit = file_data['v1']
+
+    v_sgf = np.copy(v_fit)
+
+    if "87" in filename:
+
+      # Piecewise fit using
+      #     11 points per window (must be odd)
+      #     9th order polynomial (must be > 1, < window size)
+
+      num_passes = 30
+
+      for i in xrange(0, num_passes):
+        v_sgf = SavitzkyGolay(v_sgf, 51, 3)
+
+      vn = len(v_fit)
+      window = int(vn*0.202)
+
+    #   v_sgf2 = v_sgf[window:vn-window]
+
+    #   # NOTE:
+    #   #   noticed that sometimes there is a peak near the center, but
+    #   #   it is inconsistent in appearence so only the last two peaks are used
+
+    #   peaks = naive_peak_find(v_sgf2, window)[-2:]#
+
+    #   # boolean, true if peaks are in front of center, as they are lower
+    #   # actual frequency than the center of the spectrum
+    #   flipped = (int(sum(peaks)/float(len(peaks))) > int(vn/3.))
+
+    #   tpeaks = [t_fit[a] for a in peaks]
+
+    #   if flipped:
+    #     tzero = tpeaks[-2]
+    #     tdelta = tpeaks[-1] - tpeaks[-2]
+    #   else:
+    #     tzero = tpeaks[1]
+    #     tdelta = tpeaks[1] - tpeaks[0]
+
+    #   mhzps = co13_co23_87 / abs(tdelta)
+
+    else:
+
+      num_passes = 50
+
+      for i in xrange(0, num_passes):
+        v_sgf = SavitzkyGolay(v_sgf, 51, 3)
+
+    #   vn = len(v_fit)
+    #   window = int(vn/4.)
+
+    #   v_sgf2 = v_sgf[window:vn-window]
+
+    #   # NOTE:
+    #   #   noticed that sometimes there is a peak near the center, but
+    #   #   it is inconsistent in appearence so only the last two peaks are used
+
+    #   peaks = naive_peak_find(v_sgf2, window)[-2:]#
+
+    #   # boolean, true if peaks are in front of center, as they are lower
+    #   # actual frequency than the center of the spectrum
+    #   flipped = (int(sum(peaks)/float(len(peaks))) > int(vn/3.))
+
+    #   tpeaks = [t_fit[a] for a in peaks]
+
+    #   if flipped:
+    #     tzero = tpeaks[-1]
+    #     tdelta = tpeaks[-1] - tpeaks[-2]
+    #   else:
+    #     tzero = tpeaks[0]
+    #     tdelta = tpeaks[1] - tpeaks[0]
+
+    #   mhzps = co34_co23_85 / abs(tdelta)
+
+    # wfile.write(",".join([filename, str(tzero), str(mhzps), str(flipped)])+"\n")
+
+    # # UNCOMMENT FOLLOWING TO VISUALLY INSPECT
+
+    #
+    # Automatic code is not working well here, do manually unless time to fix
+    #
+
+    pt.plot(t_fit, v_fit, t_fit, v_sgf, linewidth=3)
+    #pt.vlines(tpeaks, min(v_fit), max(v_fit))
+    pt.show()
+
+    flipped = raw_input("Flipped?: ")
+
+    inner_peak = float(raw_input("Inner Peak (s): "))
+
+    outer_peak = float(raw_input("Outer Peak (s): "))
+
+    tzero = inner_peak
+    mhzps = 1/(abs(inner_peak - outer_peak))
+
+    if "87" in filename:
+      mhzps *= co13_co23_87
+    else:
+      mhzps *= co34_co23_85
+
+    wfile.write(",".join([filename, str(tzero), str(mhzps), str(flipped)])+"\n")
+
+  wfile.close()
+
+  return
+
 #
 #
 # The next set of functions deals with plotting figures
@@ -324,6 +445,65 @@ def PowerFigures87():
     # flip if flipped
 
     if(params_87[filename]['flipped']):
+      mhz_scale = mhz_scale[::-1] * -1.0
+      master_aom = master_aom[::-1]
+      pdh_absorb = pdh_absorb[::-1]
+      pdh_error = pdh_error[::-1]
+
+    fig = pt.figure()
+
+    ax1 = fig.add_subplot(211)
+    ax1.plot(mhz_scale, master_aom, linewidth=2, color='#324259')
+
+    ax1b = ax1.twinx()
+    ax1b.plot(mhz_scale, pdh_absorb, linewidth=2, color='#4646EA')
+
+    ax1.get_xaxis().set_visible(False)
+
+    ax2 = fig.add_subplot(212)
+    ax2.plot(mhz_scale, pdh_error, linewidth=2, color='#ff2b63')
+
+    save_file = dump_dir + OSDirAppend(filename.replace(".csv", ".png"))
+
+    fig.savefig(save_file, bbox_inches='tight')
+
+    # if(raw_input("Enter c to close PROGRAM: ") == "c"):
+    #   break
+
+    pt.close(fig)
+
+  return
+
+def TempFigures():
+
+  # just plot for now until we figure out how to calculate the paramaters more
+  # reliably
+
+  params_temp = params_dict(root_dir + OSDirAppend('tempparams.csv'))
+
+  dump_dir = root_dir + OSDirAppend('figures')
+
+  for filename in os.listdir(source_dir_temps):
+
+    print "Plotting " + filename + "\n"
+
+    file_path = source_dir_temps + OSDirAppend(filename)
+    file_data = np.genfromtxt(file_path, dtype=float, delimiter=',', \
+      names=['t1', 'v1', 't2', 'v2', 't3', 'v3'])
+
+    mhz_scale = (file_data['t1']- params_temp[filename]['tzero']) * \
+      params_temp[filename]['mhzps']
+
+    master_aom = file_data['v1']
+    pdh_absorb = file_data['v2']
+    pdh_error = file_data['v3']
+
+    # flip if flipped
+
+    # BUG:
+    # figures don't flip even if "flipped" is True in CSV
+
+    if(params_temp[filename]['flipped']):
       mhz_scale = mhz_scale[::-1] * -1.0
       master_aom = master_aom[::-1]
       pdh_absorb = pdh_absorb[::-1]
