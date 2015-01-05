@@ -22,7 +22,10 @@
 import os
 import matplotlib.pyplot as pt
 import numpy as np
+from math import ceil
+
 from savitzkygolay import SavitzkyGolay
+
 
 # this is the data root, DROPBOX/ENPH\ 479/rubidium
 # specify power/temp/old data directory later
@@ -38,6 +41,14 @@ tzero = 0.0
 mhzps = 1.0
 tdelta = 1.0
 
+def OSDirAppend(target_dir):
+
+  if 'nt' in os.name:
+    return "\\" + target_dir
+  else:
+    return "/" + target_dir
+
+
 source_dir_85 = data_dir + OSDirAppend('power') + OSDirAppend('85')
 source_dir_87 = data_dir + OSDirAppend('power') + OSDirAppend('87')
 source_dir_temps = data_dir + OSDirAppend('temperature_2')
@@ -45,13 +56,6 @@ source_dir_temps = data_dir + OSDirAppend('temperature_2')
 write_params_85 = root_dir + OSDirAppend('85params.csv')
 write_params_87 = root_dir + OSDirAppend('87params.csv')
 write_params_temps = root_dir + OSDirAppend('tempparams.csv')
-
-def OSDirAppend(target_dir):
-
-  if 'nt' in os.name:
-    return "\\" + target_dir
-  else:
-    return "/" + target_dir
 
 #
 # for plotting, each file needs the following data:
@@ -339,6 +343,14 @@ def FindResTemps():
 #
 #
 
+def round_up(num, divisor):
+  rem = (num%divisor)
+  if rem > 0:
+    return num + 5 - num%divisor
+  else:
+    return num
+
+
 def params_dict(source_file):
 
   import string
@@ -380,9 +392,9 @@ def PowerFigures85():
     mhz_scale = (file_data['t1'] - params_85[filename]['tzero']) * \
       params_85[filename]['mhzps']
 
-    master_aom = file_data['v1']
-    pdh_absorb = file_data['v2']
-    pdh_error = file_data['v3']
+    master_aom = file_data['v1']*1000
+    pdh_absorb = file_data['v2']*1000
+    pdh_error = file_data['v3']*1000
 
     # flip if flipped
 
@@ -395,15 +407,39 @@ def PowerFigures85():
     fig = pt.figure()
 
     ax1 = fig.add_subplot(211)
-    ax1.plot(mhz_scale, master_aom, linewidth=2, color='#324259')
-
     ax1b = ax1.twinx()
-    ax1b.plot(mhz_scale, pdh_absorb, linewidth=2, color='#4646EA')
-
-    ax1.get_xaxis().set_visible(False)
-
     ax2 = fig.add_subplot(212)
+
+    xmin = -200
+    xmax = 600
+
+    ax1.set_xlim([xmin, xmax])
+    ax2.set_xlim([xmin, xmax])
+    ax1b.set_xlim([xmin, xmax])
+
+    ax1.plot(mhz_scale, master_aom, linewidth=2, color='#324259')
+    ax1.set_ylabel('Master (mV, Black)')
+    ax1.set_ylim([-360, -180])
+
+    ax1b.plot(mhz_scale, pdh_absorb, linewidth=2, color='#4646EA')
+    ax1b.set_ylabel('Mod Transfer (mV, Blue)')
+    ymin, ymax = ax1b.get_ylim()
+    diff = round_up(ceil((ymax-ymin)/9.0), 5)
+    if diff < 5.0:
+      diff = 5.0
+    print diff
+    ax1b.set_ylim([ymax-9*diff, ymax])
+    ax1b.set_yticks([ymax-(9-a)*diff for a in reversed(xrange(0, 10))])
+    ax1b.set_yticklabels([ymax-(9-a)*diff for a in reversed(xrange(0, 10))])
+
     ax2.plot(mhz_scale, pdh_error, linewidth=2, color='#ff2b63')
+    ax2.set_ylabel('PDH Error Signal (mV)')
+    ax2.set_xlabel('Frequency from F\'=3,4 Crossover (MHz)')
+
+    ax1.grid(True, which='both')
+    ax1.set_xticklabels([])
+    ax2.grid(True, which='both')
+
 
     save_file = dump_dir + OSDirAppend(filename.replace(".csv", ".png"))
 
@@ -438,9 +474,9 @@ def PowerFigures87():
     mhz_scale = (file_data['t1'] - params_87[fzero87]['tzero']) * \
       params_87[fzero87]['mhzps']
 
-    master_aom = file_data['v1']
-    pdh_absorb = file_data['v2']
-    pdh_error = file_data['v3']
+    master_aom = file_data['v1']*1000
+    pdh_absorb = file_data['v2']*1000
+    pdh_error = file_data['v3']*1000
 
     # flip if flipped
 
@@ -453,15 +489,38 @@ def PowerFigures87():
     fig = pt.figure()
 
     ax1 = fig.add_subplot(211)
-    ax1.plot(mhz_scale, master_aom, linewidth=2, color='#324259')
-
     ax1b = ax1.twinx()
-    ax1b.plot(mhz_scale, pdh_absorb, linewidth=2, color='#4646EA')
-
-    ax1.get_xaxis().set_visible(False)
-
     ax2 = fig.add_subplot(212)
+
+    xmin = -200
+    xmax = 500
+
+    ax1.set_xlim([xmin, xmax])
+    ax2.set_xlim([xmin, xmax])
+    ax1b.set_xlim([xmin, xmax])
+
+    ax1.plot(mhz_scale, master_aom, linewidth=2, color='#324259')
+    ax1.set_ylabel('Master (mV, Black)')
+    ax1.set_ylim([-360, -180])
+
+    ax1b.plot(mhz_scale, pdh_absorb, linewidth=2, color='#4646EA')
+    ax1b.set_ylabel('Mod Transfer (mV, Blue)')
+    ymin, ymax = ax1b.get_ylim()
+    diff = round_up(ceil((ymax-ymin)/9.0), 5)
+    if diff < 5.0:
+      diff = 5.0
+    print diff
+    ax1b.set_ylim([ymax-9*diff, ymax])
+    ax1b.set_yticks([ymax-(9-a)*diff for a in reversed(xrange(0, 10))])
+    ax1b.set_yticklabels([ymax-(9-a)*diff for a in reversed(xrange(0, 10))])
+
     ax2.plot(mhz_scale, pdh_error, linewidth=2, color='#ff2b63')
+    ax2.set_ylabel('PDH Error Signal (mV)')
+    ax2.set_xlabel('Frequency from F\'=2,3 Crossover (MHz)')
+
+    ax1.grid(True, which='both')
+    ax1.set_xticklabels([])
+    ax2.grid(True, which='both')
 
     save_file = dump_dir + OSDirAppend(filename.replace(".csv", ".png"))
 
@@ -494,9 +553,9 @@ def TempFigures():
     mhz_scale = (file_data['t1']- params_temp[filename]['tzero']) * \
       params_temp[filename]['mhzps']
 
-    master_aom = file_data['v1']
-    pdh_absorb = file_data['v2']
-    pdh_error = file_data['v3']
+    master_aom = file_data['v1']*1000
+    pdh_absorb = file_data['v2']*1000
+    pdh_error = file_data['v3']*1000
 
     # flip if flipped
 
@@ -513,14 +572,18 @@ def TempFigures():
 
     ax1 = fig.add_subplot(211)
     ax1.plot(mhz_scale, master_aom, linewidth=2, color='#324259')
+    ax1.set_ylabel('Master (mV, Black)')
 
     ax1b = ax1.twinx()
     ax1b.plot(mhz_scale, pdh_absorb, linewidth=2, color='#4646EA')
+    ax1b.set_ylabel('Mod Transfer (mV, Blue)')
 
     ax1.get_xaxis().set_visible(False)
 
     ax2 = fig.add_subplot(212)
     ax2.plot(mhz_scale, pdh_error, linewidth=2, color='#ff2b63')
+    ax2.set_ylabel('PDH Error Signal (mV)')
+    ax2.set_xlabel('Frequency (MHz)')
 
     save_file = dump_dir + OSDirAppend(filename.replace(".csv", ".png"))
 
