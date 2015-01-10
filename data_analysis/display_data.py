@@ -49,6 +49,13 @@ tzero = 0.0
 mhzps = 1.0
 tdelta = 1.0
 
+# this is simply the stdev of the mhzps data in the 85/87params.csv
+# files, could write a routine but just did it in spreadsheet
+# for now... (these files wont change going forward)
+
+error_85 = 2581.2403904854
+error_87 = 3298.0375922976
+
 def OSDirAppend(target_dir):
 
   if 'nt' in os.name:
@@ -110,8 +117,8 @@ def FindRes85Power():
     v_fit = file_data['v1']
 
     # Piecewise fit using
-    #     11 points per window (must be odd)
-    #     9th order polynomial (must be > 1, < window size)
+    #     61 points per window (must be odd)
+    #     3rd order polynomial (must be > 1, < window size)
 
     num_passes = 50
 
@@ -138,10 +145,10 @@ def FindRes85Power():
     tpeaks = [t_fit[a] for a in peaks]
 
     if flipped:
-      tzero = tpeaks[-1]
+      tzero = tpeaks[-2]
       tdelta = tpeaks[-1] - tpeaks[-2]
     else:
-      tzero = tpeaks[0]
+      tzero = tpeaks[1]
       tdelta = tpeaks[1] - tpeaks[0]
 
     mhzps = co34_co23_85 / abs(tdelta)
@@ -165,6 +172,8 @@ def FindRes85Power():
 def FindRes87Power():
 
   wfile = open(write_params_87, 'wb')
+
+  pt.ion()
 
   for filename in os.listdir(source_dir_87):
 
@@ -214,13 +223,35 @@ def FindRes87Power():
 
     mhzps = co13_co23_87 / abs(tdelta)
 
-    wfile.write(",".join([filename, str(tzero), str(mhzps), str(flipped)])+"\n")
-
     # UNCOMMENT FOLLOWING TO VISUALLY INSPECT
 
     pt.plot(t_fit, v_fit, t_fit, v_sgf, linewidth=3)
     pt.vlines(tpeaks, min(v_fit), max(v_fit))
     pt.show()
+
+    prompt = raw_input("good? (y/n/c): ")
+
+    if (prompt != "y" and prompt != "c"):
+
+      flipped = raw_input("Flipped?: ")
+
+      inner_peak = float(raw_input("Inner Peak (s): "))
+
+      outer_peak = float(raw_input("Outer Peak (s): "))
+
+      tzero = inner_peak
+      mhzps = 1/(abs(inner_peak - outer_peak))
+
+      mhzps *= co13_co23_87
+
+    if prompt == "c":
+      break
+
+    pt.clf()
+
+    wfile.write(",".join([filename, str(tzero), str(mhzps), str(flipped)])+"\n")
+
+  pt.close()
 
   wfile.close()
 
@@ -230,6 +261,8 @@ def FindRes87Power():
 def FindResTemps():
 
   wfile = open(write_params_temps, 'wb')
+
+  pt.ion()
 
   for filename in os.listdir(source_dir_temps):
 
@@ -342,6 +375,10 @@ def FindResTemps():
 
     wfile.write(",".join([filename, str(tzero), str(mhzps), str(flipped)])+"\n")
 
+    pt.clf()
+
+  pt.close()
+
   wfile.close()
 
   return
@@ -362,6 +399,7 @@ def round_up(num, divisor):
 def params_dict(source_file):
 
   import string
+  import ast
 
   pdict = {}
   read_file = open(source_file, "rb")
@@ -378,7 +416,7 @@ def params_dict(source_file):
 
     pdict[parameters[0]]["mhzps"] = float(parameters[2])
 
-    pdict[parameters[0]]["flipped"] = bool(parameters[3])
+    pdict[parameters[0]]["flipped"] = ast.literal_eval(parameters[3])
 
   return pdict
 
@@ -500,7 +538,6 @@ def PowerFigures85():
     ax1.set_xticklabels([])
     ax2.grid(True, which='both')
 
-
     save_file = dump_dir + OSDirAppend(filename.replace(".csv", ".png"))
 
     fig.savefig(save_file, bbox_inches='tight')
@@ -517,6 +554,7 @@ def PowerFigures87():
   dump_dir = root_dir + OSDirAppend('figures')
 
   params_87 = params_dict(root_dir + OSDirAppend('87params.csv'))
+  slope_87 = slope_dict(root_dir + OSDirAppend('lockparams87.csv'))
 
   # 87 DATA IS NOT VERY EASY TO EXTRACT PEAKS FROM, WE JUST USE THE DATA
   # FROM THE FIRST EXTRACTION FOR ALL FILES AS THEY ARE SIMILAR ENOUGH
@@ -531,12 +569,22 @@ def PowerFigures87():
     file_data = np.genfromtxt(file_path, dtype=float, delimiter=',', \
       names=['t1', 'v1', 't2', 'v2', 't3', 'v3'])
 
-    mhz_scale = (file_data['t1'] - params_87[fzero87]['tzero']) * \
-      params_87[fzero87]['mhzps']
+    mhz_scale = (file_data['t1'] - params_87[filename]['tzero']) * \
+      params_87[filename]['mhzps']
 
     master_aom = file_data['v1']*1000
     pdh_absorb = file_data['v2']*1000
     pdh_error = file_data['v3']*1000
+
+    # lock point slope stuff
+
+    lock_slope = slope_87[filename]['offset'] + \
+      file_data['t1'] * slope_87[filename]['mvps']
+
+    mvpmhz = abs(slope_87[filename]['mvps']/params_87[filename]['mhzps'])
+    dmvpmhz = slope_87[filename]['dmvps']/params_87[filename]['mhzps']
+
+    nmvpp = slope_87[filename]['nmvpp']
 
     # flip if flipped
 
@@ -545,6 +593,7 @@ def PowerFigures87():
       master_aom = master_aom[::-1]
       pdh_absorb = pdh_absorb[::-1]
       pdh_error = pdh_error[::-1]
+      lock_slope = lock_slope[::-1]
 
     fig = pt.figure()
 
@@ -565,6 +614,9 @@ def PowerFigures87():
 
     ax1b.plot(mhz_scale, pdh_absorb, linewidth=2, color='#90b2fb')
     ax1b.set_ylabel('Mod Transfer (mV, Blue)')
+
+    # set pdh abs spectrum to same scale
+
     ymin, ymax = ax1b.get_ylim()
     diff = round_up(ceil((ymax-ymin)/9.0), 5)
     if diff < 5.0:
@@ -577,6 +629,17 @@ def PowerFigures87():
     ax2.plot(mhz_scale, pdh_error, linewidth=2, color='#ff2b63')
     ax2.set_ylabel('PDH Error Signal (mV)')
     ax2.set_xlabel('Frequency from F\'=2,3 Crossover (MHz)')
+
+    ax2lims = ax2.get_ylim()
+
+    ax2.plot(mhz_scale, lock_slope, linewidth=2, color='black')
+
+    ax2.set_ylim(ax2lims)
+
+    ax2.annotate("Slope (mV/MHz): %.4f +/- %.4f" % (mvpmhz, dmvpmhz),\
+    xy=(0.05, 0.9), xycoords='axes fraction', fontsize=10)
+    ax2.annotate("Noise @ Lock (mVpp): %.4f" % (nmvpp),\
+    xy=(0.05, 0.8), xycoords='axes fraction', fontsize=10)
 
     ax1.grid(True, which='both')
     ax1.set_xticklabels([])
@@ -595,16 +658,19 @@ def PowerFigures87():
 
 def TempFigures():
 
+  ignorelist = ['87_100C.csv', '85_80C.csv', '85_102C.csv', '87_80C.csv']
+
   # just plot for now until we figure out how to calculate the paramaters more
   # reliably
 
   params_temp = params_dict(root_dir + OSDirAppend('tempparams.csv'))
+  slope_temp = slope_dict(root_dir + OSDirAppend('lockparamstemps.csv'))
 
   dump_dir = root_dir + OSDirAppend('figures')
 
   for filename in os.listdir(source_dir_temps):
 
-    print "Plotting " + filename + "\n"
+    print "Plotting " + filename
 
     file_path = source_dir_temps + OSDirAppend(filename)
     file_data = np.genfromtxt(file_path, dtype=float, delimiter=',', \
@@ -617,8 +683,17 @@ def TempFigures():
     pdh_absorb = file_data['v2']*1000
     pdh_error = file_data['v3']*1000
 
-    # flip if flipped
+    # lock point slope stuff
 
+    lock_slope = slope_temp[filename]['offset'] + \
+      file_data['t1'] * slope_temp[filename]['mvps']
+
+    mvpmhz = abs(slope_temp[filename]['mvps']/params_temp[filename]['mhzps'])
+    dmvpmhz = slope_temp[filename]['dmvps']/params_temp[filename]['mhzps']
+
+    nmvpp = slope_temp[filename]['nmvpp']
+
+    # flip if flipped
     # BUG:
     # figures don't flip even if "flipped" is True in CSV
 
@@ -627,23 +702,65 @@ def TempFigures():
       master_aom = master_aom[::-1]
       pdh_absorb = pdh_absorb[::-1]
       pdh_error = pdh_error[::-1]
+      lock_slope = lock_slope[::-1]
 
     fig = pt.figure()
 
     ax1 = fig.add_subplot(211)
+    ax1b = ax1.twinx()
+    ax2 = fig.add_subplot(212)
+
+    xmin = -400
+    xmax = 800
+
+    ax1.set_xlim([xmin, xmax])
+    ax2.set_xlim([xmin, xmax])
+    ax1b.set_xlim([xmin, xmax])
+
     ax1.plot(mhz_scale, master_aom, linewidth=2, color='#324259')
     ax1.set_ylabel('Master (mV, Black)')
 
-    ax1b = ax1.twinx()
     ax1b.plot(mhz_scale, pdh_absorb, linewidth=2, color='#90b2fb')
     ax1b.set_ylabel('Mod Transfer (mV, Blue)')
 
-    ax1.get_xaxis().set_visible(False)
+    # set pdh abs spectrum to same scale
 
-    ax2 = fig.add_subplot(212)
+    ymin, ymax = ax1b.get_ylim()
+    ndivs = 9
+    if filename in ["85_40C.csv", "87_80C.csv"]:
+      ndivs = 8
+    diff = round_up(ceil((ymax-ymin)/float(ndivs)), 5)
+    if diff < 5.0:
+      diff = 5.0
+    print diff
+    ax1b.set_ylim([ymax-ndivs*diff, ymax])
+    ax1b.set_yticks([ymax-(ndivs-a)*diff for a in reversed(xrange(0, 1+ndivs))])
+    ax1b.set_yticklabels([ymax-(ndivs-a)*diff for a in reversed(xrange(0, 1+ndivs))])
+
     ax2.plot(mhz_scale, pdh_error, linewidth=2, color='#ff2b63')
     ax2.set_ylabel('PDH Error Signal (mV)')
-    ax2.set_xlabel('Frequency (MHz)')
+
+    if '87' in filename:
+      ax2.set_xlabel('Frequency from F\'=2,3 Crossover (MHz)')
+    else:
+      ax2.set_xlabel('Frequency from F\'=3,4 Crossover (MHz)')
+
+    if filename not in ignorelist:
+
+      ax2lims = ax2.get_ylim()
+
+      ax2.plot(mhz_scale, lock_slope, linewidth=2, color='black')
+
+      ax2.set_ylim(ax2lims)
+
+      ax2.annotate("Slope (mV/MHz): %.4f +/- %.4f" % (mvpmhz, dmvpmhz),\
+      xy=(0.05, 0.9), xycoords='axes fraction', fontsize=10)
+      ax2.annotate("Noise @ Lock (mVpp): %.4f" % (nmvpp),\
+      xy=(0.05, 0.8), xycoords='axes fraction', fontsize=10)
+
+    ax1.grid(True, which='both')
+    ax1.set_xticklabels([])
+    ax2.grid(True, which='both')
 
     save_file = dump_dir + OSDirAppend(filename.replace(".csv", ".png"))
 
@@ -801,6 +918,316 @@ def LockPointSlopeNoise():
     return
 
 
+def PumpSort(dataset):
+
+  sset = dataset
+
+  t0 = 0
+  t1 = 0
+  t2 = 0
+  t3 = 0
+  t4 = 0
+  t5 = 0
+  t6 = 0
+
+  for i in xrange(0, len(sset[0])):
+    for j in xrange(0, len(sset[0])-i):
+
+      try:
+        if(sset[3][i] > sset[3][j]):
+          t0 = sset[0][i]
+          t1 = sset[1][i]
+          t2 = sset[2][i]
+          t3 = sset[3][i]
+          t4 = sset[4][i]
+          t5 = sset[5][i]
+          t6 = sset[6][i]
+
+          sset[0][i]=sset[0][j]
+          sset[1][i]=sset[1][j]
+          sset[2][i]=sset[2][j]
+          sset[3][i]=sset[3][j]
+          sset[4][i]=sset[4][j]
+          sset[5][i]=sset[5][j]
+          sset[6][i]=sset[6][j]
+
+          sset[0][j] = t0
+          sset[1][j] = t1
+          sset[2][j] = t2
+          sset[3][j] = t3
+          sset[4][j] = t4
+          sset[5][j] = t5
+          sset[6][j] = t6
+      except IndexError:
+        print i,j
+        print sset
+        raw_input("INDEXERROR...")
+
+  return sset
+
+
+def PeakDrift():
+
+  dump_dir = root_dir + OSDirAppend('figures')
+
+  params_85 = params_dict(root_dir + OSDirAppend('85params.csv'))
+  params_87 = params_dict(root_dir + OSDirAppend('87params.csv'))
+
+  peak_sets_85 = {}
+  peak_sets_87 = {}
+
+  ###### 85 ######
+
+  for filename in os.listdir(source_dir_85):
+
+    print "Processing " + filename
+
+    splits = filename.replace(".csv","").split("_")
+    probe = splits[1]
+    pump = float(splits[2].replace("mW",""))
+
+    # 2 = F'=4
+    # 1 = F'=34 crossover
+    # 0 = F'=24 crossover
+
+    if probe not in peak_sets_85.keys():
+      peak_sets_85[probe]=[[],[],[],[],[],[],[]]
+
+    file_path = source_dir_85 + OSDirAppend(filename)
+    file_data = np.genfromtxt(file_path, dtype=float, delimiter=',', \
+      names=['t1', 'v1', 't2', 'v2', 't3', 'v3'])
+
+    mhzps = params_85[filename]['mhzps']
+
+    mhz_scale = (file_data['t1'] - params_85[filename]['tzero']) * \
+      mhzps
+
+    pdh_absorb = file_data['v2']*1000
+
+    if(params_85[filename]['flipped']):
+      mhz_scale = mhz_scale[::-1] * -1.0
+      pdh_absorb = pdh_absorb[::-1]
+
+    num_passes = 50
+
+    v_sgf = np.copy(pdh_absorb)
+
+    for i in xrange(0, num_passes):
+      v_sgf = SavitzkyGolay(v_sgf, 71, 3)
+
+    vn = len(pdh_absorb)
+    window = int(vn*0.43)
+
+    v_sgf2 = v_sgf[window:vn-window]
+
+    # NOTE:
+    #   noticed that sometimes there is a peak near the center, but
+    #   it is inconsistent in appearence so only the last two peaks are used
+
+    peaks = naive_peak_find(v_sgf2, window)
+    mpeaks = [mhz_scale[a] for a in peaks]
+    tpeaks = [file_data['t1'][a] for a in peaks]
+
+    peak_sets_85[probe][2].append(mpeaks[2])
+    peak_sets_85[probe][1].append(mpeaks[1])
+    peak_sets_85[probe][0].append(mpeaks[0])
+
+    peak_sets_85[probe][3].append(pump)
+
+    peak_sets_85[probe][4].append(((mhzps*1e-6)**2 +\
+      (tpeaks[0]*error_85)**2)**0.5)
+    peak_sets_85[probe][5].append(((mhzps*1e-6)**2 +\
+      (tpeaks[1]*error_85)**2)**0.5)
+    peak_sets_85[probe][6].append(((mhzps*1e-6)**2 +\
+      (tpeaks[2]*error_85)**2)**0.5)
+
+  ##### 87 ######
+
+  for filename in os.listdir(source_dir_87):
+
+    print "Processing " + filename
+
+    splits = filename.replace(".csv","").split("_")
+    probe = splits[1]
+    pump = float(splits[2].replace("mW",""))
+
+    # 2 = F'=3
+    # 1 = F'=23 crossover
+    # 0 = F'=13 crossover
+
+    if probe not in peak_sets_87.keys():
+      peak_sets_87[probe]=[[],[],[],[],[],[],[]]
+
+    file_path = source_dir_87 + OSDirAppend(filename)
+    file_data = np.genfromtxt(file_path, dtype=float, delimiter=',', \
+      names=['t1', 'v1', 't2', 'v2', 't3', 'v3'])
+
+    mhzps = params_87[filename]['mhzps']
+
+    mhz_scale = (file_data['t1'] - params_87[filename]['tzero']) * \
+      mhzps
+
+    pdh_absorb = file_data['v2']*1000
+
+    if(params_87[filename]['flipped']):
+      mhz_scale = mhz_scale[::-1] * -1.0
+      pdh_absorb = pdh_absorb[::-1]
+
+    num_passes = 50
+
+    v_sgf = np.copy(pdh_absorb)
+
+    for i in xrange(0, num_passes):
+      v_sgf = SavitzkyGolay(v_sgf, 81, 3)
+
+    vn = len(pdh_absorb)
+    window = int(vn*0.27)
+
+    v_sgf2 = v_sgf[window:vn-window]
+
+    # NOTE:
+    #   noticed that sometimes there is a peak near the center, but
+    #   it is inconsistent in appearence so only the last two peaks are used
+
+    peaks = naive_peak_find(v_sgf2, window)
+    mpeaks = [mhz_scale[a] for a in peaks]
+
+    if filename == "87_0.5mW_4.0mW.csv":
+      peak_sets_87[probe][2].append(mpeaks[3])
+      peak_sets_87[probe][1].append(mpeaks[2])
+      peak_sets_87[probe][0].append(mpeaks[1])
+
+      peak_sets_87[probe][4].append(((mhzps*1e-6)**2 +\
+        (tpeaks[1]*error_87)**2)**0.5)
+      peak_sets_87[probe][5].append(((mhzps*1e-6)**2 +\
+        (tpeaks[2]*error_87)**2)**0.5)
+      peak_sets_87[probe][6].append(((mhzps*1e-6)**2 +\
+        (tpeaks[3]*error_87)**2)**0.5)
+
+    elif filename == "87_2.0mW_1.0mW.csv":
+      peak_sets_87[probe][2].append(mpeaks[3])
+      peak_sets_87[probe][1].append(mpeaks[1])
+      peak_sets_87[probe][0].append(mpeaks[0])
+
+      peak_sets_87[probe][4].append(((mhzps*1e-6)**2 +\
+        (tpeaks[0]*error_87)**2)**0.5)
+      peak_sets_87[probe][5].append(((mhzps*1e-6)**2 +\
+        (tpeaks[1]*error_87)**2)**0.5)
+      peak_sets_87[probe][6].append(((mhzps*1e-6)**2 +\
+        (tpeaks[3]*error_87)**2)**0.5)
+    else:
+      peak_sets_87[probe][2].append(mpeaks[2])
+      peak_sets_87[probe][1].append(mpeaks[1])
+      peak_sets_87[probe][0].append(mpeaks[0])
+
+      peak_sets_87[probe][4].append(((mhzps*1e-6)**2 +\
+        (tpeaks[0]*error_87)**2)**0.5)
+      peak_sets_87[probe][5].append(((mhzps*1e-6)**2 +\
+        (tpeaks[1]*error_87)**2)**0.5)
+      peak_sets_87[probe][6].append(((mhzps*1e-6)**2 +\
+        (tpeaks[2]*error_87)**2)**0.5)
+
+    peak_sets_87[probe][3].append(pump)
+
+  # EXIT LOOP
+
+  fig = pt.figure()
+
+  ### PLOT 85 DATA
+
+  ax1 = fig.add_subplot(311)
+  ax2 = fig.add_subplot(312)
+  ax3 = fig.add_subplot(313)
+
+  cycle=['r', 'g', 'b', 'orange','purple','cyan']
+
+  for i, probe in enumerate(peak_sets_85.keys()):
+
+    item = peak_sets_85[probe]
+
+    item = PumpSort(item)
+
+    ssize = 30
+
+    ax1.scatter(item[3], item[0], s=ssize, color=cycle[i])
+    ax1.errorbar(item[3], item[0], yerr=item[4], fmt='-o',color=cycle[i])
+    ax1.plot(item[3], item[0], color=cycle[i], label=probe + " Probe")
+    ax2.scatter(item[3], item[1], s=ssize, color=cycle[i])
+    ax2.errorbar(item[3], item[1], yerr=item[5], fmt='-o',color=cycle[i])
+    ax2.plot(item[3], item[1], color=cycle[i])
+    ax3.scatter(item[3], item[2], s=ssize, color=cycle[i])
+    ax3.errorbar(item[3], item[2], yerr=item[6], fmt='-o',color=cycle[i])
+    ax3.plot(item[3], item[2], color=cycle[i])
+
+  ax1.grid(True, which='both')
+  ax1.set_xticklabels([])
+  ax2.grid(True, which='both')
+  ax2.set_xticklabels([])
+  ax3.grid(True, which='both')
+  ax3.set_xlabel("Total Pump Power (mW)")
+
+  ax1.set_ylabel("F'=4 (MHz)")
+  ax2.set_ylabel("F'=3,4 Crossover (MHz)", fontsize=9)
+  ax3.set_ylabel("F'=2,4 Crossover (MHz)", fontsize=9)
+
+  ax1.legend(loc='upper left', bbox_to_anchor=(0.,1.5), prop={'size':13.7},
+          ncol=3, fancybox=True, shadow=True, borderaxespad=0.)
+
+  save_file = dump_dir + OSDirAppend("85_peak_drift.png")
+
+  fig.savefig(save_file, bbox_inches='tight')
+
+  fig.clf()
+
+  ### PLOT 87 DATA
+
+  ax1 = fig.add_subplot(311)
+  ax2 = fig.add_subplot(312)
+  ax3 = fig.add_subplot(313)
+
+  cycle=['r', 'g', 'b', 'orange','purple','cyan']
+
+  for i, probe in enumerate(peak_sets_87.keys()):
+
+    item = peak_sets_87[probe]
+
+    item = PumpSort(item)
+
+    ssize = 30
+
+    ax1.scatter(item[3], item[0], s=ssize, color=cycle[i])
+    ax1.errorbar(item[3], item[0], yerr=item[4], fmt='-o',color=cycle[i])
+    ax1.plot(item[3], item[0], color=cycle[i], label=probe + " Probe")
+    ax2.scatter(item[3], item[1], s=ssize, color=cycle[i])
+    ax2.errorbar(item[3], item[1], yerr=item[5], fmt='-o',color=cycle[i])
+    ax2.plot(item[3], item[1], color=cycle[i])
+    ax3.scatter(item[3], item[2], s=ssize, color=cycle[i])
+    ax3.errorbar(item[3], item[2], yerr=item[6], fmt='-o',color=cycle[i])
+    ax3.plot(item[3], item[2], color=cycle[i])
+
+  ax1.grid(True, which='both')
+  ax1.set_xticklabels([])
+  ax2.grid(True, which='both')
+  ax2.set_xticklabels([])
+  ax3.grid(True, which='both')
+  ax3.set_xlabel("Total Pump Power (mW)")
+
+  ax1.set_ylabel("F'=3 (MHz)")
+  ax2.set_ylabel("F'=2,3 Crossover (MHz)", fontsize=9)
+  ax3.set_ylabel("F'=1,3 Crossover (MHz)", fontsize=9)
+
+  ax1.legend(loc='upper left', bbox_to_anchor=(0.,1.5), prop={'size':13.7},
+          ncol=3, fancybox=True, shadow=True, borderaxespad=0.)
+
+  save_file = dump_dir + OSDirAppend("87_peak_drift.png")
+
+  fig.savefig(save_file, bbox_inches='tight')
+
+  fig.clf()
+
+  pt.close(fig)
+
+  return
 #
 # In Shell run:
 #
