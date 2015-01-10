@@ -773,12 +773,7 @@ def TempFigures():
 
   return
 
-
-def LockPointSlopeNoise():
-  'fairly interactive. Will store slope data in mV/s, rely on peak finder \
-  to convert to mV/MHz. Will store noise value in mV'
-
-  def LineFit(axislimits, time, error, givenguess=[1.0, 1.0]):
+def LineFit(axislimits, time, error, givenguess=[1.0, 1.0]):
 
     def func(x, a, b):
       return a*x + b
@@ -823,6 +818,10 @@ def LockPointSlopeNoise():
     fitline = offset + mvps * fittime
 
     return fittime, fitline, mvps, dmvps, offset, mvppn, index1, index2, fiterror
+
+def LockPointSlopeNoise():
+  'fairly interactive. Will store slope data in mV/s, rely on peak finder \
+  to convert to mV/MHz. Will store noise value in mV'
 
   wfile = open(write_params_lock, 'wb')
 
@@ -1228,6 +1227,204 @@ def PeakDrift():
   pt.close(fig)
 
   return
+
+def AOMData():
+
+  dump_dir = root_dir + OSDirAppend('figures')
+  data_dir2 = "E:\\Documents\\Dropbox\\ENPH 479\\"
+
+  file85 = data_dir2 + OSDirAppend('AOM_85')
+  file87 = data_dir2 + OSDirAppend('AOM_87')
+
+  pt.ion()
+
+  fig = pt.figure()
+
+  for filename in [file85, file87]:
+
+    file_data = np.genfromtxt(filename, dtype=float, delimiter=',', \
+      names=['t1', 'v1', 't2', 'v2', 't3', 'v3'])
+
+    t = file_data['t1']
+    ramp = file_data['v1']*1000
+    absorb = file_data['v2']*1000
+    error = file_data['v3']*1000
+
+    # # Piecewise fit using
+    # #     11 points per window (must be odd)
+    # #     9th order polynomial (must be > 1, < window size)
+
+    num_passes = 30
+
+    v_sgf = np.copy(absorb)
+
+    for i in xrange(0, num_passes):
+      v_sgf = SavitzkyGolay(v_sgf, 71, 3)
+
+    vn = len(absorb)
+    window = int(vn*0.35)
+
+    v_sgf2 = v_sgf[window:vn-window]
+
+    peaks = naive_peak_find(v_sgf2, window)[-2:]#
+
+    flipped = (peaks[-1] > int(vn/3.))
+
+    tpeaks = [t[a] for a in peaks]
+
+    if flipped:
+      tzero = tpeaks[-2]
+      tdelta = tpeaks[-1] - tpeaks[-2]
+    else:
+      tzero = tpeaks[1]
+      tdelta = tpeaks[1] - tpeaks[0]
+
+    mhzps = 1 / abs(tdelta)
+
+    ax1 = fig.add_subplot(111)
+    ax1.plot(t, absorb, t, v_sgf, linewidth=3)
+
+    ax1.vlines(tpeaks, min(absorb), max(absorb))
+    fig.show()
+
+    prompt = raw_input("OK? (y/n/c): ")
+
+    if (prompt != "y" and prompt != "c"):
+
+      import ast
+
+      flipped = ast.literal_eval(raw_input("Flipped?: "))
+
+      inner_peak = float(raw_input("Inner Peak (s): "))
+
+      outer_peak = float(raw_input("Outer Peak (s): "))
+
+      tzero = inner_peak
+
+      mhzps = 1/(abs(inner_peak - outer_peak))
+
+    if prompt == "c":
+      break
+
+    if "87" in filename:
+      mhzps *= co13_co23_87
+    else:
+      mhzps *= co34_co23_85
+
+    fig.clf()
+
+    # FIT FOR EQUATION FOR LOCK POINT PARAMETERS
+
+    ax1 = fig.add_subplot(111)
+    ax1.plot(t, absorb, linewidth=2, color='#324259')
+    ax1.plot(t, ramp, linewidth=2, color='red')
+    ax1.set_ylabel('Mod Transfer (mV, Blue)')
+
+    ax1b = ax1.twinx()
+    ax1b.plot(t, error, linewidth=2, color='#ff2b63')
+    ax1b.set_ylabel('PDH Error Signal (mV)')
+
+    ax1.set_xlabel('Time(s)')
+
+    fig.show()
+
+    raw_input("Reposition Error Signal Around Lock Point,"+ \
+      "then press any key to continue...")
+
+    ax1x = ax1.get_xlim()
+
+    # FIT for LOCK SLOPE
+
+    fit_time, fit_line, mvps, dmvps, offset, mvppn, in1, in2, fiterror = \
+      LineFit(ax1x, t, error)
+
+    ax1b.plot(fit_time, fit_line, linewidth=2, color='black')
+    ax1b.plot(fit_time, fiterror, linewidth=2, color='green')
+
+    print "MVPS, MVPPN: ", mvps, dmvps, mvppn
+
+    prompt = raw_input("good? (y/n/c): ")
+
+    fig.clf()
+
+    # final plotting
+
+    mhz_scale = (file_data['t1'] - tzero) * mhzps
+
+    # lock point slope stuff
+
+    lock_slope = offset +  file_data['t1'] * mvps
+
+    mvpmhz = abs(mvps/mhzps)
+    dmvpmhz = dmvps/mhzps
+
+    # flip if flipped
+
+    if(flipped):
+      mhz_scale = mhz_scale[::-1] * -1.0
+      ramp = ramp[::-1]
+      absorb = absorb[::-1]
+      error = error[::-1]
+      lock_slope = lock_slope[::-1]
+
+    ax1 = fig.add_subplot(211)
+
+    ax2 = fig.add_subplot(212)
+
+    xmin = -300
+    xmax = 400
+
+    ax1.set_xlim([xmin, xmax])
+    ax2.set_xlim([xmin, xmax])
+    ax1b.set_xlim([xmin, xmax])
+
+    ax1.plot(mhz_scale, absorb, linewidth=2, color='#324259')
+    ax1.set_ylabel('Master Absorb (mV)')
+
+    # ymin, ymax = ax1b.get_ylim()
+    # diff = round_up(ceil((ymax-ymin)/9.0), 5)
+    # if diff < 5.0:
+    #   diff = 5.0
+    # print diff
+    # ax1b.set_ylim([ymax-9*diff, ymax])
+    # ax1b.set_yticks([ymax-(9-a)*diff for a in reversed(xrange(0, 10))])
+    # ax1b.set_yticklabels([ymax-(9-a)*diff for a in reversed(xrange(0, 10))])
+
+    ax2.plot(mhz_scale, error, linewidth=2, color='#ff2b63')
+    ax2.set_ylabel('AOM Error Signal (mV)')
+
+    if '87' in filename:
+      ax2.set_xlabel('Frequency from F\'=2,3 Crossover (MHz)')
+    else:
+      ax2.set_xlabel('Frequency from F\'=3,4 Crossover (MHz)')
+
+    ax2lims = ax2.get_ylim()
+
+    ax2.plot(mhz_scale, lock_slope, linewidth=2, color='black')
+
+    ax2.set_ylim(ax2lims)
+
+    ax2.annotate("Slope (mV/MHz): %.4f +/- %.4f" % (mvpmhz, dmvpmhz),\
+    xy=(0.55, 0.9), xycoords='axes fraction', fontsize=10)
+    ax2.annotate("Noise @ Lock (mVpp): %.4f" % (mvppn),\
+    xy=(0.55, 0.8), xycoords='axes fraction', fontsize=10)
+
+    ax1.grid(True, which='both')
+    ax1.set_xticklabels([])
+    ax2.grid(True, which='both')
+
+    save_file = ""
+
+    if '87' in filename:
+      save_file = dump_dir + OSDirAppend("AOM_87.png")
+    else:
+      save_file = dump_dir + OSDirAppend("AOM_85.png")
+
+    fig.savefig(save_file, bbox_inches='tight')
+
+  pt.close(fig)
+
+
 #
 # In Shell run:
 #
