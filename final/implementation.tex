@@ -3,7 +3,102 @@
 
 EOM driver onboard phase shift is bad, (see figure) only allowing for shifts between $\lambda \in [0.23, 0.41]$. However, for reasons unknown, this onboard system simulatneously introduced some low-frequency noise which propagated through to the error signal. The frequency was left at 19.8 MHz with no onboard phase delay as it produced the strongest and cleanest error signal. Phase delay was instead accomplished using variable length 50$\Omega$ BNC cables, with a 1.5m cable producing the strongest signal.
 
-
-%%%%%%%%%%% RAMPING FROM MHZPS
-
 Using the fitted MHz/s parameters, we can see that for $^{87}$Rb and $^{85}$Rb, the ramping was done at approximately $115 \pm 4 Mhz/s$ and $140 \pm 3 Mhz/s$, respectively.
+
+\subsection{Overview}
+
+\subsection{Laser Slave Seeding}
+
+The laser setup begins with the master laser, a rubidium laser [details?].  This laser feeds its light into a ``slave'' laser, which stimulates emission at the same frequency by the second laser.
+
+That slave then feeds into *another* slave, which we have direct access to.  Particularly, there are a series of mirrors which direct the light from the second slave into the third slave.  Setting up this slave requires a particular algorithm (must be done at the beginning of each day):
+
+ 1. Lock the master laser and first slave.  This is somewhat involved, but beyond the scope of this document.
+ 2. Set the current on this slave to a low value, typically 32.0mA is used.
+ 3. Place a power meter at the output of this slave laser.
+ 4. Adjust the two mirrors feeding master light into the slave, until the power output from the slave laser is maximised.
+ 5. Unlock the master laser.  Set it to sweep frequency across a wide enough range that the Rb85 and Rb87 absorbtion features [which ones, specifically?] are visible on the master's diagnostic scope.
+ 6. Make sure that light from the slave laser is fed back to the diagnostic table (via fibre coupling).  Check with the power meter that >50\% of the slave light is entering the fibre (there are many reasons why the light might not make it this far.
+ 7. Set the current into the slave to a high value (110.0mA), and gradually decrease it.  Observe that there is a "stable" frequency window in which the slave can operate, and that adjusting the current moves this window.  Reduce the current of the slave until the feature of interest is in the centre of the stability window.  The window should be wide enough to contain both the Rb85 and Rb87 transitions.
+ 8. The laser can now be used for experiments.
+
+\subsection{Laser sweeping}
+
+The master laser is nominally operated in a "locked-frequency" mode.  There is a "lock-box" which provides this function, and an AOM-based locking system.  This provides a fast (current-based) and slow (piezo-based) feedback response to the laser's frequency.
+
+However, if we disable the feedback, we can operate the lockbox in a "frequency sweeping" mode, in which no locking is performed.  The lock box does not touch the current, but it slowly moves the piezo element in a triangular wave.  This directly affects the frequency output of the master laser, giving us a frequency sweep which is very slow compared to the locking system, but fast enough to give a continuous view of how the system responds in frequency.
+
+Particularly, by using this triangular wave as the trigger on an oscilloscope, we get a continuously-updating view of the frequency response of our system.  Frequency appears on the x-axis, and the quantity of interest appears on the y-axis.  For example, by sending this beam through a Rb gas cell, and placing a detector on the far side, we get a plot of the absorbtion spectrum of rubidium against frequency.
+
+If we plot the DC value of our system on the y-axis, then we observe the strength of the feedback signal as a function of frequency.
+
+\subsection{Alignment}
+
+In short, lots!  Each beam has four degrees of freedom.  Thus aligning the beams (in two axes) in two locations is sufficient to have the beams perfectly aligned.  This is required for both fibre couplers and cavities.
+
+Fibre couplers:
+
+ 1. Use the "spaghetti laser" to create a narrow beam coming out of the fibre.  This will be used to determine the alignment of the coupler.
+ 2. Place a transparent IR card near the fibre coupler such that you can see both the spaghetti laser beam, and the slave laser beam.
+ 3. Adjust the last mirror before the coupler until these two beams line up precisely.
+ 4. Place the transparent IR card past the last mirror [TODO(jeff) figure].
+ 5. Adjust the fibre coupler until the two beams line up.
+ 6. Remove the spaghetti laser and IR card.  Attach the power meter to the fibre coupler.  You should see some power.
+ 7. Adjust the same four degrees of freedom on the mirror and coupler, maximising the power entering the fibre coupler.  These should be small adjustments.
+
+Talk about cavities or is this too much?
+ 
+\subsection{Pump/Probe, Saturated Absorption}
+
+- We feed the an EOM-modulated beam into the sample from the right to left.  A beam passes through the gas from left to right, and the signal is "written" across the beams selectively when the laser is near the transition frequnecy.
+
+\subsection{EOM + Crystal Driver + Power Supply}
+
+An EOM crystal driver (used for the PHYS 408 labs) was provided.  This generates a ~20MHz signal, and is tuned to drive the high capacitance of the EOM crystal at a high voltage.
+
+This board came with an AC-DC wall wart.  However, supply noise proved to be a problem, so a custom power supply was developed for this board.  The power supply takes filtered DC lab power, and linearly downregulates to the needed input power [TODO elaborate]
+
+\subsection{Cavity EOM measurement}
+
+- A confocal cavity was used to measure the effect the EOM has on the beam, to ensure that sidebands are in fact being created.  The cavity resonates more highly with laser light that fits in an integer number of wavelengths within the cavity.  Having a photodiode on the end allows us to measure the amplitude of that resonance.  The backside of the cavity can be moved by adjusting the voltage applied to a piezo system.  By feeding a triangular wave in (from a function generator), we can observe the (rough) frequency spectrum of the beam.
+
+[confocal cavity]
+
+This allows us to measure that the EOM driver is, in fact functioning.  However, the frequency resolution of this instrument is about 10MHz [include math!] at best.  This means that our 20MHz features are only *barely* resolvable.
+
+\subsection{Heated Rb Cell}
+
+For the tests that including temperature control, a heating element was used.  This consists of a thermistor (to measure temperature) and several heating pads, attached to a DC power supply.
+
+During these tests, the current output was manually controlled, until the thermistor's reading had been stable for several minutes.  Then the power was switched off, and the measurements recorded.
+
+\subsection{Saturated Abosorbtion Measurement}
+
+Since the frequency was sweeping during our main tests, we incorporated a low-frequency detector to give us an indication of how our rubidium cell was responding to the input beam, possible with saturated absorbtion.  This proved to be very useful.
+
+We later replaced the low-frequency thorlabs detector with an in-house detector (the "fat" detector), which performed better, and works well both at DC and RF.  We isolated the two signals before later processing.
+
+\subsection{Error signal (20Mhz) Detection}
+
+TODO
+
+- Originally using ROSA.  Later replaced by "fat" detector, which provides stronger signal at both DC and 20MHz.
+
+NOTE: Doesn't belong here, but the ROSA detector includes some 10kHz sidebands on the error signal, which contribute significantly (only a few dB below carrier) to the output.  Need to talk about these.  Origin unknown, possibly IM3 (nonlinearities) in detector.  Present *before* amplification, and not in the "fat" detector signal, so unique to ROSA.  Also only exist when beam+EOM are on.
+
+\subsection{Signal Conditioning Case}
+
+A custom case was designed and constructed for the custom electronics in the project.  It contains a central power distributor, which downregulates ±15V DC lab power to ±5V DC power taken by the amplifiers.
+
+\subsection{Preamplification}
+
+The 20MHz signal created at the detector is first filtered.  This cuts out the DC component, which is used to measure the saturated absorbtion, and high frequency components, which are additional unwanted artefacts.  It leaves just a 20MHz signal.  We pass that signal through two minicircuits [partno] amplifiers, which increase the power level of the signal enough to make it usable.
+
+\subsection{Demodulation (lock-in)}
+
+The preamplified signal is passed into a frequency mixer.  That signal is mixed with the 20MHz local oscillator (the EOM driver).  The mixed signal is then filtered at 10MHz.  This eliminates high frequency components, and isolates a DC signal which tells us how far away from the set-point we are.  The selection of frequency is important at this stage.  The higher a frequency we chose, the faster our system can respond to changes in the laser, however, the higher the frequency, the more noise is present in the output.  We chose 10MHz, which is as fast as possible.  Reducing this cutoff would reduce the output noise further.
+
+\subsection{Laser Diode Feedback (not implemented)}
+
+In order for the system to actually be used, the feedback loop would need to be closed.  That is, the demodulated error signal would need to be fed back into a laser diode controller, which would use the signal to adjust the frequency of the laser itself.  A suitable solution available in the lab was the Vescent D2-105 laser controller, which includes fast (current) and slow (piezo) control, and a built in PI²D controller.  This was not implemented, as the sponsor indicated that they would prefer a deeper investigation of possible tactics to improve the error signal, over closing the loop and providing a functional (but sub-optimal) solution.
+

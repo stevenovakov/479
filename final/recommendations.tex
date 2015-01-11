@@ -1,4 +1,24 @@
 \newpage
 \section{Recommendations}
 
-someone
+\subsection{Improved Phase Measurement}
+
+Our current setup assumes that the real projection of the recieved signal tells us everything we need to know, and that adjusting the phase until the output signal is maximised gives us what we need.
+
+However, the physics of the modulation transfer scheme are poorly understood.  It is entirely possible that the recieved signal contains some interesting elements in the imaginary axis.  We have not measured this, as we did not possess a reliable way of adjusting the phase of our signal.
+
+\subsection{Trying different EOM driving frequencies}
+
+The features in the Rb85 transitions are roughly 30MHz apart.  With a 20MHz EOM driver signal, we notice that the fringes of two strong signals overlap, crossing zero at a crossover.  If a 30MHz EOM driver were used instead, these two signals might constructively amplify, creating a very clean error signal.
+
+An alternative approach uses the Rb87 features, which are generally more separated from one another.  Since our oscillator was fixed in frequency, we didn't get to experiment with the effect of the driving frequency on the quality of the error signal.
+
+\subsection{Improved pre-amplifiers}
+
+Near the end of the project, we decided that reducing noise was our priority.  The first and foremost concern is the noise from the amplifiers themselves.  The amplifiers we used, the ZL-1000+, also exists in a low noise variant, the ZLN-1000+.  This amplifier has nearly identical properties, but the noise figure is lower, 3dB instead of 6dB \footnote{Noise figure is the amount that the SNR is increased by the amplifier.  That is, if we have a -20dBm carrier, with -30dBm of noise, and we feed it into a +20dB amplifier with +6dB noise figure, we get out a signal with 0dBm carrier, and -14dBm of noise.  So our SNR goes from 10dB to 4dB.}
+
+Additionally, the amplifiers we're using do not have the specifications we desire.  They were the most appropriate from the supplier we used (minicircuits), but they're still far over-specified.  These amplifiers are designed to work up to 1000MHz, whereas we only need operation up to 20MHz.  We also require only a very narrow bandwidth near 20MHz.  There are likely amplifiers better suited to this purpose.  If not, then one could probably be made which meets these specifications.  See, for example \cite{ti_amps}.
+
+\subsection{Additional Low-Pass Filtering}
+
+A spectral analysis of our noise indicates that the energy distribution is flat in frequency, white noise, up to our low-pass cutoff frequency (10MHz).  A crude, but likely effective way to remove noise would be to bring in a lower low-pass filter, which would have the effect of "averaging" the error signal in time, reducing the amount of white noise, at the cost of response time.
