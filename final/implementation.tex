@@ -1,9 +1,21 @@
 \newpage
 \section{Implementation}
 
-EOM driver onboard phase shift is bad, (see figure) only allowing for shifts between $\lambda \in [0.23, 0.41]$. However, for reasons unknown, this onboard system simulatneously introduced some low-frequency noise which propagated through to the error signal. The frequency was left at 19.8 MHz with no onboard phase delay as it produced the strongest and cleanest error signal. Phase delay was instead accomplished using variable length 50$\Omega$ BNC cables, with a 1.5m cable producing the strongest signal.
+Mention how we modified the EOM driver to run off of the same lab power supply to eliminate unwanted coupling. \\
+
+EOM driver onboard phase shift is bad, (see figure) only allowing for shifts between $\lambda \in [0.23, 0.41]$. However, for reasons unknown, this onboard system simulatneously introduced some low-frequency noise which propagated through to the error signal. The frequency was left at 19.8 MHz with no onboard phase delay as it produced the strongest and cleanest error signal. Phase delay was instead accomplished using variable length 50$\Omega$ BNC cables, with a 1.5m cable producing the strongest signal. \\
+
+\begin{figure}
+  \begin{tabular}{cc}
+    \includegraphics[width=0.47\textwidth]{figures/{eom_driver_onboard_1}.jpg} &
+    \includegraphics[width=0.47\textwidth]{figures/{eom_driver_onboard_2}.jpg} \\
+  \end{tabular}
+  \caption{Measuring the maximum phase shift of the EOM driver reference output. Depending on the impedance characteristics of the load, either or both waveforms would change in amplitude and spectral quality.}
+\end{figure}
 
 Using the fitted MHz/s parameters, we can see that for $^{87}$Rb and $^{85}$Rb, the ramping was done at approximately $115 \pm 4 Mhz/s$ and $140 \pm 3 Mhz/s$, respectively.
+
+Originally tried beam sizes from that paper, but introducing 3:1 telescopes on either side of the cell drastically improved SNR.
 
 \subsection{Overview}
 
@@ -101,4 +113,7 @@ The preamplified signal is passed into a frequency mixer.  That signal is mixed 
 \subsection{Laser Diode Feedback (not implemented)}
 
 In order for the system to actually be used, the feedback loop would need to be closed.  That is, the demodulated error signal would need to be fed back into a laser diode controller, which would use the signal to adjust the frequency of the laser itself.  A suitable solution available in the lab was the Vescent D2-105 laser controller, which includes fast (current) and slow (piezo) control, and a built in PI²D controller.  This was not implemented, as the sponsor indicated that they would prefer a deeper investigation of possible tactics to improve the error signal, over closing the loop and providing a functional (but sub-optimal) solution.
+
+
+
 
