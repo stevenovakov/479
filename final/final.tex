@@ -11,6 +11,7 @@
 \usepackage{graphicx}
 \usepackage{enumerate}
 \usepackage{color}
+\usepackage{float}
 \usepackage{setspace}
 \usepackage{tabularx}
 \setlength{\extrarowheight}{5pt}
@@ -50,6 +51,9 @@
 \newcommand{\vecthree}[3]{\left(\!\!{\scriptsize\begin{array}{c}#1\\#2\\#3\end{array}}\!\!\right)}
 \newcommand{\vectwo}[3]{\left(\!\!{\scriptsize\begin{array}{c}#1\\#2\end{array}}\!\!\right)}
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+\newcommand{\ggather}[1]{\begin{gather}#1\end{gather}}
+\newcommand{\nggather}[1]{\begin{gather}#1\end{gather}}
 
 \newcolumntype{C}{>{\centering\arraybackslash}X}
 \newcolumntype{L}{>{\raggedright\arraybackslash}X}
@@ -133,6 +137,10 @@
 
 \include{implementation}
 
+%%%%%%%%%%%%%%%% IMPLEMENTATION
+
+\include{validation}
+
 %%%%%%%%%%%%%%%% DELIVERABLES
 
 \include{deliverables}
@@ -141,19 +149,18 @@
 
 \include{recommendations}
 
-
 %%%%%%%%%%%%%%%% CONCLUSION
 
 \include{conclusion}
+
+%%%%%%%%%%%%%%%% APPENDICES
+
+\include{appendix}
 
 %%%%%%%%%%%%%%%% REFERENCES
 
 \newpage
 \printbibliography
-
-%%%%%%%%%%%%%%%% APPENDICES
-
-\include{appendix}
 
 \end{document}
 

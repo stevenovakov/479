@@ -1,4 +1,74 @@
 \newpage
-\section{Theory and Discussion} \label{sec:theory}
+\section{Theory} \label{sec:theory}
 
-Steve (both, but steve will start)
+Talk about optical phase modulation, PDH. State here again that it is the absorption spectrum resonance features that are to be used for frequency locking.
+
+\subsection{Optical Phase Modulation}
+
+\subsection{The Pound-Drever-Hall Method}
+
+\subsubsection{Fabry-P{\'e}rot Cavity Reference}
+
+Makes sense to briefly discuss this and how it is made use of in this project.
+
+Fabry-P{\'e}rot cavity with reflection coefficient $R(\omega)=E_{r}/E_{in}$.
+\ggather{
+  E_r = E_0\left[R(\omega)e^{i\omega t} + R(\omega+ \Omega)e^{i(\omega + \Omega)t} -
+  R(\omega - \Omega)e^{i(\omega - \Omega)t} \right]
+}
+$R(\omega)$ is complex valued. Power prop to current, let's adopt the notation $F(\omega) = F, F(\omega \pm \Omega) = F_\pm$, for any frequency dependent function F:
+\ggather{
+  \begin{gathered}
+    I \propto |E_r|^2 = E_0^2 \left[ |R|^2 + \frac{\beta^2}{4}\left(|R_+|^2 + |R_-|^2\right) + \right.
+\\
+    \left. \beta(\Re[X(\omega)]\cos\Omega t + \Im[X(\omega)]\sin\Omega t) + \frac{\beta^2}{2}(R_+R_-^\star e^{i2\Omega t} - R_-R_+^\star e^{-i2\Omega t})\right] \\
+  \end{gathered} \\
+  X(\omega) = R R_+^\star - R^\star R_-
+}
+after band pass filter in a sufficient bandwidth around $\Omega$ and mixed with a reference VCO with phase offset $\phi$ from the driver and with frequency $\Omega$ (can be derived from driver signal):
+\nggather{
+  \nonumber V \propto |E_0|^2 \beta(\Re[X(\omega)]\cos\Omega t + \Im[X(\omega)]\sin\Omega t) V_{VCO}\cos(\Omega t + \phi)
+}
+filtering at some $\omega_f < \Omega$:
+\ggather{
+  V \propto |E_0|^2 \beta(\Re[X(\omega)]\cos \phi + \Im[X(\omega)]\sin\phi)
+}
+by adjusting $\phi$ appropriately, one can extract either $(\Re[X(\omega)]$ or $(\Im[X(\omega)]$. Alternatively, by setting up a quadrature demodulation path, with two references $\pi/2$ out of phase, both signals can be accessible in parallel.
+
+\subsubsection{Atomic Gas Reference}
+
+Instead of a reflection from FPC, our beam is changed by it's transmission through an atomic gas. Given a frequency dependent susceptibility $\chi(\omega)$, the complex index of refraction can be defined as (see DANSTECKREF p. ):
+\ggather{
+  \tilde{n}(\omega) = \sqrt{1 + \chi(\omega)} \\
+  n(\omega) = \Re[\tilde{n}(\omega)] \quad \quad a(\omega) \propto \Im[\tilde{n}(\omega)]
+}
+where $n(\omega)$, $a(\omega)$ are the real index of refraction and absorption, respectively. As a beam passes through this medium, one can derive a complex valued transmission function, $\tilde{T}(\omega)=T(\omega)e^{i\phi_T(\omega)}$,as a function of optical path length, L. After some brief algebraic manipulation:
+\ggather{
+  T(\omega) = e^{-a(\omega)L} \\
+  \phi_T(\omega) = (1 - n(\omega)) \frac{\omega}{c} L
+}
+where $\phi_T(\omega)$ is the \emph{additional} phase accumulation from the presence of the cell. Just like the Fabry-P{\'e}rot cavity, this can be used in a Pound-Drever-Hall system to generate the following electrical signal:
+\ggather{
+  V \propto |E_0|^2 \beta([T(\omega)\cos\phi_T(\omega)]\cos\Omega t + [T(\omega)\sin\phi_T(\omega)]\sin\Omega t)
+}
+and, similarly, through either selective or quadrature demodulation the real-valued absorption function, $T(\omega)$ (or it's square, or some other manipulation of it), can be extracted and used for locking. Note that, both $T(\omega)$ shares the location of $a(\omega)$'s' resonance peaks and so the extrema's location in frequency space is conserved, which is of obvious use.
+
+\subsection{Saturated Absorption Spectroscopy}
+
+
+
+\subsection{Modulation Transfer Spectroscopy}
+
+\subsection{Error Signal Generation}
+
+Single channel demodulation, filtering at some $\Omega << \omega_f << 2\Omega$:
+\ggather{
+  \nonumber \epsilon \propto [T(\omega)\cos\phi_T(\omega)]\cos\phi + [T(\omega)\sin\phi_T(\omega)]\sin\phi ) \\
+  \epsilon \propto \Re[\tilde{T}(\omega)]\cos\phi + \Im[\tilde{T}(\omega)]\sin\phi
+}
+one can select between $\phi = 0, \pi/2$ to extract either the real or imaginary component of $\tilde{T}$. Alternatively, through quadrature mixing, one can extract both values in separate channels and create a variety of error signals that share extrema with $a(\omega)$:
+\ggather{
+  \epsilon_1 = \Re[\tilde{T}(\omega)]\cos\phi \quad \quad \epsilon_2 = \Im[\tilde{T}(\omega)]\cos\phi \\
+  T(w) = \sqrt{\epsilon_1^2 + \epsilon_2^2} \quad\quad T(w) \approx |\epsilon_1| + |\epsilon_2| \quad \mbox{(etc)}
+}
+where $\phi=0$ would presumably stay constant to maximize the signal.
