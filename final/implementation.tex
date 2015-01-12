@@ -84,12 +84,12 @@ The light passing into the EOM must be horizontally polarized, thus a half-wave 
 The EOM driver also includes a phase shift potentiometer to account for phase shifts that may occur in electrical lines or the optical path.  However, the shift provided by this potentiometer is woefully inadequate, giving us approximately ⅙ of a wavelength (at least ½ of a wavelength is needed).  We attempted to manually introduce a phase delay using BNC cables of various lengths.  Of the cables tried, a 1.5m cable provided the best signal (but this is clearly not a perfect optimization).  The maximal phase shift of the driver is shown in Figure~\ref{eom_phase}.
 
 \begin{figure}
-  \label{eom_phase}
   \begin{tabular}{cc}
     \includegraphics[width=0.47\textwidth]{figures/{eom_driver_onboard_1}.jpg} &
     \includegraphics[width=0.47\textwidth]{figures/{eom_driver_onboard_2}.jpg} \\
   \end{tabular}
   \caption{The maximal phase shift of the EOM driver reference output, with no load attached.  Red signal corresponds to the driver (1MΩ), blue signal corresponds to LO out.  The impedance of the load affects the shape of both waveforms.}
+  \label{eom_phase}
 \end{figure}
     
     \subsubsection{Pump Probe Modulation Transfer}
