@@ -144,10 +144,7 @@ The preamplified signal is passed into a frequency mixer.  That signal is mixed 
 
 We chose to use a 10MHz, which was chosen primarily to eliminate known nonlinear artefacts of the mixer present at 20MHz; these filters reduce a signal at $2f_{co}$ by 40dB\cite{zfl_1000}.  Reducing this cutoff would reduce the output noise further.
     
-    \subsubsection{Laser Feedback (not implemented)}
-    %===============================================
 
-In order for the system to actually be used, the feedback loop would need to be closed.  That is, the demodulated error signal would need to be fed back into a laser diode controller, which would use the signal to adjust the frequency of the laser itself.  A suitable solution available in the lab was the Vescent D2-105 laser controller, which includes fast (current) and slow (piezo) control, and a built in PI²D controller.  This was not implemented, as the sponsor indicated that they would prefer a deeper investigation of possible tactics to improve the error signal, versus closing the loop and providing a functional (but sub-optimal) solution.
 
 \subsection{Infrastructure}
     \subsubsection{EOM Power Supply}
@@ -159,10 +156,4 @@ This board came with an AC-DC wall wart.  However, supply noise proved to be a p
     %=============================================================
 
 A custom case was built to contain the signal conditioning components.  It also includes a linear regulator which is capable of powering up to 4 of the minicircuits amplifiers.
-
-
-TODO Restructure
-%====================================================================
-
-\subsection{Misc Crap TODODODODOODTODO}
 
