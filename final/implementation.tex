@@ -1,5 +1,6 @@
 \newpage
 \section{Implementation}
+\label{sec:implementation}
 
 Overview goes here.
 
@@ -8,7 +9,7 @@ Overview goes here.
 \subsection{Laser Setup}
     \subsubsection{Laser Seeding}
     %============================
-    
+
 The laser setup begins with the master laser, a rubidium laser [details?].  This laser feeds its light into a slave laser which, if properly tuned, will emit light of the same frequency as its master.
 
 That slave then feeds into *another* slave (\emph{Slave \#2}), which we have direct access to.  Particularly, there are a series of mirrors which direct the light from the second slave into the third slave.  Setting up this slave requires a particular algorithm (which must be executed before any work can be done each day).
@@ -24,10 +25,10 @@ That slave then feeds into *another* slave (\emph{Slave \#2}), which we have dir
  \item The master should either be re-locked, or have its frequency sweep set to a useful range.
  \item The laser can now be used for experiments.
 \end{enumerate}
-    
+
     \subsubsection{Laser Sweeping}
     %=============================
-    
+
 The master laser is nominally operated in a \emph{locked-frequency} mode.  There is a lock-box which provides this function, and an AOM-based locking system.  This provides a fast (current-based) and slow (piezo-based) feedback response, which keeps the laser's frequency as stable as possible.
 
 However, if we disable this feedback, we can operate the laser in an open-loop \emph{frequency-sweeping} mode, in which no locking is performed.  The lock box does not touch the current, but it adjusts the laser's frequency in a triangular fashion, at 50Hz.  This gives us a frequency sweep which is very slow compared to the locking system, but fast enough to give a continuous view of how the system reacts to various frequencies of light.
@@ -35,7 +36,7 @@ However, if we disable this feedback, we can operate the laser in an open-loop \
 Particularly, by using this triangular wave as the trigger on an oscilloscope, we get a continuously-updating view of any parameters we wish to measure, plotted as a function of the frequency of the laser.  For example, by sending this beam through a rubidium gas cell, and placing a detector on the far side, we get a plot of the absorbtion spectrum of rubidium as a function of frequency.
 
 Note that although the sweep speed is fixed (50Hz), the frequency range of the sweep is set manually by tuning a potentiometer.  Thus, measurements of the sweep rate (MHz/s) need to be done on a per-dataset basis.  No attempt was made to reproduce the exact sweep rate between measurements, although some measurements may have been done without adjusting the settings.  For reference, the sweep rate was generally set to roughly 120MHz/s.
-    
+
     \subsubsection{Fibre Alignment}
     %==============================
 
@@ -58,12 +59,12 @@ Fibre couplers:
 \subsection{Optical Table}
     \subsubsection{Beam Focusing}
     %============================
-    
+
 The beam that comes out of the fibre coupler spreads too wide over the course of passing through all our optics.  Thus, we have included a beam size reducer in our setup.  Basically, a convex lens focusses the beam down, and a concave lens straightens the beam.
 
     \subsubsection{Power Control}
     %============================
-    
+
 In several parts of our system, we have the need to control power.  Specifically, we need power control in three locations:
 
 \begin{enumerate}
@@ -76,12 +77,12 @@ In each of these locations, we use a half-wave plate followed by a pol cube.  Th
 
     \subsubsection{EOM and Crystal Driver}
     %===================================
-    
+
 An EOM crystal driver (borrowed from the PHYS 408 optics labs) was used to drive the EOM.  This generates a sinusoidal signal at approximately 20MHz, and is tuned to drive the high capacitance of the EOM crystal at a high voltage.  It also feeds out a reference to its internal oscillator.  This signal provides the local oscillator input for our demodulation signal.
 
 The light passing into the EOM must be horizontally polarized, thus a half-wave plate is used to re-polarize the light before it enters the EOM.
 
-The EOM driver also includes a phase shift potentiometer to account for phase shifts that may occur in electrical lines or the optical path.  However, the shift provided by this potentiometer is woefully inadequate, giving us approximately ⅙ of a wavelength (at least ½ of a wavelength is needed).  We attempted to manually introduce a phase delay using BNC cables of various lengths.  Of the cables tried, a 1.5m cable provided the best signal (but this is clearly not a perfect optimization).  The maximal phase shift of the driver is shown in Figure~\ref{eom_phase}.
+The EOM driver also includes a phase shift potentiometer to account for phase shifts that may occur in electrical lines or the optical path.  However, the shift provided by this potentiometer is woefully inadequate, giving us approximately ⅙ of a wavelength (at least ½ of a wavelength is needed).  We attempted to manually introduce a phase delay using BNC cables of various lengths.  Of the cables tried, a 1.5m cable provided the best signal (but this is clearly not a perfect optimization).  The maximal phase shift of the driver is shown in Figure~\ref{fig:eom_phase}.
 
 \begin{figure}
   \begin{tabular}{cc}
@@ -89,49 +90,50 @@ The EOM driver also includes a phase shift potentiometer to account for phase sh
     \includegraphics[width=0.47\textwidth]{figures/{eom_driver_onboard_2}.jpg} \\
   \end{tabular}
   \caption{The maximal phase shift of the EOM driver reference output, with no load attached.  Red signal corresponds to the driver (1MΩ), blue signal corresponds to LO out.  The impedance of the load affects the shape of both waveforms.}
-  \label{eom_phase}
+  \label{fig:eom_phase}
 \end{figure}
-    
+
     \subsubsection{Pump Probe Modulation Transfer}
     %=============================================
-    
+
 We feed the an EOM-modulated beam into the sample from the right to left (the \emph{pump} beam).  A single frequency beam (from the slave laser) passes through the gas from left to right (the \emph{probe} beam).  Due to nonlinear interactions in the gas, the probe beam becomes modulated at the driving frequency of the pump beam.  That is, the pump beam modulates the gas, which in turn, modulates the probe beam.
 
-The physics of the interaction between the two beams and the gas are described further in the Theory section.
+The physics of the interaction between the two beams and the gas are described further in the \textbf{Section \ref{sec:theory}}.
 
 Note that the cell has been installed diagonally, to prevent reflections off the surface of the cell from feeding into the output (affecting our output signal).
 
     \subsubsection{Rb Cell Beam Expander}
     %====================================
-    
+
 The Rb gas cell has been surrounded in lenses to expand both the probe and pump beam.  This improves the signal-to-noise ratio by passing the beam through a larger fraction of the gas in the cell.
 
     \subsubsection{Heated Rb Cell}
     %=============================
-    
+
 Heating the rubidium cell can improve the signal to noise of this system.  At room temperature, a large fraction of the rubidium in the cell exists as a solid on the surface of the cell.  By heating the cell, more rubidium will vapourize, increasing the density of the gas.  This causes our laser to pass through more gas, which strengthens the signal.
 
 However, this effect cannot be used to arbitrary temperatures.  Increasing the temperature increase the vapour pressure, but it also increases the speed of the gas molecules, which causes the Doppler broadening to become worse, until the response ultimately becomes flat.  This effect is known as Doppler flattening, and puts an upper limit on the temperature of the cell.
 
 We used a pre-built heating coil with a built-in thermocouple.  For each temperature measurement, we turned on the heater, and manually adjusted the current output until the temperature reading on the thermocouple had remained stable for five minutes.  At that point, we turned off the heater (to eliminate any magnetic fields created by the current), and took a measurement of the error signal produced.
-    
+
     \subsubsection{Cavity Wave Detector}
     %===================================
-    
+
 A confocal cavity was used to measure the effect the EOM has on the beam, to ensure that sidebands are in fact being created.  The cavity resonates more highly with laser light that fits in an integer number of wavelengths within the cavity.  Having a photodiode on the end allows us to measure the amplitude of that resonance.  The backside of the cavity can be moved by adjusting the voltage applied to a piezo system.  By feeding a triangular wave in (from a function generator), we can observe the (rough) frequency spectrum of the beam.
 
 [confocal cavity]
 
 This allows us to measure that the EOM driver is, in fact functioning.  However, the frequency resolution of this instrument is about 10MHz [include math!] at best.  This means that our 20MHz features are only *barely* resolvable.
-    
+
     \subsubsection{Saturated Absorbtion Detector}
     %============================================
-    
+
 Since the frequency was sweeping during our main tests, we isolated the low-frequency (DC) part of our signal to give us an indication of how our rubidium cell was responding to the input beam, in addition to the levels of absorbtion caused by saturated absorbtion.  This gave us a continuous reference of which part of the spectrum we were operating in at all times, as well as showing us how well our saturated absorbtion setup was working.
 
 We use a splitter to also give us the raw signal itself, which we send off to the signal conditioning box, which converts the raw output into a usable error signal.
 
 \subsection{Signal Conditioning}
+\label{sec:signalcond}
     \subsubsection{Preamplification}
     %===============================
 
@@ -143,7 +145,7 @@ The 20MHz signal created at the detector is first filtered.  The DC component an
 The preamplified signal is passed into a frequency mixer.  That signal is mixed with the 20MHz local oscillator (the EOM driver).  This gives us a desired signal at DC.  The mixed signal is then filtered at 10MHz, which eliminates any unwanted high frequency components.  The selection of frequency is important at this stage.  The higher a frequency we chose, the faster our system can respond to changes in the laser's frequency, however, setting a high frequency incurs a noise penalty.  The noise spread is linear, thus a doubling of frequency range decreases our SNR by 3dB.
 
 We chose to use a 10MHz, which was chosen primarily to eliminate known nonlinear artefacts of the mixer present at 20MHz; these filters reduce a signal at $2f_{co}$ by 40dB\cite{zfl_1000}.  Reducing this cutoff would reduce the output noise further.
-    
+
     \subsubsection{Laser Feedback (not implemented)}
     %===============================================
 

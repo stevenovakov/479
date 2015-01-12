@@ -3,19 +3,17 @@
 
 \subsection{EOM-based Optical Setup}
 
-The sponsor's requirement of an optical pipeline including an EOM unit, Rubidium vapour cell and photosensor coupling was fully met. Due to the difficulty of creating a precise optical pipeline and this group's relative inexperience, it was decided to pursuse existing home-built or pre-built solutions whenever possible.
+The sponsor's requirement of an optical pipeline including an EOM unit, Rubidium vapour cell and photosensor coupling was fully met. Due to the difficulty of creating a precise optical pipeline and this group's relative inexperience, it was decided to pursuse existing home-built or pre-built solutions whenever possible. The component and implementation specifics are discussed in further detail in \textbf{Section \ref{sec:implementation}}.
 
-\subsection{Fast Analog Laser Control Feedback Circuit}
+\subsection{Fast Analog Feedback Circuit}
 
-Constructed single channel demodulation, as warranted. Parts list is in appendix.
+The feedback circuit was built around a single channel demodulation path using discrete RF components and the EOM driver's reference output. The component and implementation specifics are discussed in further detail in \textbf{Section \ref{sec:signalcond}}. The specific RF components used for signal processing are detailed in \textbf{Appendix \ref{app:components}}.
 
 \subsection{New vs. Old System Characterization}
 
-Originally, the sponsor had suggested closed-loop testing of this locking scheme. With the use of a Fabry-Pi{\'e}rot interferometer, a direct comparison of laser linewidths using the old and new locking systems could be made. Unfortunately, due to timing, it was not possible to access, and make large changes to, the master laser table when this new system neared completion as the Madison Group researchers began experimental procedures which could not be easily interrupted. Additionally, it would have been either time-consuming or suboptimal to route either the optical signal or electrical signal across the room from our setup to the laser servo racks. The sponsor, Dr. Kirk Madison, directed us to acquire broad error signal metrics including:
+Originally, the sponsor had suggested closed-loop testing of this locking scheme. With the use of a Fabry-P{\'e}rot interferometer, a direct comparison of laser linewidths using the old and new locking systems could be made. Unfortunately, due to timing, it was not possible to access, and make large changes to, the master laser table when this new system neared completion. During development, Madison Group researchers began experimental procedures which could not be easily interrupted. Additionally, it would have been either time-consuming or suboptimal to route either the relevant optical or electrical signals across the room from this optical table to the laser servo racks. The sponsor, Dr. Kirk Madison, instead directed testing to acquire broad error signal metrics including:
 \begin{itemize}
-    \item Error signals as a function of pump/probe power
-    \item Error signals as a function of temperature
-    \item Slope (mV/MHz) around locking points
-    \item Noise (mVpp) around locking points
+    \item Error signals with variable pump/probe power
+    \item Error signals with fixed pump/probe power and variable temperature
 \end{itemize}
-Given this data, it is intended that Madison Group researchers use this data to rebuild this setup on the master laser optical table at their earliest convenience. This data is shown in \textbf{Appendices \ref{app:85pwr} - \ref{app:87temp}}. The methods used to generate the data are discussed in \textbf{Section \ref{sec:validation}}.
+and, critically, the slope (mV/MHz) and noise (mVpp) around all locking points. It is intended that Madison Group researchers use this data to rebuild this setup on the master laser optical table at their earliest convenience. This data is shown in \textbf{Appendices \ref{app:85pwr} - \ref{app:87temp}}. The methods used to generate the data are discussed in \textbf{Section \ref{sec:validation}}.
