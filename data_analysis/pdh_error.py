@@ -145,7 +145,7 @@ ax1.set_xlim([-1*span, span])
 ax2.set_xlim([-1*span, span])
 ax3.set_xlim([-1*span, span])
 
-ax1.set_ylabel(r"$T(\omega)$ (normalized)")
+ax1.set_ylabel(r"$\tau(\omega)$ (normalized)")
 ax2.set_ylabel(r"$\phi_T(\omega)$ (mRad)")
 ax3.set_ylabel(r"$\epsilon$ (arbitrary)")
 ax3.set_xlabel(r"$\Delta f = f - f_0$ (MHz)")
