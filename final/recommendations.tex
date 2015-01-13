@@ -5,11 +5,11 @@
 
 \subsection{Improved Phase Adjustment}
 
-Current understanding of modulation transfer spectroscopy indicates that the position of the zero crossing is independant of the phase adjustment.  However, as shown in prior work, the amplitude of the signal is not \cite{0957-0233-19-10-105601}. The onboard phase adjustment is limiting in its range, as shown in \textbf{Figure \ref{fig:eom_phase}}.  Implementing an improved phase adjustment which allows a full $\pi/2$ would make this optimization much easier to do.
+Current understanding of modulation transfer spectroscopy indicates that the position of the zero crossing is independant of the phase adjustment.  However, as shown in prior work, the amplitude of the signal is not \cite{0957-0233-19-10-105601}. The onboard phase adjustment is limiting in its range, as shown in \textbf{Figure \ref{fig:eom_phase}}.  Implementing an improved phase adjustment which allows a full $\lambda/2$ would make this optimization much easier to do.
 
 \subsection{EOM driving frequencies}
 
-The features in the Rb85 transitions are roughly 30MHz apart.  With a 20MHz EOM driver signal, it was noticed that the fringes of two strong signals overlap, crossing zero at a crossover.  If a 30MHz EOM driver were used instead, these two signals might constructively amplify, creating a very clean error signal. Since the EOM driver oscillator frequency was non-adjustable, it was not possible to characterize its effect on the error signal.
+The features in the Rb85 transitions are roughly 30 MHz apart.  With a 20 MHz EOM driver signal, it was noticed that the fringes of two strong signals overlap, crossing zero at a crossover.  If a 30 MHz EOM driver were used instead, these two signals might constructively amplify, creating a very clean error signal. Since the EOM driver oscillator frequency was non-adjustable, it was not possible to characterize its effect on the error signal.
 
 \subsection{Laser Power}
 
@@ -17,13 +17,13 @@ The highest quality error signal obtained made used 100\% of available laser pow
 
 \subsection{Improved pre-amplifiers}
 
-The most obvious path to noise improvement is selecting better amplifiers.  The amplifiers used here, MiniCircuits ZFL-1000+, also exists in a low noise variant, the ZFL-1000LN+.  This amplifier has nearly identical properties, but the noise figure is lower, 3dB instead of 6dB \footnote{Noise figure is the amount that the SNR is increased by the amplifier.  Given a -20dBm carrier, with -30dBm of noise, and a +20dB amplifier with +6dB noise figure, the output signal will contain a 0dBm carrier, and -14dBm of noise, changing the SNR from 10dB to 4dB.}. The best locking features in \textbf{Appendices \ref{app:85pwr} - \ref{app:87temp}} have an SNR of approximately 5:1. The existing AOM signal (\textbf{Figure \ref{fig:aom_spectra}}), has an SNR of approximately 10:1. Switching out the existing amplifiers for a better model should increase the SNR by 6dB, to a value of 20:1 (two amplifiers in series). This is more robust than the existing AOM solution.
+The most obvious path to noise improvement is selecting better amplifiers.  The amplifiers used here, MiniCircuits ZFL-1000+, also exists in a low noise variant, the ZFL-1000LN+.  This amplifier has nearly identical properties, but the noise figure is lower, 3dB instead of 6dB \footnote{Noise figure is the amount that the SNR is increased by the amplifier.  Given a -20 dBm carrier, with -30 dBm of noise, and a +20 dB amplifier with +6 dB noise figure, the output signal will contain a 0dBm carrier, and -14dBm of noise, changing the SNR from 10 dB to 4 dB.}. The best locking features in \textbf{Appendices \ref{app:85pwr} - \ref{app:87temp}} have an SNR of approximately 5:1. The existing AOM signal (\textbf{Figure \ref{fig:aom_spectra}}), has an SNR of approximately 10:1. Switching out the existing amplifiers for a better model should increase the SNR by 6 dB, to a value of 20:1 (two amplifiers in series). This is more robust than the existing AOM solution. \\
 
 Additionally, the amplifiers used do not have the desired specifications.  They are the most appropriate choice given the supplier (Mini-Circuits), but they are over-specified.  These amplifiers are designed to work up to 1000 MHz, whereas an ideal cutoff would be in the range of 25-30 MHz.  There are likely amplifiers better suited to this purpose.  If not, then one could probably be made which meets these specifications, and has very good performance.  See, for example TI's guide to RF op amp circuits.\cite{ti_amps}.
 
 \subsection{Additional Low-Pass Filtering}
 
-A spectral analysis of the noise indicates that the energy distribution is flat in frequency, white noise, up to the low-pass cutoff frequency (10MHz).  A crude, but likely effective way to remove noise would be to bring in a lower low-pass filter, which would have the effect of `averaging' the error signal in time, reducing the amount of white noise, at the cost of response time.
+A spectral analysis of the noise indicates that the energy distribution is flat in frequency, white noise, up to the low-pass cutoff frequency (10 MHz).  A crude, but likely effective way to remove noise would be to bring in a lower low-pass filter, which would have the effect of `averaging' the error signal in time, reducing the amount of white noise, at the cost of response time.
 
 
 \subsection{Closed Loop Operation}

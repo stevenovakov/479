@@ -17,7 +17,14 @@ This project aims to improve various elements of this feedback system to improve
 
 The gas in a vapour cell is at room temperature. In a saturated absorption spectroscopy scheme, for example, some atoms will be moving towards the probe beam, and other atoms will be moving away from it. As a result, if a single laser is used, the atoms moving towards the laser will perceive a higher frequency, and thus will excite at lower frequencies than the resonance frequency.  The opposite is also true.  If the absorption-vs-frequency curve is measured for a laser passed through the gas, there is a wide smear that is approximately 1 GHz wide \cite{madison14}.  This makes the apparent spectrum of the gas much wider, and thus, much harder to lock a signal to. This is depicted in \textbf{Figure \ref{fig:doppler}}. \\
 
-A major improvement is to redirect the single frequency laser around the sample, to the opposite side.  Now, when the sweep laser is at the same frequency as the pumping laser, its light will not be absorbed by the atoms with zero horizontal velocity.  This creates a Doppler-cancelled feature, which is about 10--100MHz wide.
+Redirecting another single frequency laser around the sample, to the opposite side, will yield large improvements in feature size.  Now, when the sweep laser is at the same frequency as the pumping laser, its light will not be absorbed by the atoms with zero horizontal velocity.  This creates a Doppler-cancelled feature, which is about 10--100MHz wide.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.45\textwidth]{figures/doppler.png}
+    \caption[Doppler effect demonstration]{Doppler effect demonstration.  The probe beam is absorbed across a wide frequency range, but only the non-Doppler-shifted particles are affected by both beams from left and right.}
+    \label{fig:doppler}
+\end{figure}
 
 \subsection{Acousto-Optic Modulator}
 
@@ -27,14 +34,14 @@ AOMs are limited by the mechanical properties of the optical medium. Specificall
 
 \subsection{Electro-Optic Modulator}
 
-An \emph{electro-optic modulator} (EOM), is a device that uses an electric field to modulate the phase of an EM wave.  These devices exploit the effects of strong nonlinear susceptibility, whereby the speed of light in a crystal is affected by the presence of an electric field.  Therefore, by adjusting the electric field in the crystal, the phase (and ultimately frequency spectrum) of the beam can be varied. The EOM does \emph{not} shift the carrier frequency, unlike an AOM. Furthermore, the resultant phase modulation frequency of the incident laser can reach into the GHz range, orders of magnitude above the
+An electro-optic modulator (EOM), is a device that uses an electric field to modulate the phase of an EM wave.  These devices exploit either the Kerr or Pockels effects, whereby the index of refraction in a crystal is affected by the presence of an electric field.  Therefore, by adjusting the electric field in the crystal, the phase (and ultimately frequency spectrum) of the beam can be varied. The EOM does \emph{not} shift the carrier frequency, unlike an AOM. Furthermore, the resultant phase modulation frequency of the incident laser can reach into the GHz range, orders of magnitude above the
 capability of an AOM.\\
 
-Unfortunately, the EOM requires fairly large driving voltages, on the order of hundreds of volts.  Some manufacturers provide a full EOM solution, with built-in amplifier, to make their equipment easier to use, making an external high-voltage amplifier unnecessary. This project makes use of a homebuilt EOM/driver system based around a Lithium Niobiate (LiNbO$_3$) crystal.
+Unfortunately, for large modulation depths, EOMs require fairly large driving voltages, on the order of hundreds of volts.  Some manufacturers provide a full EOM solution, with built-in amplifier, to make their equipment easier to use, making an external high-voltage amplifier unnecessary. This project makes use of a home-built EOM/driver system based around a Lithium Niobiate (LiNbO$_3$) crystal.
 
 \subsection{The Pound-Drever-Hall Method}
 
-Optical frequencies generally exceed 100THz. It is not possible to extract information at these frequencies using conventional electronic measurement equipment. Systems make use of schemes that down-mix these optical signals into RF range, which are then processed via conventional means (RF electronics and digital systems). \\
+Optical frequencies generally exceed 100 THz. It is not possible to extract information at these frequencies using conventional electronic measurement equipment. Systems make use of schemes that down-mix these optical signals into RF range, which are then processed via conventional means (RF electronics and digital systems). \\
 
 The Pound-Drever-Hall method makes use of phase-modulated light to measure an optical response and down-mix it into RF range.  This signal is then mixed again with the same oscillator to produce a DC signal. Changing the modulation frequency varies the resolution of this derivative function. At extremes, this derivative function is either small and featureless, or is excessively noisy and not useful. \\
 
@@ -42,27 +49,20 @@ This method is used to lock to extrema of absorption spectra.  In an atomic gas,
 
 \subsection{Spectroscopy Methods}
 
-There are a variety of methods to generate an absorption spectrum from an atomic gas, involving different configurations of cell/beam alignment, beam power ratios and various signal processing techniques. The original proposal involved the use of saturated absorption spectroscopy, which is elaborated on in \textbf{Section \ref{sec:sat_abs}}. However, due to various parasitic effects and poor SNR, (see \textbf{Figure \ref{fig:sat_abs_bad}}) the final configuration made use of a modulation transfer scheme, which has been described well in the literature \cite{Shirley:82}. There have also been detailed experiments specifically involving Rubidium, which were a good starting point for this project \cite{0957-0233-19-10-105601}. These processes are described in more detail in \textbf{Section \ref{sec:theory}}.
-
-\begin{figure}
-    \centering
-    \includegraphics[width=0.45\textwidth]{figures/doppler.png}
-    \caption{Doppler effect demonstration.  The probe beam is absorbed across a wide frequency range, but only the non-Doppler-shifted particles are affected by both beams from left and right.}
-    \label{fig:doppler}
-\end{figure}
+There are a variety of methods to generate an absorption spectrum from an atomic gas, involving different configurations of cell/beam alignment, beam power ratios and various signal processing techniques. The original proposal involved the use of saturated absorption spectroscopy, which is elaborated on in \textbf{Section \ref{sec:sat_abs}}. However, due to various parasitic effects and poor SNR, (see \textbf{Figure \ref{fig:sat_abs_bad}}) the final configuration made use of a modulation transfer scheme, which has been described well in the literature \cite{Shirley:82}. There have also been detailed experiments specifically involving rubidium, which were a good starting point for this project \cite{0957-0233-19-10-105601}. These processes are described in more detail in \textbf{Section \ref{sec:theory}}.
 
 \begin{figure}
   \begin{tabular}{cc}
     \includegraphics[width=0.47\textwidth]{figures/{AOM_85}.png} &
     \includegraphics[width=0.47\textwidth]{figures/{AOM_87}.png} \\
   \end{tabular}
-  \caption{Existing AOM-based, single demodulation channel error signals around Rb85 (left) and Rb87 (right) D2 transitions. Each figure shows the reference spectrum (black), and the resulting PDH error signal (red).}
+  \caption[Existing AOM-based, error signals]{Existing AOM-based, single demodulation channel error signals around Rb85 (left) and Rb87 (right) D2 transitions. Each figure shows the reference spectrum (black), and the resulting PDH error signal (red).}
   \label{fig:aom_spectra}
 \end{figure}
 
 \begin{figure}
     \centering
     \includegraphics[width=0.5\textwidth]{figures/best_sat_abs.png}
-    \caption{Saturated absorption spectroscopy based PDH signal acquired near the start of the project. Shown is the ramping signal (yellow), AOM-based reference saturated absorption spectrum (blue) and the new EOM-based PDH signal (pink). This signal is suboptimal due to low SNR (approximately 3:1), which was difficult to improve given avai,lable resources. Additionaly, AM pickup effects bring into question the accuracy of the zero crossings.}
+    \caption[Acquired saturated absorption spectroscopy error signals]{Saturated absorption spectroscopy based PDH signal acquired near the start of the project. Shown is the ramping signal (yellow), AOM-based reference saturated absorption spectrum (blue) and the new EOM-based PDH signal (pink). This signal is suboptimal due to low SNR (approximately 3:1), which was difficult to improve given avai,lable resources. Additionaly, AM pickup effects bring into question the accuracy of the zero crossings.}
     \label{fig:sat_abs_bad}
 \end{figure}

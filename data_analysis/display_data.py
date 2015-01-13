@@ -1394,9 +1394,9 @@ def AOMData():
     ax2.set_ylabel('AOM Error Signal (mV)')
 
     if '87' in filename:
-      ax2.set_xlabel('Frequency from F\'=2,3 Crossover (MHz)')
+      ax2.set_xlabel('Frequency from Rb87 F\'=2,3 Crossover (MHz)')
     else:
-      ax2.set_xlabel('Frequency from F\'=3,4 Crossover (MHz)')
+      ax2.set_xlabel('Frequency from Rb85 F\'=3,4 Crossover (MHz)')
 
     ax2lims = ax2.get_ylim()
 

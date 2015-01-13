@@ -2,7 +2,7 @@
 \section{Theory}
 \label{sec:theory}
 
-To gain an understanding of the motivations behind this project it is worthwhile to discuss both prior work done with the PDH method, and the motivations behind using it to lock to an atomic source.  The PDH method is often used to lock a laser to a reference cavity \cite{black1998}.  The Madison group primarily performs laser cooling experiments on Lithium and Rubidium gas.  They need to precisely set laser frequencies at or near key atomic transitions. This project focuses on the Rb87 and Rb85 $5S_{1/2} \rightarrow 5P_{3/2}$ transitions, specifically Rb87 $\left|F=2\right\rangle \rightarrow F'$ and Rb85 $\left|F=3\right\rangle \rightarrow F'$.  The closer a laser's frequency is to a desired transition and the smaller the linewidth of that laser, the more efficient any excitation will be.  This efficiency has a direct impact on experimental outcome.
+To gain an understanding of the motivations behind this project it is worthwhile to discuss both prior work done with the PDH method, and the motivations behind using it to lock to an atomic source.  The PDH method is often used to lock a laser to a reference cavity \cite{black1998}.  The Madison group primarily performs laser cooling experiments on Lithium and rubidium gas.  They need to precisely set laser frequencies at or near key atomic transitions. This project focuses on the Rb87 and Rb85 $5S_{1/2} \rightarrow 5P_{3/2}$ transitions, specifically Rb87 $\left|F=2\right\rangle \rightarrow F'$ and Rb85 $\left|F=3\right\rangle \rightarrow F'$.  The closer a laser's frequency is to a desired transition and the smaller the linewidth of that laser, the more efficient any excitation will be.  This efficiency has a direct impact on experimental outcome.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%    Phase Modulation
@@ -30,12 +30,12 @@ where $\beta$ is defined as the modulation depth, in radians, and $\Omega$ is th
 
 it is shown that a sideband of frequency $(\omega +n\Omega)$ has amplitude $J_n(\beta)$, the Bessel function of order $n$, evaluated at $\beta$. In this implementation, the sideband power is approximately 14\% of the carrier's.
 
+\vfill
+
 \begin{figure}
   \centering
   \includegraphics[width=0.6\textwidth]{figures/spectrum.png}
-  \caption{Expected spectrum of beam after EOM phase modulation, to the first
-  sidebands. While possibly present and significant, further sidebands can
-  be ignored as they will be filtered during mixing.}
+  \caption[Expected spectrum of beam after EOM phase modulation]{Expected spectrum of beam after EOM phase modulation, to the first sidebands. While possibly present and significant, further sidebands can be ignored as they will be filtered during mixing.}
   \label{fig:eom_spectrum}
 \end{figure}
 
@@ -83,7 +83,7 @@ where $n(\omega)$, $a(\omega)$ are the real index of refraction and absorption, 
   n(\omega) \approx 1 + \frac{N e^2}{2m\epsilon_0}\frac{(\omega_0 - \omega/2\omega)}{(\omega_0-\omega)^2 +(\Gamma/2)^2} \label{eq:n} \\
   a(\omega) \approx \frac{N e^2}{m \epsilon_0 c_0 \Gamma} \frac{(\Gamma/2)^2}{(\omega_0-\omega)^2+(\Gamma/2)^2} \label{eq:a}
 }
-where $\omega_0$ is a transition resonance and $\Gamma$ is the FWHM (in rad/s) of the absorption feature around that resonance. These terms are derived from a complex valued function and are related through the Kramers-Kronig relations.\\
+where $\omega_0$ is a transition resonance and $\Gamma$ is the FWHM of the absorption feature around that resonance. These terms are derived from a complex valued function and are related through the Kramers-Kronig relations.\\
 
 As a beam passes through this medium, one can derive a complex valued transmission function, $T(\omega)=\tau(\omega)e^{i\phi_T(\omega)}$,as a function of optical path length, L. The components of $T(\omega)$ are defined as:
 \ggather{
@@ -118,7 +118,7 @@ to produce a sharp feature around resonances, as in \textbf{Figure \ref{fig:sat_
     \includegraphics[width=0.8\textwidth]{figures/{saturated_absorption_far}.png}\\
     \includegraphics[width=0.8\textwidth]{figures/{saturated_absorption}.png}
   \end{tabular}
-  \caption{A sample doppler-free resonance feature in a saturated absorption scheme for varying pump beam intensities. This is a previous simulation using physical constants from \cite{steckrb85} for the Rb85 $\left|F=3\right\rangle \rightarrow \left|F'=3\right\rangle$ resonance.}
+  \caption[A sample doppler-free resonance feature in a saturated absorption scheme]{A sample doppler-free resonance feature in a saturated absorption scheme for varying pump beam intensities. This is a previous simulation using physical constants from \cite{steckrb85} for the Rb85 $\left|F=3\right\rangle \rightarrow \left|F'=3\right\rangle$ resonance.}
   \label{fig:sat_abs}
 \end{figure}
 
@@ -133,7 +133,11 @@ Using the electrical signal in (\ref{eq:v_pdh_gas}), a single channel demodulati
 \ggather{
   \epsilon \propto \mbox{Re}[Y(\omega)]\cos\phi + \mbox{Im}[Y(\omega)]\sin\phi
 }
-One can select between $\phi = 0, \pi/2$ to extract either the real or imaginary component of $Y(\omega)$. It is worth investigating briefly what the in-phase and quadrature components of $Y(\omega)$ are ( (\ref{eq:pdh_in_phase}) and (\ref{eq:pdh_quadrature}), respectively). Defining $R = r + i\mathbb{R}$, and assuming the behaviour described in (\ref{eq:vapour_interact}):
+One can select between $\phi = 0, \pi/2$ to extract either the real or imaginary component of $Y(\omega)$. It is worth investigating briefly what the in-phase and quadrature components of $Y(\omega)$ are ( (\ref{eq:pdh_in_phase}) and (\ref{eq:pdh_quadrature}), respectively).
+
+\vfill
+
+Defining $R = r + i\mathbb{R}$, and assuming the behaviour described in (\ref{eq:vapour_interact}):
 \ggather{
   \nonumber Y(\omega) = (T + i\mathbb{T})(T_+ - i\mathbb{T}_+) - (T - i\mathbb{T})(T_- + i\mathbb{T}_-) \\
   Re[Y(\omega)] = T(T_+ - T_-) + \mathbb{T}(\mathbb{T}_+ - \mathbb{T}_-) \label{eq:pdh_in_phase}\\
@@ -149,7 +153,7 @@ where $\phi=0$ would presumably stay constant to maximize the signals. These sep
 
 \begin{figure}
   \includegraphics[width=0.94\textwidth]{figures/{pdh_error}.png}
-  \caption{In-phase and quadrature PDH error signals calculated for a simple absorption model around the Rb85 $\left|F=3\right\rangle \rightarrow \left|F'=3\right\rangle$ resonance using (\ref{eq:n}) (\ref{eq:a}) (\ref{eq:tau}) (\ref{eq:phit}) with $w_0\approx$ 383 THz, $\Gamma \approx$ 6.07 MHz, and a vapour density of $7.4\cdot 10^{13}$ atoms/ $m^3$ at $20^\circ C$ \cite{steckrb85}. While actual physical constants were used in computation, this is a separate model that does not factor Doppler broadening and is intended to show qualitative behaviour.}
+  \caption[In-phase and quadrature PDH error signals]{In-phase and quadrature PDH error signals calculated for a simple absorption model around the Rb85 $\left|F=3\right\rangle \rightarrow \left|F'=3\right\rangle$ resonance using (\ref{eq:n}) (\ref{eq:a}) (\ref{eq:tau}) (\ref{eq:phit}) with $w_0\approx$ 383 THz, $\Gamma \approx$ 6.07 MHz, and a vapour density of $7.4\cdot 10^{13}$ atoms/ $m^3$ at $20^\circ C$ \cite{steckrb85}. While actual physical constants were used in computation, this is a separate model that does not factor Doppler broadening and is intended to show qualitative behaviour.}
   \label{fig:pdh_error}
 \end{figure}
 
@@ -161,13 +165,13 @@ where $\phi=0$ would presumably stay constant to maximize the signals. These sep
 
 During development, the saturated absorption signal was difficult to work with. Because total input laser power was limited, a necessary increase in the pump power to create sharper resonance features resulted in a lower probe amplitude and degraded the SNR of the electrical signal. The best signal achieved was with approximately 9 mW pump power and 1.5 mW probe power (see \textbf{Figure \ref{fig:sat_abs_bad}}). This signal has an SNR of approximately 3:1, which is poor, and has visible DC features which bring into question whether the null locking points are directly at the transition resonances. In an effort to eliminate these problems, a modulation transfer scheme was adopted. In modulation transfer spectroscopy, the pump beam is modulated instead of the probe beam. Through nonlinear interactions in the gas, the modulated sidebands are still written onto the probe beam (see \textbf{Figure \ref{fig:spectroscopies}}).   \\
 
-The modulation transfer signal chiefly serves to eliminate parasitic AM pickup present in the saturated absorption scheme. This as is evident in the final data sets (compared to \textbf{Figure \ref{fig:sat_abs_bad}}), as they have a flat response far from the resonance peaks. At a variety of modulation frequencies in the range of 10-20MHz, both the in-phase and quadrature components of the resulting PDH signal still have zero crossings exactly at the transition resonances, which is ideal \cite{0957-0233-19-10-105601}\footnote{see Figure 1a, 1b in particular}. Given the data in this prior work, it is apparent that a modulation frequency in the range of 10-20 Mhz would produce the highest amplitude error signals.
+The modulation transfer signal chiefly serves to eliminate parasitic AM pickup present in the saturated absorption scheme. This as is evident in the final data sets (compared to \textbf{Figure \ref{fig:sat_abs_bad}}), as they have a flat response far from the resonance peaks. At a variety of modulation frequencies in the range of 10--20 MHz, both the in-phase and quadrature components of the resulting PDH signal still have zero crossings exactly at the transition resonances, which is ideal \cite{0957-0233-19-10-105601}\footnote{see Figure 1a, 1b in particular}. Given the data in this prior work, it is apparent that a modulation frequency in the range of 10--20 MHz would produce the highest amplitude error signals.
 
 \begin{figure}
   \begin{tabular}{ >{\centering\arraybackslash} m{0.47\textwidth} >{\centering\arraybackslash} m{0.47\textwidth} }
     \includegraphics[width=0.46\textwidth]{figures/{sat_abs_beams}.png} &
     \includegraphics[width=0.46\textwidth]{figures/{mod_xfer_beams}.png} \\
   \end{tabular}
-  \caption{Schematic differences between saturated absorption (left) and modulation transfer (right) spectroscopy. Saturated absorption schemes demand a higher pump/probe ratio. Though only the pump beam is modulated by the EOM in the modulation transfer scheme, the probe beam picks up the modulation through nonlinear interaction in the gas.}
+  \caption[Differences between saturated absorption and modulation transfer spectroscopy]{Schematic differences between saturated absorption (left) and modulation transfer (right) spectroscopy. Saturated absorption schemes demand a higher pump/probe ratio. Though only the pump beam is modulated by the EOM in the modulation transfer scheme, the probe beam picks up the modulation through nonlinear interaction in the gas.}
   \label{fig:spectroscopies}
 \end{figure}

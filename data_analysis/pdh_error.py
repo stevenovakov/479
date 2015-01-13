@@ -12,7 +12,7 @@ pt.ion()
 # F=3 -> F'=3 D2 transition (MHz)
 rb_85_d2_fp3 = 384.230e6 - 1.265e3 + 100.205
 # FWHM bandwidth around center (MHz)
-gamma = 2*math.pi*5.75
+gamma = 6.066
 
 rb_molar = 85.46e-3 #kg
 nrb = 7.4e9 * 1e4
@@ -40,15 +40,15 @@ def a(w, w0, gamma):
   return r
 
 def trans(m, m0, g):
-  w = 1e6 * m
-  w0 = 1e6 * m0
-  gamma = 1e6 * g
+  w = 1e6 * m * 2 * math.pi
+  w0 = 1e6 * m0 * 2 * math.pi
+  gamma = 1e6 * g * 2 * math.pi
   return math.e**(-1*a(w, w0, gamma)*L)
 
 def phase(m, m0, g):
-  w = 1e6 * m
-  w0 = 1e6 * m0
-  gamma = 1e6 * g
+  w = 1e6 * m * 2 * math.pi
+  w0 = 1e6 * m0 * 2 * math.pi
+  gamma = 1e6 * g * 2 * math.pi
   return (1 - n(w, w0, gamma))*(w/scicon.c)*L
 
 #
@@ -59,7 +59,7 @@ def phase(m, m0, g):
 #     PDH quadrature
 #
 
-span = 4*gamma #MHz
+span = 6*gamma #MHz
 fmod = 20 #MHz
 N = 1e3
 
@@ -103,7 +103,7 @@ for s in xrange(0, len(tf)-2*window):
   tfmi = tf[minus].imag
 
   inphase.append(tfr*(tfpr-tfmr) + tfi*(tfpi-tfmi))
-  quadrature.append(tfi*(tfmr-tfpr) + tfr*(tfpi - tfmi))
+  quadrature.append(tfi*(tfpr + tfmr) - tfr*(tfpi + tfmi))
 
 inphase = np.array(inphase)
 quadrature = np.array(quadrature)
@@ -149,7 +149,7 @@ ax1.set_ylabel(r"$\tau(\omega)$ (normalized)")
 ax2.set_ylabel(r"$\phi_T(\omega)$ (mRad)")
 ax3.set_ylabel(r"$\epsilon$ (arbitrary)")
 ax3.set_xlabel(r"$\Delta f = f - f_0$ (MHz)")
-ax3.legend(loc="lower left",prop={'size':11})
+ax3.legend(loc="upper left",prop={'size':11})
 
 ax1.grid(True, which='both')
 ax1.set_xticklabels([])
