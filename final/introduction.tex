@@ -1,21 +1,21 @@
 \newpage
 \section{Introduction}
 
-The ability to lock a laser to a very specific frequency is of great importance to the UBC Quantum Degenerate Gases Laboratory.  They use these optical systems to laser cool atomic and molecular gases.  This requires a very narrow linewidth on the laser, and a specific frequency.  Any improvement in the frequency precision of the laser will increase the quantity of atoms that can be trapped or cooled, as well as the attainable temperatures in a trap.  Often, this frequency must be very close to the natural transitions of the gas. \\
+The ability to lock a laser to a very specific frequency is of great importance to the UBC Quantum Degenerate Gases Laboratory.  They use these optical systems to laser cool atomic and molecular gases.  This requires a very narrow laser linewidth, and a stable carrier frequency.  Any improvement in the frequency precision of the laser will increase the quantity of atoms that can be trapped or cooled, as well as the attainable temperatures in a trap.  Often, this frequency must be very close to the natural transitions of the gas. \\
 
-One way to acquire such a system is to pass the beam through a gas.  The gas has state transitions at particular optical frequencies, which can be detected by sweeping the laser (or an associated probe beam).  When doing this, the gas atoms will absorb photons at the corresponding frequencies, which will appear on a spectrum analyser as in Figure XXXXX(Get a figure of the rubidium spectrum).  However, since the gas is at room temperature, the broad absorption dip will have a bandwidth of about 1 GHz, which is too wide for accurate laser locking.
+One way to acquire such a system is to pass the beam through a gas.  The gas has state transitions at particular optical frequencies, which can be detected by sweeping the probing laser. The gas will absorb photons most strongly at the atomic transition resonances, which will appear as sharp dips in the transmission spectrum.  However, since the gas is at room temperature, the broad absorption dip will have a bandwidth of about 1 GHz, which is too wide for accurate laser locking.
 
-The Madison group has an existing system to lock lasers to various atomic transitions using AOM-based saturated absorption spectroscopy and the Pound-Drever-Hall method. However, this system is severaly limited in a number of ways: \\
+The Madison group has an existing system to lock lasers to various atomic transitions using AOM-based saturated absorption spectroscopy and the Pound-Drever-Hall method. However, this system is limited in a number of ways: \\
 \begin{tabularx}{\linewidth}{lX}
   Stability & Currently, the signal is processed in a way that leaves it sensitive to acoustic perturbations. As such, it has a large jitter amplitude during operation, which results in higher laser linewidths and, occasionally, total loss of locking. \\
   Bandwidth & Due to the low bandwidth of various components (including the modulating element) the signal's bandwidth is limited to approximately 10 kHz. This reduces the speed at which the laser servo can acquire a lock. \\
   Zero Crossings & Due to AM pickup, shifts of alignment and laser power, the null locking points actually shift around during operation. As stated, shifts away from precise atomic transitions reduce the efficiency of experiments.
-\end{tabularx} \\
-This project aims to improve various elements of this feedback system to improve stability, bandwidth and SNR. Furthermore, the methods employed here remove DC shifts in the error signal zero crossings. These improvements will lead to a master laser that has smaller linewidth and a more accurate/stable carrier frequency.
+\end{tabularx} \\ \ \\
+This project aims to improve various elements of this feedback system to improve stability, bandwidth and SNR and minimize the need for manual tuning. Furthermore, the methods employed here remove DC shifts in the error signal zero crossings. These improvements will lead to a master laser that has smaller linewidth and a more accurate/stable carrier frequency.
 
 \subsection{Doppler Effects}
 
-Since the gas atoms are moving in different directions, some atoms will be moving towards the laser beam, and other atoms will be moving away from it (some will be in between, of course).  As a result, if a single laser is used, the atoms moving towards the laser will perceive a higher frequency, and thus will excite at lower frequencies than the resonance frequency.  The opposite is also true.  If the absorption-vs-frequency curve is measured for a laser passed through the gas, there is a wide smear that is approximately 1 GHz wide \cite{madison14}.  This makes the apparent spectrum of the gas much wider, and thus, much harder to lock a signal to. This is depicted in \textbf{Figure \ref{fig:doppler}}. \\
+The gas in a vapour cell is at room temperature. In a saturated absorption spectroscopy scheme, for example, some atoms will be moving towards the probe beam, and other atoms will be moving away from it. As a result, if a single laser is used, the atoms moving towards the laser will perceive a higher frequency, and thus will excite at lower frequencies than the resonance frequency.  The opposite is also true.  If the absorption-vs-frequency curve is measured for a laser passed through the gas, there is a wide smear that is approximately 1 GHz wide \cite{madison14}.  This makes the apparent spectrum of the gas much wider, and thus, much harder to lock a signal to. This is depicted in \textbf{Figure \ref{fig:doppler}}. \\
 
 A major improvement is to redirect the single frequency laser around the sample, to the opposite side.  Now, when the sweep laser is at the same frequency as the pumping laser, its light will not be absorbed by the atoms with zero horizontal velocity.  This creates a Doppler-cancelled feature, which is about 10--100MHz wide.
 
@@ -34,7 +34,7 @@ Unfortunately, the EOM requires fairly large driving voltages, on the order of h
 
 \subsection{The Pound-Drever-Hall Method}
 
-Optical frequencies generally exceed 100THz. It is generally not to extract information at these frequencies using conventional electronic measurement equipment. Systems make use of schemes that down-mix these optical signals into RF range, which are then processed via conventional means (RF electronics and digital systems). \\
+Optical frequencies generally exceed 100THz. It is not possible to extract information at these frequencies using conventional electronic measurement equipment. Systems make use of schemes that down-mix these optical signals into RF range, which are then processed via conventional means (RF electronics and digital systems). \\
 
 The Pound-Drever-Hall method makes use of phase-modulated light to measure an optical response and down-mix it into RF range.  This signal is then mixed again with the same oscillator to produce a DC signal. Changing the modulation frequency varies the resolution of this derivative function. At extremes, this derivative function is either small and featureless, or is excessively noisy and not useful. \\
 
@@ -46,7 +46,7 @@ There are a variety of methods to generate an absorption spectrum from an atomic
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.6\textwidth]{figures/doppler.png}
+    \includegraphics[width=0.45\textwidth]{figures/doppler.png}
     \caption{Doppler effect demonstration.  The probe beam is absorbed across a wide frequency range, but only the non-Doppler-shifted particles are affected by both beams from left and right.}
     \label{fig:doppler}
 \end{figure}
@@ -56,13 +56,13 @@ There are a variety of methods to generate an absorption spectrum from an atomic
     \includegraphics[width=0.47\textwidth]{figures/{AOM_85}.png} &
     \includegraphics[width=0.47\textwidth]{figures/{AOM_87}.png} \\
   \end{tabular}
-  \caption{Existing AOM-based, single demodulation channel error signals around Rb85 (left) and Rb87 (right) D2 transitions.}
+  \caption{Existing AOM-based, single demodulation channel error signals around Rb85 (left) and Rb87 (right) D2 transitions. Each figure shows the reference spectrum (black), and the resulting PDH error signal (red).}
   \label{fig:aom_spectra}
 \end{figure}
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.6\textwidth]{figures/best_sat_abs.png}
-    \caption{Saturated absorption , blurb about why its bad and how low probe power limits snr inherently.}
+    \includegraphics[width=0.5\textwidth]{figures/best_sat_abs.png}
+    \caption{Saturated absorption spectroscopy based PDH signal acquired near the start of the project. Shown is the ramping signal (yellow), AOM-based reference saturated absorption spectrum (blue) and the new EOM-based PDH signal (pink). This signal is suboptimal due to low SNR (approximately 3:1), which was difficult to improve given avai,lable resources. Additionaly, AM pickup effects bring into question the accuracy of the zero crossings.}
     \label{fig:sat_abs_bad}
 \end{figure}
