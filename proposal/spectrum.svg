@@ -13,7 +13,7 @@
    height="97.839874"
    id="svg2"
    version="1.1"
-   inkscape:version="0.48.5 r10040"
+   inkscape:version="0.48.4 r9939"
    sodipodi:docname="spectrum.svg">
   <defs
      id="defs4">
@@ -73,10 +73,10 @@
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1366"
-     inkscape:window-height="702"
-     inkscape:window-x="0"
-     inkscape:window-y="27"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
      inkscape:window-maximized="1"
      fit-margin-top="0"
      fit-margin-left="0"
@@ -90,7 +90,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -103,29 +103,44 @@
        style="fill:none;stroke:#0000ff;stroke-width:0.93894386px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 259.33213,85.064945 0,-21.725524"
        id="path4289"
-       inkscape:connector-curvature="0" />
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\final\figures\spectrum.png"
+       inkscape:export-xdpi="200.45218"
+       inkscape:export-ydpi="200.45218" />
     <path
        style="fill:none;stroke:#0000ff;stroke-width:0.91149074;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
        d="m 206.10968,85.684975 0,23.722695"
        id="path4293"
-       inkscape:connector-curvature="0" />
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\final\figures\spectrum.png"
+       inkscape:export-xdpi="200.45218"
+       inkscape:export-ydpi="200.45218" />
     <path
        inkscape:connector-curvature="0"
        id="path4275"
        d="m 158.33137,85.362905 168.78722,0"
-       style="fill:none;stroke:#000000;stroke-width:1.14134586px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend)" />
+       style="fill:none;stroke:#000000;stroke-width:1.14134586px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\final\figures\spectrum.png"
+       inkscape:export-xdpi="200.45218"
+       inkscape:export-ydpi="200.45218" />
     <path
        inkscape:connector-curvature="0"
        id="path4277"
        d="m 166.11784,91.791471 0,-58.571422"
-       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend)" />
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\final\figures\spectrum.png"
+       inkscape:export-xdpi="200.45218"
+       inkscape:export-ydpi="200.45218" />
     <text
        sodipodi:linespacing="125%"
        id="text4279"
        y="26.791479"
        x="151.83211"
        style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       xml:space="preserve"><tspan
+       xml:space="preserve"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\final\figures\spectrum.png"
+       inkscape:export-xdpi="200.45218"
+       inkscape:export-ydpi="200.45218"><tspan
          style="font-size:14px"
          y="26.791479"
          x="151.83211"
@@ -138,7 +153,10 @@
        x="222.93863"
        style="font-size:12.64056301px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
        xml:space="preserve"
-       transform="scale(1.0263335,0.97434216)"><tspan
+       transform="scale(1.0263335,0.97434216)"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\final\figures\spectrum.png"
+       inkscape:export-xdpi="200.45218"
+       inkscape:export-ydpi="200.45218"><tspan
          y="98.538528"
          x="222.93863"
          id="tspan4285"
@@ -147,7 +165,10 @@
        inkscape:connector-curvature="0"
        id="path4287"
        d="m 233.43927,85.541475 0,-41.964286"
-       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\final\figures\spectrum.png"
+       inkscape:export-xdpi="200.45218"
+       inkscape:export-ydpi="200.45218" />
     <text
        sodipodi:linespacing="125%"
        id="text4283-0"
@@ -155,7 +176,10 @@
        x="253.39539"
        style="font-size:11.54238605px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none;font-family:Sans"
        xml:space="preserve"
-       transform="scale(0.975899,1.0246962)"><tspan
+       transform="scale(0.975899,1.0246962)"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\final\figures\spectrum.png"
+       inkscape:export-xdpi="200.45218"
+       inkscape:export-ydpi="200.45218"><tspan
          y="93.595024"
          x="253.39539"
          id="tspan4285-4"
@@ -167,7 +191,10 @@
        x="196.67018"
        style="font-size:11.48356915px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none;font-family:Sans"
        xml:space="preserve"
-       transform="scale(0.99115533,1.0089236)"><tspan
+       transform="scale(0.99115533,1.0089236)"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\final\figures\spectrum.png"
+       inkscape:export-xdpi="200.45218"
+       inkscape:export-ydpi="200.45218"><tspan
          y="81.794655"
          x="196.67018"
          id="tspan4285-4-8"
@@ -178,7 +205,10 @@
        y="110.73421"
        x="174.00189"
        style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none;font-family:Sans"
-       xml:space="preserve"><tspan
+       xml:space="preserve"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\final\figures\spectrum.png"
+       inkscape:export-xdpi="200.45218"
+       inkscape:export-ydpi="200.45218"><tspan
          y="110.73421"
          x="174.00189"
          id="tspan4285-4-8-3"
@@ -191,7 +221,10 @@
        y="59.878803"
        x="259.84076"
        style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none;font-family:Sans"
-       xml:space="preserve"><tspan
+       xml:space="preserve"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\final\figures\spectrum.png"
+       inkscape:export-xdpi="200.45218"
+       inkscape:export-ydpi="200.45218"><tspan
          y="59.878803"
          x="259.84076"
          id="tspan4285-4-8-3-1"
@@ -204,7 +237,10 @@
        y="37.378807"
        x="218.59074"
        style="font-size:14px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       xml:space="preserve"><tspan
+       xml:space="preserve"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\final\figures\spectrum.png"
+       inkscape:export-xdpi="200.45218"
+       inkscape:export-ydpi="200.45218"><tspan
          y="37.378807"
          x="218.59074"
          id="tspan4285-4-8-3-1-7"
@@ -215,12 +251,18 @@
        inkscape:connector-curvature="0"
        id="path4275-1"
        d="m 12.315839,85.014581 85.56545,0"
-       style="fill:none;stroke:#000000;stroke-width:0.8260414px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend)" />
+       style="fill:none;stroke:#000000;stroke-width:0.8260414px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\final\figures\spectrum.png"
+       inkscape:export-xdpi="200.45218"
+       inkscape:export-ydpi="200.45218" />
     <path
        inkscape:connector-curvature="0"
        id="path4277-5"
        d="m 20.036519,91.443151 0,-58.571417"
-       style="fill:none;stroke:#000000;stroke-width:0.98614967px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend)" />
+       style="fill:none;stroke:#000000;stroke-width:0.98614967px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\final\figures\spectrum.png"
+       inkscape:export-xdpi="200.45218"
+       inkscape:export-ydpi="200.45218" />
     <text
        sodipodi:linespacing="125%"
        id="text4279-7"
@@ -228,7 +270,10 @@
        x="6.2300258"
        style="font-size:39.44598389px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
        xml:space="preserve"
-       transform="scale(0.98614963,1.0140449)"><tspan
+       transform="scale(0.98614963,1.0140449)"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\final\figures\spectrum.png"
+       inkscape:export-xdpi="200.45218"
+       inkscape:export-ydpi="200.45218"><tspan
          style="font-size:13.80609512px"
          y="26.076914"
          x="6.2300258"
@@ -241,7 +286,10 @@
        x="47.883018"
        style="font-size:13.80609512px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
        xml:space="preserve"
-       transform="scale(0.98614963,1.0140449)"><tspan
+       transform="scale(0.98614963,1.0140449)"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\final\figures\spectrum.png"
+       inkscape:export-xdpi="200.45218"
+       inkscape:export-ydpi="200.45218"><tspan
          y="94.317497"
          x="47.883018"
          id="tspan4285-5"
@@ -250,7 +298,10 @@
        inkscape:connector-curvature="0"
        id="path4287-6"
        d="m 52.112159,84.988421 0,-59.232484"
-       style="fill:none;stroke:#000000;stroke-width:1.17160952px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+       style="fill:none;stroke:#000000;stroke-width:1.17160952px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\final\figures\spectrum.png"
+       inkscape:export-xdpi="200.45218"
+       inkscape:export-ydpi="200.45218" />
     <text
        sodipodi:linespacing="125%"
        id="text4283-0-8-8-1-5-0"
@@ -258,7 +309,10 @@
        x="55.651352"
        style="font-size:13.87464333px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
        xml:space="preserve"
-       transform="scale(0.99104599,1.0090349)"><tspan
+       transform="scale(0.99104599,1.0090349)"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\final\figures\spectrum.png"
+       inkscape:export-xdpi="200.45218"
+       inkscape:export-ydpi="200.45218"><tspan
          y="29.146215"
          x="55.651352"
          id="tspan4285-4-8-3-1-7-1"
@@ -268,18 +322,24 @@
        d="m 101.80892,57.918472 c 5.20329,-6.682054 7.2522,-9.17129 13.21429,-0.714286 7.87571,10.542384 10.8382,4.811147 13.83928,0 8.35759,-10.969536 13.16999,-1.562203 14.55357,0.08929"
        id="path15015"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cccc" />
+       sodipodi:nodetypes="cccc"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\final\figures\spectrum.png"
+       inkscape:export-xdpi="200.45218"
+       inkscape:export-ydpi="200.45218" />
     <text
        sodipodi:linespacing="125%"
        id="text4279-9"
        y="45.075069"
-       x="99.892273"
+       x="105.60656"
        style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       xml:space="preserve"><tspan
+       xml:space="preserve"
+       inkscape:export-filename="E:\University Stuff\ENPH 479\final\figures\spectrum.png"
+       inkscape:export-xdpi="200.45218"
+       inkscape:export-ydpi="200.45218"><tspan
          style="font-size:14px"
          y="45.075069"
-         x="99.892273"
+         x="105.60656"
          id="tspan4281-5"
-         sodipodi:role="line">A/EOM</tspan></text>
+         sodipodi:role="line">EOM</tspan></text>
   </g>
 </svg>

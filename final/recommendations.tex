@@ -1,6 +1,7 @@
 \newpage
 
 \section{Recommendations}
+\label{sec:recommendations}
 
 \subsection{Improved Phase Adjustment}
 
@@ -18,9 +19,9 @@ The best quality measurement we made was using 100\% of our laser's power.  Thus
 
 \subsection{Improved pre-amplifiers}
 
-Near the end of the project, we decided that reducing noise was our priority.  The first and foremost concern is the noise from the amplifiers themselves.  The amplifiers we used, the ZFL-1000+, also exists in a low noise variant, the ZFL-1000LN+.  This amplifier has nearly identical properties, but the noise figure is lower, 3dB instead of 6dB \footnote{Noise figure is the amount that the SNR is increased by the amplifier.  That is, if we have a -20dBm carrier, with -30dBm of noise, and we feed it into a +20dB amplifier with +6dB noise figure, we get out a signal with 0dBm carrier, and -14dBm of noise.  So our SNR goes from 10dB to 4dB.}
+Near the end of the project, we decided that reducing noise was our priority.  The first and foremost concern is the noise from the amplifiers themselves.  The amplifiers we used, the ZFL-1000+, also exists in a low noise variant, the ZFL-1000LN+.  This amplifier has nearly identical properties, but the noise figure is lower, 3dB instead of 6dB \footnote{Noise figure is the amount that the SNR is increased by the amplifier.  Given a -20dBm carrier, with -30dBm of noise, and a +20dB amplifier with +6dB noise figure, the output signal will contain a 0dBm carrier, and -14dBm of noise, changing the SNR from 10dB to 4dB.}. The best locking features in \textbf{Appendices \ref{app:85pwr} - \ref{app:87temp}} have an SNR of approximately 5:1. The existing AOM signal (\textbf{Figure \ref{fig:aom_spectra}}), has an SNR of approximately 10:1. Switching out the existing amplifiers for a better model will increase the SNR by 6dB, to a value of 20:1 (two amplifiers in series). This is more robust than the existing AOM solution.
 
-Additionally, the amplifiers we're using do not have the specifications we desire.  They are the most appropriate from the supplier we used (minicircuits), but they're still far over-specified.  These amplifiers are designed to work up to 1000MHz, whereas we only need operation up to 20MHz.  We also require only a very narrow bandwidth near 20MHz.  There are likely amplifiers better suited to this purpose.  If not, then one could probably be made which meets these specifications, and ideally, has very good performance.  See, for example TI's guide to RF op amp circuits\cite{ti_amps}.
+Additionally, the amplifiers used do not have the desired specifications.  They are the most appropriate choice given the supplier (Mini-Circuits), but they are over-specified.  These amplifiers are designed to work up to 1000 MHz, whereas an ideal cutoff would be in the range of 25-30 MHz.  There are likely amplifiers better suited to this purpose.  If not, then one could probably be made which meets these specifications, and has very good performance.  See, for example TI's guide to RF op amp circuits.\cite{ti_amps}.
 
 \subsection{Additional Low-Pass Filtering}
 
@@ -30,6 +31,4 @@ A spectral analysis of our noise indicates that the energy distribution is flat 
 \subsubsection{Close the Loop}
 
 In order for the system to actually be used, the feedback loop would need to be closed.  That is, the demodulated error signal would need to be fed back into a laser diode controller, which would use the signal to adjust the frequency of the laser itself.  A suitable solution available in the lab was the Vescent D2-105 laser controller, which includes fast (current) and slow (piezo) control, and a built in PI²D controller.  This was not implemented, as the sponsor indicated that they would prefer a deeper investigation of possible tactics to improve the error signal, versus closing the loop and providing a functional (but sub-optimal) solution.
-
-
 

@@ -1,12 +1,13 @@
 \newpage
 \section{Implementation}
+\label{sec:implementation}
 
 \subsection{Laser Setup}
 
     \subsubsection{Laser Seeding}
     %============================
     
-The laser setup begins with the master laser, a rubidium laser [details?].  This laser feeds its light into a slave laser which, if properly tuned, will emit light of the same frequency as its master. \\
+The laser setup begins with the master laser.  This laser feeds its light into a slave laser which, if properly tuned, will emit light of the same frequency as its master. \\
 
 That slave then feeds into another slave (\emph{Slave \#2}), which we have direct access to.  Particularly, there are a series of mirrors which direct the light from the second slave into the third slave.  Setting up this slave requires a particular algorithm (which must be executed before any work can be done each day). \\
 
@@ -21,7 +22,7 @@ That slave then feeds into another slave (\emph{Slave \#2}), which we have direc
  \item The master should either be re-locked, or have its frequency sweep set to a useful range.
  \item The laser can now be used for experiments.
 \end{enumerate}
-    
+
     \subsubsection{Laser Sweeping}
     %=============================
     
@@ -31,8 +32,8 @@ However, if we disable this feedback, we can operate the laser in an open-loop \
 
 Particularly, by using this triangular wave as the trigger on an oscilloscope, we get a continuously-updating view of any parameters we wish to measure, plotted as a function of the frequency of the laser.  For example, by sending this beam through a rubidium gas cell, and placing a detector on the far side, we get a plot of the absorption spectrum of rubidium as a function of frequency. \\
 
-Note that although the sweep speed is fixed (50Hz), the frequency range of the sweep is set manually by tuning a potentiometer.  Thus, measurements of the sweep rate (MHz/s) need to be done on a per-dataset basis.  No attempt was made to reproduce the exact sweep rate between measurements, although some measurements may have been done without adjusting the settings.  For reference, the sweep rate was generally set to roughly 120MHz/s. \\
-    
+Note that although the sweep speed is fixed (50Hz), the frequency range of the sweep is set manually by tuning a potentiometer.  Thus, measurements of the sweep rate (MHz/s) need to be done on a per-dataset basis.  No attempt was made to reproduce the exact sweep rate between measurements, although some measurements may have been done without adjusting the settings.  For reference, the sweep rate was set to roughly 120MHz/s. \\
+
     \subsubsection{Fibre Alignment}
     %==============================
 
@@ -99,7 +100,7 @@ In each of these locations, we use a half-wave plate followed by a pol cube.  Th
 
 An EOM crystal driver was borrowed from the Phys 408 Optics lab.  It is shown in Figure~\ref{eom_driver}.  The availability of a working device greatly reduced the cost overhead of this project.  The driver generates a sinusoidal signal at approximately 20MHz, and is tuned to drive the high capacitance of the EOM crystal at a high voltage.  It also feeds out a reference to its internal oscillator.  This signal provides the local oscillator input for our demodulator. \\
 
-The EOM driver also includes a phase shift potentiometer to account for phase shifts that may occur in electrical lines or the optical path.  However, the shift provided by this potentiometer is woefully inadequate, giving us approximately ⅙ of a wavelength (at least ½ of a wavelength is needed).  We attempted to manually introduce a phase delay using BNC cables of various lengths.  Of the cables tried, a 1.5m cable provided the best signal (but this is clearly suboptimal).  The maximum phase shift of the driver is shown in Figure~\ref{eom_phase}. \\
+The EOM driver also includes a phase shift potentiometer to account for phase shifts that may occur in electrical lines or the optical path.  However, the shift provided by this potentiometer is woefully inadequate, giving us approximately ⅙ of a wavelength (at least ½ of a wavelength is needed).  We attempted to manually introduce a phase delay using BNC cables of various lengths.  Of the cables tried, a 1.5m cable provided the best signal (but this is clearly suboptimal).  The maximum phase shift of the driver is shown in Figure~\ref{fig:eom_phase}. \\
 
 The light passing into the EOM must be horizontally polarized, thus a half-wave plate is used to re-polarize the light before it enters the EOM. \\
 
@@ -109,21 +110,21 @@ The light passing into the EOM must be horizontally polarized, thus a half-wave 
     \includegraphics[width=0.47\textwidth]{figures/{eom_driver_onboard_2}.jpg} \\
   \end{tabular}
   \caption{The maximum phase shift of the EOM driver reference output, with no load attached.  Red signal corresponds to the driver (1MΩ), blue signal corresponds to LO out.  The impedance of the load affects the shape of both waveforms.}
-  \label{eom_phase}
+  \label{fig:eom_phase}
 \end{figure}
-    
+
     \subsubsection{Pump Probe Modulation Transfer}
     %=============================================
-    
+
 We feed the an EOM-modulated beam into the sample from one direction (the \emph{pump} beam).  A single frequency beam (from the slave laser) passes through the gas in the opposite direction (the \emph{probe} beam).  Due to nonlinear interactions in the gas, the probe beam becomes modulated at the driving frequency of the pump beam.  That is, the pump beam modulates the gas, which in turn, modulates the probe beam. \\
 
-The physics of the interaction between the two beams and the gas are described further in the Theory section. \\
+The physics of the interaction between the two beams and the gas are described further in the \textbf{Section \ref{sec:theory}}. \\
 
 Note that the cell has been installed at an angle, to prevent reflections off the surface of the cell. \\
 
     \subsubsection{Rb Cell Beam Expander}
     %====================================
-    
+   
 The Rb gas cell has been surrounded in telescoping lenses to expand both the probe and pump beam.  This improves the signal-to-noise ratio by passing the beam through a larger fraction of the gas in the cell.  The telescopes increase the diameter of both beams by a factor of 3. \\
 
     \subsubsection{Heated Rb Cell}
@@ -150,10 +151,10 @@ A confocal cavity was used to measure the effect the EOM has on the beam, to ens
 \begin{figure}
   \centering\includegraphics[width=0.5\textwidth]{figures/eom_wave.pdf}
   \caption{EOM Spectrum as viewed from the detector of a confocal cavity.  Sidebands appear on the light wave at ±20MHz from the carrier (which was calibrated from the free spectral range of the cavity)}
-  \label{eom_wave}
+  \label{fig:eom_wave}
 \end{figure}
 
-Figure~\ref{eom_wave} shows us that the EOM driver is functioning correctly.  However, the frequency resolution of this instrument is about 10MHz [include math!] at best.  This means that our 20MHz features are only barely resolvable. \\
+Figure~\ref{fig:eom_wave} shows us that the EOM driver is functioning correctly.  However, the frequency resolution of this instrument is about 10MHz [include math!] at best.  This means that our 20MHz features are only barely resolvable. \\
     
     \subsubsection{Saturated Absorption Reference}
     %============================================
@@ -163,6 +164,7 @@ Since the frequency was sweeping during our main tests, we isolated the low-freq
 We use a splitter to also give us the raw signal itself, which we send off to the signal conditioning box, which converts the raw output into a usable error signal. \\
 
 \subsection{Signal Conditioning}
+\label{sec:signalcond}
 
 \begin{figure}
   \centering\includegraphics[width=\textwidth]{figures/rf_design.pdf}
